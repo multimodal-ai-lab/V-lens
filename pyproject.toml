@@ -1,0 +1,17 @@
+[project]
+name = "vlens"
+version = "0.1.0"
+description = "V-lens: draw the hidden states of unified text-and-image models as pictures"
+requires-python = ">=3.10"
+# Exact versions differ between the model environments; see requirements/*.txt.
+dependencies = ["torch", "transformers", "numpy", "scipy", "pillow", "pyyaml", "huggingface-hub"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["vlens*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

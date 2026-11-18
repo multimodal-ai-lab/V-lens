@@ -1,0 +1,60 @@
+# Two states (Supp. E): a request with two slots, "a photo of a [modifier] [object]", filled with two extracted states.
+# Single-word modifiers only, so each slot gets one state. Colours and patterns (striped / spotted).
+# Per pair: object, the two values, the judges' question, a partner pair with the same values (for exchanging the
+# object while keeping the modifier), and the sentence forms:
+#   plain: a sentence that names the thing with its modifier       ("I saw a red car on the street.")
+#   context: the modifier and the object in one sentence, "it" in the next ("The car was painted bright red. Later I
+#            looked at it."); {m} is the modifier word.
+# dev pairs and held-out pairs (new objects, new sentence forms).
+pairs:
+  # ------------------------------------------------------------------ development
+  - {id: car, split: dev, type: colour, object: car, values: [red, blue], partner: bicycle,
+     question: "What colour is the car in this picture?",
+     plain: "I saw a {m} car on the street.", context: "The car was painted bright {m}. Later I looked at it."}
+  - {id: bicycle, split: dev, type: colour, object: bicycle, values: [red, blue], partner: car,
+     question: "What colour is the bicycle in this picture?",
+     plain: "I saw a {m} bicycle on the street.", context: "The bicycle was painted bright {m}. Later I looked at it."}
+  - {id: balloon, split: dev, type: colour, object: balloon, values: [green, yellow], partner: hat,
+     question: "What colour is the balloon in this picture?",
+     plain: "I saw a {m} balloon on the street.", context: "The balloon was bright {m}. Later I looked at it."}
+  - {id: hat, split: dev, type: colour, object: hat, values: [green, yellow], partner: balloon,
+     question: "What colour is the hat in this picture?",
+     plain: "I saw a {m} hat on the street.", context: "The hat was bright {m}. Later I looked at it."}
+  - {id: shirt, split: dev, type: pattern, object: shirt, values: [striped, spotted], partner: mug,
+     question: "What pattern does the shirt in this picture have?",
+     plain: "I saw a {m} shirt on the street.", context: "The shirt was {m} all over. Later I looked at it."}
+  - {id: mug, split: dev, type: pattern, object: mug, values: [striped, spotted], partner: shirt,
+     question: "What pattern does the mug in this picture have?",
+     plain: "I saw a {m} mug on the table.", context: "The mug was {m} all over. Later I looked at it."}
+  - {id: scarf, split: dev, type: pattern, object: scarf, values: [striped, spotted], partner: tie,
+     question: "What pattern does the scarf in this picture have?",
+     plain: "I saw a {m} scarf on the street.", context: "The scarf was {m} all over. Later I looked at it."}
+  - {id: tie, split: dev, type: pattern, object: tie, values: [striped, spotted], partner: scarf,
+     question: "What pattern does the tie in this picture have?",
+     plain: "I saw a {m} tie on the table.", context: "The tie was {m} all over. Later I looked at it."}
+  # ------------------------------------------------------------------ held out (new objects, new sentence forms)
+  - {id: bus, split: test, type: colour, object: bus, values: [red, green], partner: kite,
+     question: "What colour is the bus in this picture?",
+     plain: "There was a {m} bus near the station.", context: "Someone painted the bus {m}. I drove it home."}
+  - {id: kite, split: test, type: colour, object: kite, values: [red, green], partner: bus,
+     question: "What colour is the kite in this picture?",
+     plain: "There was a {m} kite near the station.", context: "Someone painted the kite {m}. I flew it today."}
+  - {id: cup, split: test, type: colour, object: cup, values: [pink, blue], partner: chair,
+     question: "What colour is the cup in this picture?",
+     plain: "There was a {m} cup near the window.", context: "Someone painted the cup {m}. I washed it today."}
+  - {id: chair, split: test, type: colour, object: chair, values: [pink, blue], partner: cup,
+     question: "What colour is the chair in this picture?",
+     plain: "There was a {m} chair near the window.", context: "Someone painted the chair {m}. I moved it today."}
+  - {id: dress, split: test, type: pattern, object: dress, values: [striped, spotted], partner: umbrella,
+     question: "What pattern does the dress in this picture have?",
+     plain: "There was a {m} dress near the window.", context: "Someone made the dress {m}. I washed it today."}
+  - {id: umbrella, split: test, type: pattern, object: umbrella, values: [striped, spotted], partner: dress,
+     question: "What pattern does the umbrella in this picture have?",
+     plain: "There was a {m} umbrella near the door.", context: "Someone made the umbrella {m}. I opened it today."}
+  - {id: sock, split: test, type: pattern, object: sock, values: [striped, spotted], partner: pillow,
+     question: "What pattern does the sock in this picture have?",
+     plain: "There was a {m} sock near the bed.", context: "Someone made the sock {m}. I washed it today."}
+  - {id: pillow, split: test, type: pattern, object: pillow, values: [striped, spotted], partner: sock,
+     question: "What pattern does the pillow in this picture have?",
+     plain: "There was a {m} pillow near the bed.", context: "Someone made the pillow {m}. I washed it today."}
+labels: {striped: stripes, spotted: spots (polka dots)}

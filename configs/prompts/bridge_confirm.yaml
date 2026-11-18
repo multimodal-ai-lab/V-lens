@@ -1,0 +1,20 @@
+# Depth study (Sec. 4.3, Supp. D): the 16 two-hop questions of bridges.yaml (families bridge and same_answer), unchanged
+# ("inferred"), and the same question after a sentence that names the connecting object ("explicit", the named-first
+# control). Used by scripts/depth_fixed_positions.py, depth_all_tokens.py and depth_through_answer.py.
+explicit_intro:
+  cow_milk: "A cow is a farm animal that says moo."
+  bee_honey: "A bee is an insect that lives in a hive."
+  chicken_egg: "A chicken is a farm bird that clucks."
+  rabbit_carrot: "A rabbit is a long-eared animal that hops."
+  horse_horseshoe: "A horse is a farm animal that neighs."
+  dog_bone: "A dog is a pet that barks."
+  sheep_wool: "A sheep is a farm animal that says baa."
+  cat_mouse: "A cat is a pet that purrs."
+  spider_eight: "A spider is an animal that spins webs."
+  stopsign_eight: "A stop sign is a red road sign that tells cars to halt."
+  bicycle_two: "A bicycle is a vehicle that you pedal."
+  flamingo_two: "A flamingo is a tall pink wading bird."
+  owl_two: "An owl is a bird that hoots at night."
+  penguin_two: "A penguin is a black and white bird that cannot fly and lives on the ice."
+  bee_six: "A bee is an insect that buzzes and stings."
+  butterfly_six: "A butterfly is an insect with big colourful wings."

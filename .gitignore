@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv*/
+.pytest_cache/
+.DS_Store
+# fetched by third_party/setup.sh
+third_party/bagel/
+third_party/show_o2/
+third_party/sensenova_u1/
+third_party/chameleon/
+# local data, checkpoints and outputs (vlens/paths.py defaults)
+data/
+models/
+outputs/

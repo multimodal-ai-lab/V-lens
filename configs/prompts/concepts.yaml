@@ -1,0 +1,113 @@
+# The 100 concept names every calibration picture is ranked against (CLIP, scripts/calibrate_insertion_layer.py) and
+# from which the judges' distractor options are drawn. Each entry: name (used in "a photo of a {name}") and words (all
+# spellings that count as a mention).
+
+animals:
+  - {name: spider, words: [spider, spiders]}
+  - {name: cat, words: [cat, cats, kitten, kittens]}
+  - {name: dog, words: [dog, dogs, puppy, puppies]}
+  - {name: horse, words: [horse, horses]}
+  - {name: elephant, words: [elephant, elephants]}
+  - {name: giraffe, words: [giraffe, giraffes]}
+  - {name: zebra, words: [zebra, zebras]}
+  - {name: lion, words: [lion, lions]}
+  - {name: tiger, words: [tiger, tigers]}
+  - {name: bear, words: [bear, bears]}
+  - {name: penguin, words: [penguin, penguins]}
+  - {name: owl, words: [owl, owls]}
+  - {name: eagle, words: [eagle, eagles]}
+  - {name: parrot, words: [parrot, parrots]}
+  - {name: shark, words: [shark, sharks]}
+  - {name: whale, words: [whale, whales]}
+  - {name: dolphin, words: [dolphin, dolphins]}
+  - {name: octopus, words: [octopus, octopuses, octopi]}
+  - {name: crab, words: [crab, crabs]}
+  - {name: snake, words: [snake, snakes]}
+  - {name: frog, words: [frog, frogs]}
+  - {name: turtle, words: [turtle, turtles, tortoise]}
+  - {name: butterfly, words: [butterfly, butterflies]}
+  - {name: bee, words: [bee, bees]}
+  - {name: ant, words: [ant, ants]}
+  - {name: kangaroo, words: [kangaroo, kangaroos]}
+  - {name: camel, words: [camel, camels]}
+  - {name: sheep, words: [sheep, lamb, lambs]}
+  - {name: cow, words: [cow, cows, cattle]}
+  - {name: pig, words: [pig, pigs]}
+
+food:
+  - {name: apple, words: [apple, apples]}
+  - {name: banana, words: [banana, bananas]}
+  - {name: lemon, words: [lemon, lemons]}
+  - {name: strawberry, words: [strawberry, strawberries]}
+  - {name: pineapple, words: [pineapple, pineapples]}
+  - {name: watermelon, words: [watermelon, watermelons]}
+  - {name: grapes, words: [grape, grapes]}
+  - {name: carrot, words: [carrot, carrots]}
+  - {name: pizza, words: [pizza, pizzas]}
+  - {name: hamburger, words: [hamburger, hamburgers, burger, burgers]}
+  - {name: cake, words: [cake, cakes]}
+  - {name: bread, words: [bread, loaf]}
+  - {name: cheese, words: [cheese, cheeses]}
+  - {name: egg, words: [egg, eggs]}
+  - {name: mushroom, words: [mushroom, mushrooms]}
+
+objects:
+  - {name: clock, words: [clock, clocks]}
+  - {name: guitar, words: [guitar, guitars]}
+  - {name: piano, words: [piano, pianos]}
+  - {name: violin, words: [violin, violins]}
+  - {name: umbrella, words: [umbrella, umbrellas]}
+  - {name: chair, words: [chair, chairs]}
+  - {name: lamp, words: [lamp, lamps]}
+  - {name: book, words: [book, books]}
+  - {name: key, words: [key, keys]}
+  - {name: candle, words: [candle, candles]}
+  - {name: scissors, words: [scissors]}
+  - {name: hammer, words: [hammer, hammers]}
+  - {name: telescope, words: [telescope, telescopes]}
+  - {name: crown, words: [crown, crowns]}
+  - {name: sword, words: [sword, swords]}
+  - {name: teapot, words: [teapot, teapots]}
+  - {name: balloon, words: [balloon, balloons]}
+  - {name: kite, words: [kite, kites]}
+  - {name: anchor, words: [anchor, anchors]}
+  - {name: trophy, words: [trophy, trophies]}
+
+vehicles:
+  - {name: car, words: [car, cars]}
+  - {name: bus, words: [bus, buses]}
+  - {name: train, words: [train, trains]}
+  - {name: airplane, words: [airplane, airplanes, plane, planes, aircraft]}
+  - {name: boat, words: [boat, boats, ship, ships]}
+  - {name: bicycle, words: [bicycle, bicycles, bike, bikes]}
+  - {name: motorcycle, words: [motorcycle, motorcycles]}
+  - {name: helicopter, words: [helicopter, helicopters]}
+  - {name: rocket, words: [rocket, rockets]}
+  - {name: tractor, words: [tractor, tractors]}
+
+places_and_nature:
+  - {name: Eiffel Tower, words: [eiffel]}
+  - {name: pyramid, words: [pyramid, pyramids]}
+  - {name: castle, words: [castle, castles]}
+  - {name: lighthouse, words: [lighthouse, lighthouses]}
+  - {name: volcano, words: [volcano, volcanoes]}
+  - {name: waterfall, words: [waterfall, waterfalls]}
+  - {name: desert, words: [desert, deserts]}
+  - {name: moon, words: [moon, moons]}
+  - {name: rainbow, words: [rainbow, rainbows]}
+  - {name: snowman, words: [snowman, snowmen]}
+  - {name: cactus, words: [cactus, cacti, cactuses]}
+  - {name: sunflower, words: [sunflower, sunflowers]}
+  - {name: rose, words: [rose, roses]}
+  - {name: palm tree, words: [palm]}
+  - {name: windmill, words: [windmill, windmills]}
+  - {name: igloo, words: [igloo, igloos]}
+  - {name: tornado, words: [tornado, tornadoes]}
+  - {name: bridge, words: [bridge, bridges]}
+  - {name: fire, words: [fire, fires, flame, flames]}
+  - {name: island, words: [island, islands]}
+  - {name: iceberg, words: [iceberg, icebergs]}
+  - {name: snowflake, words: [snowflake, snowflakes]}
+  - {name: Statue of Liberty, words: [liberty]}
+  - {name: skyscraper, words: [skyscraper, skyscrapers]}
+  - {name: tent, words: [tent, tents]}

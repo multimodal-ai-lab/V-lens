@@ -1,0 +1,103 @@
+# Context test, two meanings (Table 2, Supp. Table S7): 20 words used twice in one sentence, each meaning settled by the
+# words before it, in both orders.
+double_meaning:
+- word: mouse
+  meaning_a: mouse
+  meaning_b: computer mouse
+  sentence_ab: In the pantry, a whiskered mouse sniffed; on the office desk, a plastic wireless mouse clicked.
+  sentence_ba: On the office desk, a plastic wireless mouse clicked; in the pantry, a whiskered mouse sniffed.
+- word: bat
+  meaning_a: bat animal
+  meaning_b: baseball bat
+  sentence_ab: Hanging upside down in the attic, a furry bat slept; among the baseball equipment lay a wooden bat.
+  sentence_ba: Among the baseball equipment lay a wooden bat; hanging upside down in the attic, a furry bat slept.
+- word: crane
+  meaning_a: crane bird
+  meaning_b: construction crane
+  sentence_ab: Near the nesting herons, a long-legged crane rested; over the harbor, a steel cargo crane lifted containers.
+  sentence_ba: Over the harbor, a steel cargo crane lifted containers; near the nesting herons, a long-legged crane rested.
+- word: seal
+  meaning_a: seal animal
+  meaning_b: wax seal
+  sentence_ab: Among the barking marine mammals, a whiskered seal surfaced; on the envelope, a red wax seal hardened.
+  sentence_ba: On the envelope, a red wax seal hardened; among the barking marine mammals, a whiskered seal surfaced.
+- word: glasses
+  meaning_a: eyeglasses
+  meaning_b: drinking glasses
+  sentence_ab: At the eye clinic, she collected prescription glasses; beside the juice bottles, she arranged empty drinking glasses.
+  sentence_ba: Beside the juice bottles, she arranged empty drinking glasses; at the eye clinic, she collected prescription glasses.
+- word: tank
+  meaning_a: military tank
+  meaning_b: fish tank
+  sentence_ab: Beside the army barracks stood a tracked tank; in the pet shop stood a glass aquarium tank.
+  sentence_ba: In the pet shop stood a glass aquarium tank; beside the army barracks stood a tracked tank.
+- word: pitcher
+  meaning_a: baseball pitcher
+  meaning_b: drink pitcher
+  sentence_ab: During baseball practice, the left-handed pitcher warmed up; beside the breakfast cups stood a ceramic water pitcher.
+  sentence_ba: Beside the breakfast cups stood a ceramic water pitcher; during baseball practice, the left-handed pitcher warmed up.
+- word: palm
+  meaning_a: palm tree
+  meaning_b: hand palm
+  sentence_ab: Beside the oasis grew a tall palm; beneath my fingers, soap bubbles covered my palm.
+  sentence_ba: Beneath my fingers, soap bubbles covered my palm; beside the oasis grew a tall palm.
+- word: nut
+  meaning_a: edible nut
+  meaning_b: metal nut
+  sentence_ab: Beside the nutcracker lay a cracked nut; on the threaded bolt sat a hexagonal metal nut.
+  sentence_ba: On the threaded bolt sat a hexagonal metal nut; beside the nutcracker lay a cracked nut.
+- word: fork
+  meaning_a: eating fork
+  meaning_b: road fork
+  sentence_ab: Beside the dinner plate lay a silver fork; ahead on the road appeared a Y-shaped fork.
+  sentence_ba: Ahead on the road appeared a Y-shaped fork; beside the dinner plate lay a silver fork.
+- word: bill
+  meaning_a: duck bill
+  meaning_b: restaurant bill
+  sentence_ab: Below the duck's eyes was a broad bill; beside my empty restaurant plate lay the printed bill.
+  sentence_ba: Beside my empty restaurant plate lay the printed bill; below the duck's eyes was a broad bill.
+- word: tie
+  meaning_a: necktie
+  meaning_b: cable tie
+  sentence_ab: Under his shirt collar hung a silk tie; around the bundled cables was a tight plastic tie.
+  sentence_ba: Around the bundled cables was a tight plastic tie; under his shirt collar hung a silk tie.
+- word: sheet
+  meaning_a: bedsheet
+  meaning_b: sheet of paper
+  sentence_ab: Over the mattress she spread a cotton sheet; into the printer she fed a blank paper sheet.
+  sentence_ba: Into the printer she fed a blank paper sheet; over the mattress she spread a cotton sheet.
+- word: tablet
+  meaning_a: pill
+  meaning_b: tablet computer
+  sentence_ab: From the medicine bottle she took a small tablet; for browsing websites she used a touchscreen tablet.
+  sentence_ba: For browsing websites she used a touchscreen tablet; from the medicine bottle she took a small tablet.
+- word: drum
+  meaning_a: snare drum
+  meaning_b: oil drum
+  sentence_ab: Beside the cymbals sat a snare drum; in the oil depot stood a sealed steel drum.
+  sentence_ba: In the oil depot stood a sealed steel drum; beside the cymbals sat a snare drum.
+- word: cardinal
+  meaning_a: church cardinal
+  meaning_b: cardinal bird
+  sentence_ab: Beside the pope stood a red-robed cardinal; at the bird feeder perched a red, crested cardinal.
+  sentence_ba: At the bird feeder perched a red, crested cardinal; beside the pope stood a red-robed cardinal.
+- word: cape
+  meaning_a: cape garment
+  meaning_b: coastal headland
+  sentence_ab: Over the superhero's shoulders hung a red cape; along the coast, waves battered a rocky cape.
+  sentence_ba: Along the coast, waves battered a rocky cape; over the superhero's shoulders hung a red cape.
+- word: crown
+  meaning_a: royal crown
+  meaning_b: dental crown
+  sentence_ab: On the king's head glittered a jeweled crown; over the damaged tooth, the dentist fitted a porcelain crown.
+  sentence_ba: Over the damaged tooth, the dentist fitted a porcelain crown; on the king's head glittered a jeweled crown.
+- word: shell
+  meaning_a: seashell
+  meaning_b: artillery shell
+  sentence_ab: On the sandy beach lay a ridged shell; beside the artillery gun lay an unexploded metal shell.
+  sentence_ba: Beside the artillery gun lay an unexploded metal shell; on the sandy beach lay a ridged shell.
+- word: comb
+  meaning_a: hair comb
+  meaning_b: honeycomb
+  sentence_ab: Beside the hairdryer lay a plastic comb; inside the hive, bees filled a golden wax comb.
+  sentence_ba: Inside the hive, bees filled a golden wax comb; beside the hairdryer lay a plastic comb.

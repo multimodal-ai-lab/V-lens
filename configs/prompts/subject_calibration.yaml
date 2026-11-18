@@ -1,0 +1,30 @@
+# Calibration of the main-subject judge question (Supp. B, Table S5): pictures drawn from explicit requests, so the
+# right answer is known by construction. expect: truth (the named thing is the main subject, the alternative only
+# background), both, or neither. truth/alt are the two options offered.
+reads:
+  - {id: bg_elephant, request: "a photo of an elephant standing in a forest", truth: elephant, alt: tree, expect: truth, reads: [{word: x}]}
+  - {id: bg_horse, request: "a photo of a horse standing in front of a red barn", truth: horse, alt: barn, expect: truth, reads: [{word: x}]}
+  - {id: bg_cat, request: "a photo of a cat sleeping on a sofa", truth: cat, alt: sofa, expect: truth, reads: [{word: x}]}
+  - {id: bg_sailboat, request: "a photo of a sailboat on the sea in front of mountains", truth: sailboat, alt: mountain, expect: truth, reads: [{word: x}]}
+  - {id: bg_giraffe, request: "a photo of a giraffe on the savanna with acacia trees", truth: giraffe, alt: tree, expect: truth, reads: [{word: x}]}
+  - {id: bg_cow, request: "a photo of a cow grazing in a field behind a wooden fence", truth: cow, alt: fence, expect: truth, reads: [{word: x}]}
+  - {id: bg_parrot, request: "a photo of a parrot perched on a tree branch", truth: parrot, alt: tree, expect: truth, reads: [{word: x}]}
+  - {id: bg_car, request: "a photo of a car parked in front of a house", truth: car, alt: house, expect: truth, reads: [{word: x}]}
+  - {id: bg_bicycle, request: "a photo of a bicycle leaning against a brick wall under a window", truth: bicycle, alt: window, expect: truth, reads: [{word: x}]}
+  - {id: bg_teapot, request: "a photo of a teapot on a wooden kitchen table", truth: teapot, alt: table, expect: truth, reads: [{word: x}]}
+  - {id: bg_owl, request: "a photo of an owl sitting in a tree at night", truth: owl, alt: tree, expect: truth, reads: [{word: x}]}
+  - {id: bg_dog, request: "a photo of a dog running on a beach by the sea", truth: dog, alt: sea, expect: truth, reads: [{word: x}]}
+  - {id: two_catdog, request: "a photo of a cat and a dog sitting side by side", truth: cat, alt: dog, expect: both, reads: [{word: x}]}
+  - {id: two_elegir, request: "a photo of an elephant and a giraffe standing together", truth: elephant, alt: giraffe, expect: both, reads: [{word: x}]}
+  - {id: two_horsecow, request: "a photo of a horse and a cow standing next to each other in a field", truth: horse, alt: cow, expect: both, reads: [{word: x}]}
+  - {id: two_guitarviolin, request: "a photo of a guitar and a violin lying next to each other", truth: guitar, alt: violin, expect: both, reads: [{word: x}]}
+  - {id: two_applebanana, request: "a photo of an apple and a banana on a table", truth: apple, alt: banana, expect: both, reads: [{word: x}]}
+  - {id: two_carbike, request: "a photo of a car and a bicycle side by side", truth: car, alt: bicycle, expect: both, reads: [{word: x}]}
+  - {id: one_zebra, request: "a photo of a zebra", truth: zebra, alt: piano, expect: truth, reads: [{word: x}]}
+  - {id: one_lighthouse, request: "a photo of a lighthouse", truth: lighthouse, alt: banana, expect: truth, reads: [{word: x}]}
+  - {id: one_penguin, request: "a photo of a penguin", truth: penguin, alt: car, expect: truth, reads: [{word: x}]}
+  - {id: one_tractor, request: "a photo of a tractor", truth: tractor, alt: owl, expect: truth, reads: [{word: x}]}
+  - {id: none_teapot, request: "a photo of a teapot", truth: horse, alt: tree, expect: neither, reads: [{word: x}]}
+  - {id: none_lake, request: "a photo of a calm mountain lake", truth: elephant, alt: guitar, expect: neither, reads: [{word: x}]}
+  - {id: none_street, request: "a photo of a city street at night", truth: cow, alt: pizza, expect: neither, reads: [{word: x}]}
+  - {id: none_room, request: "a photo of an empty room with white walls", truth: dog, alt: bicycle, expect: neither, reads: [{word: x}]}

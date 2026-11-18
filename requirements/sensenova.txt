@@ -1,0 +1,23 @@
+# SenseNova-U1 environment (Python 3.11; its code needs transformers >= 4.57). Also runs the Qwen3-VL and Gemma-3 judges.
+#   python3.11 -m venv .venv-sensenova && .venv-sensenova/bin/pip install -r requirements/sensenova.txt && .venv-sensenova/bin/pip install -e . --no-deps
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.57.6
+accelerate==1.15.0
+huggingface-hub==0.36.2
+tokenizers==0.22.2
+safetensors==0.8.0
+sentencepiece==0.2.2
+einops==0.8.2
+numpy==2.4.6
+scipy==1.17.1
+pillow==12.3.0
+pyyaml==6.0.3
+regex==2026.9.29
+tqdm==4.70.1
+packaging==26.3
+httpx==0.28.1
+matplotlib==3.11.2
+datasets
+pytest==9.1.1

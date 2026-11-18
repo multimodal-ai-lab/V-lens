@@ -1,0 +1,25 @@
+# Main environment (Python 3.11): BAGEL, Show-o2, Liquid, the CLIP calibration, scoring scripts and the CPU tests.
+#   python3.11 -m venv .venv-main && .venv-main/bin/pip install -r requirements/main.txt && .venv-main/bin/pip install -e . --no-deps
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.51.3
+diffusers==0.37.1
+accelerate==1.15.0
+safetensors==0.8.0
+tokenizers==0.21.4
+einops==0.8.2
+# prebuilt wheel for torch 2.6 + CUDA 12 + Python 3.11 (BAGEL's attention)
+flash-attn @ https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
+numpy==2.4.6
+scipy==1.17.1
+pillow==12.3.0
+pyyaml==6.0.3
+regex==2026.9.29
+sentencepiece==0.2.2
+tqdm==4.70.1
+matplotlib==3.11.2
+pyarrow==25.0.1
+huggingface-hub
+datasets
+pytest==9.1.1

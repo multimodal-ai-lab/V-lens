@@ -1,0 +1,773 @@
+# Pronoun test (Sec. 4.6, Supp. Tables S7 and S8): 20 pairs of texts that name two things and select one with a verb,
+# then "it" (G01-G10 change the verb, G11-G20 keep the verb and change a thing), with the controls of Table S8.
+reads:
+- id: G01_1
+  family: reference
+  pair: G01
+  role: text1
+  text: A sheep and a bicycle stood in the yard. She sheared it.
+  truth: sheep
+  alt: bicycle
+  answer: sheep
+  reads:
+  - name: it
+    word: it
+- id: G01_2
+  family: reference
+  pair: G01
+  role: text2
+  text: A sheep and a bicycle stood in the yard. She pedaled it.
+  truth: bicycle
+  alt: sheep
+  answer: bicycle
+  reads:
+  - name: it
+    word: it
+- id: G01_v1
+  family: reference
+  pair: G01
+  role: verb_only
+  text: She sheared it.
+  truth: sheep
+  alt: bicycle
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G01_v2
+  family: reference
+  pair: G01
+  role: verb_only
+  text: She pedaled it.
+  truth: bicycle
+  alt: sheep
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G02_1
+  family: reference
+  pair: G02
+  role: text1
+  text: An orange and a clock were on the table. He wound it.
+  truth: clock
+  alt: orange
+  answer: clock
+  reads:
+  - name: it
+    word: it
+- id: G02_2
+  family: reference
+  pair: G02
+  role: text2
+  text: An orange and a clock were on the table. He peeled it.
+  truth: orange
+  alt: clock
+  answer: orange
+  reads:
+  - name: it
+    word: it
+- id: G02_v1
+  family: reference
+  pair: G02
+  role: verb_only
+  text: He wound it.
+  truth: clock
+  alt: orange
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G02_v2
+  family: reference
+  pair: G02
+  role: verb_only
+  text: He peeled it.
+  truth: orange
+  alt: clock
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G03_1
+  family: reference
+  pair: G03
+  role: text1
+  text: A dog and a trumpet were in the room. She walked it.
+  truth: dog
+  alt: trumpet
+  answer: dog
+  reads:
+  - name: it
+    word: it
+- id: G03_2
+  family: reference
+  pair: G03
+  role: text2
+  text: A dog and a trumpet were in the room. She played it.
+  truth: trumpet
+  alt: dog
+  answer: trumpet
+  reads:
+  - name: it
+    word: it
+- id: G03_v1
+  family: reference
+  pair: G03
+  role: verb_only
+  text: She walked it.
+  truth: dog
+  alt: trumpet
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G03_v2
+  family: reference
+  pair: G03
+  role: verb_only
+  text: She played it.
+  truth: trumpet
+  alt: dog
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G04_1
+  family: reference
+  pair: G04
+  role: text1
+  text: A candle and a sandwich were on the table. He ate it.
+  truth: sandwich
+  alt: candle
+  answer: sandwich
+  reads:
+  - name: it
+    word: it
+- id: G04_2
+  family: reference
+  pair: G04
+  role: text2
+  text: A candle and a sandwich were on the table. He lit it.
+  truth: candle
+  alt: sandwich
+  answer: candle
+  reads:
+  - name: it
+    word: it
+- id: G04_v1
+  family: reference
+  pair: G04
+  role: verb_only
+  text: He ate it.
+  truth: sandwich
+  alt: candle
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G04_v2
+  family: reference
+  pair: G04
+  role: verb_only
+  text: He lit it.
+  truth: candle
+  alt: sandwich
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G05_1
+  family: reference
+  pair: G05
+  role: text1
+  text: An umbrella and a rabbit were by the door. She fed it a carrot.
+  truth: rabbit
+  alt: umbrella
+  answer: rabbit
+  reads:
+  - name: it
+    word: it
+- id: G05_2
+  family: reference
+  pair: G05
+  role: text2
+  text: An umbrella and a rabbit were by the door. She opened it.
+  truth: umbrella
+  alt: rabbit
+  answer: umbrella
+  reads:
+  - name: it
+    word: it
+- id: G05_v1
+  family: reference
+  pair: G05
+  role: verb_only
+  text: She fed it a carrot.
+  truth: rabbit
+  alt: umbrella
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G05_v2
+  family: reference
+  pair: G05
+  role: verb_only
+  text: She opened it.
+  truth: umbrella
+  alt: rabbit
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G06_1
+  family: reference
+  pair: G06
+  role: text1
+  text: A banana and a phone were on the desk. He charged it.
+  truth: phone
+  alt: banana
+  answer: phone
+  reads:
+  - name: it
+    word: it
+- id: G06_2
+  family: reference
+  pair: G06
+  role: text2
+  text: A banana and a phone were on the desk. He peeled it.
+  truth: banana
+  alt: phone
+  answer: banana
+  reads:
+  - name: it
+    word: it
+- id: G06_v1
+  family: reference
+  pair: G06
+  role: verb_only
+  text: He charged it.
+  truth: phone
+  alt: banana
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G06_v2
+  family: reference
+  pair: G06
+  role: verb_only
+  text: He peeled it.
+  truth: banana
+  alt: phone
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G07_1
+  family: reference
+  pair: G07
+  role: text1
+  text: A cow and a violin were in the barn. She milked it.
+  truth: cow
+  alt: violin
+  answer: cow
+  reads:
+  - name: it
+    word: it
+- id: G07_2
+  family: reference
+  pair: G07
+  role: text2
+  text: A cow and a violin were in the barn. She tuned it.
+  truth: violin
+  alt: cow
+  answer: violin
+  reads:
+  - name: it
+    word: it
+- id: G07_v1
+  family: reference
+  pair: G07
+  role: verb_only
+  text: She milked it.
+  truth: cow
+  alt: violin
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G07_v2
+  family: reference
+  pair: G07
+  role: verb_only
+  text: She tuned it.
+  truth: violin
+  alt: cow
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G08_1
+  family: reference
+  pair: G08
+  role: text1
+  text: A balloon and a book lay on the bed. He read it.
+  truth: book
+  alt: balloon
+  answer: book
+  reads:
+  - name: it
+    word: it
+- id: G08_2
+  family: reference
+  pair: G08
+  role: text2
+  text: A balloon and a book lay on the bed. He inflated it.
+  truth: balloon
+  alt: book
+  answer: balloon
+  reads:
+  - name: it
+    word: it
+- id: G08_v1
+  family: reference
+  pair: G08
+  role: verb_only
+  text: He read it.
+  truth: book
+  alt: balloon
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G08_v2
+  family: reference
+  pair: G08
+  role: verb_only
+  text: He inflated it.
+  truth: balloon
+  alt: book
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G09_1
+  family: reference
+  pair: G09
+  role: text1
+  text: A cat and a radio were in the kitchen. She petted it.
+  truth: cat
+  alt: radio
+  answer: cat
+  reads:
+  - name: it
+    word: it
+- id: G09_2
+  family: reference
+  pair: G09
+  role: text2
+  text: A cat and a radio were in the kitchen. She tuned it.
+  truth: radio
+  alt: cat
+  answer: radio
+  reads:
+  - name: it
+    word: it
+- id: G09_v1
+  family: reference
+  pair: G09
+  role: verb_only
+  text: She petted it.
+  truth: cat
+  alt: radio
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G09_v2
+  family: reference
+  pair: G09
+  role: verb_only
+  text: She tuned it.
+  truth: radio
+  alt: cat
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G10_1
+  family: reference
+  pair: G10
+  role: text1
+  text: A camera and a pig were in the yard. He took a photo with it.
+  truth: camera
+  alt: pig
+  answer: camera
+  reads:
+  - name: it
+    word: it
+- id: G10_2
+  family: reference
+  pair: G10
+  role: text2
+  text: A camera and a pig were in the yard. He fed it some corn.
+  truth: pig
+  alt: camera
+  answer: pig
+  reads:
+  - name: it
+    word: it
+- id: G10_v1
+  family: reference
+  pair: G10
+  role: verb_only
+  text: He took a photo with it.
+  truth: camera
+  alt: pig
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G10_v2
+  family: reference
+  pair: G10
+  role: verb_only
+  text: He fed it some corn.
+  truth: pig
+  alt: camera
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G11_1
+  family: reference
+  pair: G11
+  role: text1
+  text: A dog and a teapot were in the yard. She fed it.
+  truth: dog
+  alt: horse
+  answer: dog
+  reads:
+  - name: it
+    word: it
+- id: G11_2
+  family: reference
+  pair: G11
+  role: text2
+  text: A horse and a teapot were in the yard. She fed it.
+  truth: horse
+  alt: dog
+  answer: horse
+  reads:
+  - name: it
+    word: it
+- id: G11_v1
+  family: reference
+  pair: G11
+  role: verb_only
+  text: She fed it.
+  truth: dog
+  alt: horse
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G12_1
+  family: reference
+  pair: G12
+  role: text1
+  text: A broom and a bus stood outside. He drove it.
+  truth: bus
+  alt: car
+  answer: bus
+  reads:
+  - name: it
+    word: it
+- id: G12_2
+  family: reference
+  pair: G12
+  role: text2
+  text: A broom and a car stood outside. He drove it.
+  truth: car
+  alt: bus
+  answer: car
+  reads:
+  - name: it
+    word: it
+- id: G12_v1
+  family: reference
+  pair: G12
+  role: verb_only
+  text: He drove it.
+  truth: bus
+  alt: car
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G13_1
+  family: reference
+  pair: G13
+  role: text1
+  text: A pear and a spoon lay on the plate. She ate it.
+  truth: pear
+  alt: cookie
+  answer: pear
+  reads:
+  - name: it
+    word: it
+- id: G13_2
+  family: reference
+  pair: G13
+  role: text2
+  text: A cookie and a spoon lay on the plate. She ate it.
+  truth: cookie
+  alt: pear
+  answer: cookie
+  reads:
+  - name: it
+    word: it
+- id: G13_v1
+  family: reference
+  pair: G13
+  role: verb_only
+  text: She ate it.
+  truth: pear
+  alt: cookie
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G14_1
+  family: reference
+  pair: G14
+  role: text1
+  text: A pillow and a flute lay on the rug. He played it.
+  truth: flute
+  alt: drum
+  answer: flute
+  reads:
+  - name: it
+    word: it
+- id: G14_2
+  family: reference
+  pair: G14
+  role: text2
+  text: A pillow and a drum lay on the rug. He played it.
+  truth: drum
+  alt: flute
+  answer: drum
+  reads:
+  - name: it
+    word: it
+- id: G14_v1
+  family: reference
+  pair: G14
+  role: verb_only
+  text: He played it.
+  truth: flute
+  alt: drum
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G15_1
+  family: reference
+  pair: G15
+  role: text1
+  text: A bicycle and a bucket stood by the gate. She rode it.
+  truth: bicycle
+  alt: scooter
+  answer: bicycle
+  reads:
+  - name: it
+    word: it
+- id: G15_2
+  family: reference
+  pair: G15
+  role: text2
+  text: A scooter and a bucket stood by the gate. She rode it.
+  truth: scooter
+  alt: bicycle
+  answer: scooter
+  reads:
+  - name: it
+    word: it
+- id: G15_v1
+  family: reference
+  pair: G15
+  role: verb_only
+  text: She rode it.
+  truth: bicycle
+  alt: scooter
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G16_1
+  family: reference
+  pair: G16
+  role: text1
+  text: A vase and a newspaper were on the table. He read it.
+  truth: newspaper
+  alt: magazine
+  answer: newspaper
+  reads:
+  - name: it
+    word: it
+- id: G16_2
+  family: reference
+  pair: G16
+  role: text2
+  text: A vase and a magazine were on the table. He read it.
+  truth: magazine
+  alt: newspaper
+  answer: magazine
+  reads:
+  - name: it
+    word: it
+- id: G16_v1
+  family: reference
+  pair: G16
+  role: verb_only
+  text: He read it.
+  truth: newspaper
+  alt: magazine
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G17_1
+  family: reference
+  pair: G17
+  role: text1
+  text: A backpack and a rabbit were on the rug. She gave it a treat.
+  truth: rabbit
+  alt: dog
+  answer: rabbit
+  reads:
+  - name: it
+    word: it
+- id: G17_2
+  family: reference
+  pair: G17
+  role: text2
+  text: A backpack and a dog were on the rug. She gave it a treat.
+  truth: dog
+  alt: rabbit
+  answer: dog
+  reads:
+  - name: it
+    word: it
+- id: G17_v1
+  family: reference
+  pair: G17
+  role: verb_only
+  text: She gave it a treat.
+  truth: rabbit
+  alt: dog
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G18_1
+  family: reference
+  pair: G18
+  role: text1
+  text: A key and some bread were on the counter. He sliced it.
+  truth: bread
+  alt: cheese
+  answer: bread
+  reads:
+  - name: it
+    word: it
+- id: G18_2
+  family: reference
+  pair: G18
+  role: text2
+  text: A key and some cheese were on the counter. He sliced it.
+  truth: cheese
+  alt: bread
+  answer: cheese
+  reads:
+  - name: it
+    word: it
+- id: G18_v1
+  family: reference
+  pair: G18
+  role: verb_only
+  text: He sliced it.
+  truth: bread
+  alt: cheese
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G19_1
+  family: reference
+  pair: G19
+  role: text1
+  text: A helicopter and a truck stood on the airfield. She flew it.
+  truth: helicopter
+  alt: airplane
+  answer: helicopter
+  reads:
+  - name: it
+    word: it
+- id: G19_2
+  family: reference
+  pair: G19
+  role: text2
+  text: An airplane and a truck stood on the airfield. She flew it.
+  truth: airplane
+  alt: helicopter
+  answer: airplane
+  reads:
+  - name: it
+    word: it
+- id: G19_v1
+  family: reference
+  pair: G19
+  role: verb_only
+  text: She flew it.
+  truth: helicopter
+  alt: airplane
+  answer: null
+  reads:
+  - name: it
+    word: it
+- id: G20_1
+  family: reference
+  pair: G20
+  role: text1
+  text: A chair and a candle were at the campsite. He lit it.
+  truth: candle
+  alt: campfire
+  answer: candle
+  reads:
+  - name: it
+    word: it
+- id: G20_2
+  family: reference
+  pair: G20
+  role: text2
+  text: A chair and a campfire were at the campsite. He lit it.
+  truth: campfire
+  alt: candle
+  answer: campfire
+  reads:
+  - name: it
+    word: it
+- id: G20_v1
+  family: reference
+  pair: G20
+  role: verb_only
+  text: He lit it.
+  truth: candle
+  alt: campfire
+  answer: null
+  reads:
+  - name: it
+    word: it

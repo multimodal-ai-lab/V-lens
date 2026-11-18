@@ -1,0 +1,663 @@
+# Context test, unnamed objects (Table 2, Supp. Table S7): 30 matched pairs of questions that describe two different
+# objects and end in the same part word, with neither object named.
+reads:
+- id: F01_1
+  family: matched
+  pair: F01
+  role: text1
+  text: What sound does the small bearded farm animal that climbs rocks and has curved horns make?
+  truth: goat
+  alt: rhinoceros
+  answer: bleating
+  reads:
+  - name: cue
+    word: horns
+- id: F01_2
+  family: matched
+  pair: F01
+  role: text2
+  text: How many legs does the huge thick-skinned animal with nose-mounted horns have?
+  truth: rhinoceros
+  alt: goat
+  answer: '4'
+  reads:
+  - name: cue
+    word: horns
+- id: F02_1
+  family: matched
+  pair: F02
+  role: text1
+  text: What does the tall spotted animal with an extremely long neck eat?
+  truth: giraffe
+  alt: violin
+  answer: leaves
+  reads:
+  - name: cue
+    word: neck
+- id: F02_2
+  family: matched
+  pair: F02
+  role: text2
+  text: How many strings does the smallest bowed orchestral instrument with a wooden neck have?
+  truth: violin
+  alt: giraffe
+  answer: '4'
+  reads:
+  - name: cue
+    word: neck
+- id: F03_1
+  family: matched
+  pair: F03
+  role: text1
+  text: How many legs does the large African cat with a shaggy mane have?
+  truth: lion
+  alt: horse
+  answer: '4'
+  reads:
+  - name: cue
+    word: mane
+- id: F03_2
+  family: matched
+  pair: F03
+  role: text2
+  text: What sound does the hoofed racing animal with a flowing mane make?
+  truth: horse
+  alt: lion
+  answer: neighing
+  reads:
+  - name: cue
+    word: mane
+- id: F04_1
+  family: matched
+  pair: F04
+  role: text1
+  text: Can the black-and-white Antarctic bird with a short beak fly?
+  truth: penguin
+  alt: parrot
+  answer: 'no'
+  reads:
+  - name: cue
+    word: beak
+- id: F04_2
+  family: matched
+  pair: F04
+  role: text2
+  text: How many legs does the colorful talking bird with a curved beak have?
+  truth: parrot
+  alt: penguin
+  answer: '2'
+  reads:
+  - name: cue
+    word: beak
+- id: F05_1
+  family: matched
+  pair: F05
+  role: text1
+  text: Does the ocean predator with rows of sharp teeth and triangular fins breathe air?
+  truth: shark
+  alt: dolphin
+  answer: 'no'
+  reads:
+  - name: cue
+    word: fins
+- id: F05_2
+  family: matched
+  pair: F05
+  role: text2
+  text: Does the smart grey sea mammal that leaps beside boats and has fins breathe air?
+  truth: dolphin
+  alt: shark
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: fins
+- id: F06_1
+  family: matched
+  pair: F06
+  role: text1
+  text: How many legs does the slow pond reptile with a hard shell have?
+  truth: turtle
+  alt: peanut
+  answer: '4'
+  reads:
+  - name: cue
+    word: shell
+- id: F06_2
+  family: matched
+  pair: F06
+  role: text2
+  text: Which spread is made from the small brown legume with two kernels in a papery shell?
+  truth: peanut
+  alt: turtle
+  answer: peanut butter
+  reads:
+  - name: cue
+    word: shell
+- id: F07_1
+  family: matched
+  pair: F07
+  role: text1
+  text: How long does the sleepy eucalyptus-eating Australian animal with fluffy ears sleep?
+  truth: koala
+  alt: donkey
+  answer: about 20 hours
+  reads:
+  - name: cue
+    word: ears
+- id: F07_2
+  family: matched
+  pair: F07
+  role: text2
+  text: What sound does the stubborn grey farm animal with long ears make?
+  truth: donkey
+  alt: koala
+  answer: braying
+  reads:
+  - name: cue
+    word: ears
+- id: F08_1
+  family: matched
+  pair: F08
+  role: text1
+  text: How many legs does the hopping Australian animal with a pouch and thick tail have?
+  truth: kangaroo
+  alt: kite
+  answer: '2'
+  reads:
+  - name: cue
+    word: tail
+- id: F08_2
+  family: matched
+  pair: F08
+  role: text2
+  text: What shape is the toy children fly on a long string, with a ribbon tail?
+  truth: kite
+  alt: kangaroo
+  answer: diamond
+  reads:
+  - name: cue
+    word: tail
+- id: F09_1
+  family: matched
+  pair: F09
+  role: text1
+  text: Does the passenger vehicle that flies using engines beneath its wings need a runway?
+  truth: airplane
+  alt: bee
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: wings
+- id: F09_2
+  family: matched
+  pair: F09
+  role: text2
+  text: How many legs does the buzzing honey-maker with transparent wings have?
+  truth: bee
+  alt: airplane
+  answer: '6'
+  reads:
+  - name: cue
+    word: wings
+- id: F10_1
+  family: matched
+  pair: F10
+  role: text1
+  text: What drink is brewed in the round vessel with a lid and curved spout?
+  truth: teapot
+  alt: whale
+  answer: tea
+  reads:
+  - name: cue
+    word: spout
+- id: F10_2
+  family: matched
+  pair: F10
+  role: text2
+  text: Does the giant ocean animal that sprays water from its spout breathe air?
+  truth: whale
+  alt: teapot
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: spout
+- id: F11_1
+  family: matched
+  pair: F11
+  role: text1
+  text: How many finger holes does the paper-cutting tool with two crossed blades have?
+  truth: scissors
+  alt: helicopter
+  answer: '2'
+  reads:
+  - name: cue
+    word: blades
+- id: F11_2
+  family: matched
+  pair: F11
+  role: text2
+  text: Can the rescue vehicle with a cockpit and spinning overhead blades hover?
+  truth: helicopter
+  alt: scissors
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: blades
+- id: F12_1
+  family: matched
+  pair: F12
+  role: text1
+  text: Does the hopping Australian animal that carries its baby in a pouch eat grass?
+  truth: kangaroo
+  alt: pelican
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: pouch
+- id: F12_2
+  family: matched
+  pair: F12
+  role: text2
+  text: Can the large water bird with a long bill that scoops fish into its pouch fly?
+  truth: pelican
+  alt: kangaroo
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: pouch
+- id: F13_1
+  family: matched
+  pair: F13
+  role: text1
+  text: Does the strummed instrument with a fretted neck and six strings need a bow?
+  truth: guitar
+  alt: tennis racket
+  answer: 'no'
+  reads:
+  - name: cue
+    word: strings
+- id: F13_2
+  family: matched
+  pair: F13
+  role: text2
+  text: Does the oval sports tool for hitting balls over a net, with tight strings, have a handle?
+  truth: tennis racket
+  alt: guitar
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: strings
+- id: F14_1
+  family: matched
+  pair: F14
+  role: text1
+  text: What color is the American school vehicle with rows of seats and wheels usually?
+  truth: bus
+  alt: tractor
+  answer: yellow
+  reads:
+  - name: cue
+    word: wheels
+- id: F14_2
+  family: matched
+  pair: F14
+  role: text2
+  text: Does the slow farm vehicle that pulls plows, with huge back wheels, have an engine?
+  truth: tractor
+  alt: bus
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: wheels
+- id: F15_1
+  family: matched
+  pair: F15
+  role: text1
+  text: How many wheels does the chain-driven road vehicle with a saddle and pedals have?
+  truth: bicycle
+  alt: piano
+  answer: '2'
+  reads:
+  - name: cue
+    word: pedals
+- id: F15_2
+  family: matched
+  pair: F15
+  role: text2
+  text: How many keys does the large musical instrument with a hinged lid and pedals have?
+  truth: piano
+  alt: bicycle
+  answer: '88'
+  reads:
+  - name: cue
+    word: pedals
+- id: F16_1
+  family: matched
+  pair: F16
+  role: text1
+  text: Does the bathroom fixture with a flush handle and hinged lid use water?
+  truth: toilet
+  alt: suitcase
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: lid
+- id: F16_2
+  family: matched
+  pair: F16
+  role: text2
+  text: Do travelers pack clothes in the wheeled rectangular container with a hinged lid?
+  truth: suitcase
+  alt: toilet
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: lid
+- id: F17_1
+  family: matched
+  pair: F17
+  role: text1
+  text: When it rains, do people open the folding thing they carry with a curved handle?
+  truth: umbrella
+  alt: hammer
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: handle
+- id: F17_2
+  family: matched
+  pair: F17
+  role: text2
+  text: Does the carpenter's pounding tool with a heavy head and a wooden handle have a claw?
+  truth: hammer
+  alt: umbrella
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: handle
+- id: F18_1
+  family: matched
+  pair: F18
+  role: text1
+  text: Does the thin pocket tool for parting hair, with a row of teeth, need electricity?
+  truth: comb
+  alt: crocodile
+  answer: 'no'
+  reads:
+  - name: cue
+    word: teeth
+- id: F18_2
+  family: matched
+  pair: F18
+  role: text2
+  text: Does the big river reptile with a long snout and sharp teeth lay eggs?
+  truth: crocodile
+  alt: comb
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: teeth
+- id: F19_1
+  family: matched
+  pair: F19
+  role: text1
+  text: What does the small web-spinning animal with eight legs eat?
+  truth: spider
+  alt: chair
+  answer: insects
+  reads:
+  - name: cue
+    word: legs
+- id: F19_2
+  family: matched
+  pair: F19
+  role: text2
+  text: Is the furniture with a backrest, a flat seat and four legs meant for sitting?
+  truth: chair
+  alt: spider
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: legs
+- id: F20_1
+  family: matched
+  pair: F20
+  role: text1
+  text: How many legs does the hooting night bird with large forward-facing eyes have?
+  truth: owl
+  alt: potato
+  answer: '2'
+  reads:
+  - name: cue
+    word: eyes
+- id: F20_2
+  family: matched
+  pair: F20
+  role: text2
+  text: Does the vegetable used for fries with tiny buds called eyes grow on trees?
+  truth: potato
+  alt: owl
+  answer: 'no'
+  reads:
+  - name: cue
+    word: eyes
+- id: F21_1
+  family: matched
+  pair: F21
+  role: text1
+  text: What color is the thorny Valentine's flower with layered petals traditionally?
+  truth: rose
+  alt: sunflower
+  answer: red
+  reads:
+  - name: cue
+    word: petals
+- id: F21_2
+  family: matched
+  pair: F21
+  role: text2
+  text: Are the seeds of the tall yellow flower with a big dark center and bright petals edible?
+  truth: sunflower
+  alt: rose
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: petals
+- id: F22_1
+  family: matched
+  pair: F22
+  role: text1
+  text: What color is the inside of the spiky tropical fruit from Hawaii with a leafy crown?
+  truth: pineapple
+  alt: rooster
+  answer: yellow
+  reads:
+  - name: cue
+    word: crown
+- id: F22_2
+  family: matched
+  pair: F22
+  role: text2
+  text: What sound does the male farm bird with a red comb on its crown make?
+  truth: rooster
+  alt: pineapple
+  answer: crowing
+  reads:
+  - name: cue
+    word: crown
+- id: F23_1
+  family: matched
+  pair: F23
+  role: text1
+  text: How many legs does the croaking pond animal with a sticky tongue have?
+  truth: frog
+  alt: chameleon
+  answer: '4'
+  reads:
+  - name: cue
+    word: tongue
+- id: F23_2
+  family: matched
+  pair: F23
+  role: text2
+  text: How many legs does the color-changing lizard with swiveling eyes and a long tongue have?
+  truth: chameleon
+  alt: frog
+  answer: '4'
+  reads:
+  - name: cue
+    word: tongue
+- id: F24_1
+  family: matched
+  pair: F24
+  role: text1
+  text: What sound does the milk-producing farm animal with black patches and cloven hooves make?
+  truth: cow
+  alt: zebra
+  answer: mooing
+  reads:
+  - name: cue
+    word: hooves
+- id: F24_2
+  family: matched
+  pair: F24
+  role: text2
+  text: On which continent does the black-and-white striped animal with hooves live?
+  truth: zebra
+  alt: cow
+  answer: Africa
+  reads:
+  - name: cue
+    word: hooves
+- id: F25_1
+  family: matched
+  pair: F25
+  role: text1
+  text: How many legs does the huge land animal with a long trunk and tusks have?
+  truth: elephant
+  alt: walrus
+  answer: '4'
+  reads:
+  - name: cue
+    word: tusks
+- id: F25_2
+  family: matched
+  pair: F25
+  role: text2
+  text: Does the whiskered Arctic animal with flippers and long tusks breathe air?
+  truth: walrus
+  alt: elephant
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: tusks
+- id: F26_1
+  family: matched
+  pair: F26
+  role: text1
+  text: Does the school bag with two shoulder straps and a zipper usually hold books?
+  truth: backpack
+  alt: tent
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: zipper
+- id: F26_2
+  family: matched
+  pair: F26
+  role: text2
+  text: Do people sleep inside the thing they pitch at a campsite, with poles and a zipper?
+  truth: tent
+  alt: backpack
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: zipper
+- id: F27_1
+  family: matched
+  pair: F27
+  role: text1
+  text: How many sleeves does the collared upper-body garment with a row of buttons usually have?
+  truth: shirt
+  alt: remote control
+  answer: '2'
+  reads:
+  - name: cue
+    word: buttons
+- id: F27_2
+  family: matched
+  pair: F27
+  role: text2
+  text: Does the handheld device for changing television channels with buttons usually need batteries?
+  truth: remote control
+  alt: shirt
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: buttons
+- id: F28_1
+  family: matched
+  pair: F28
+  role: text1
+  text: Does the witch's flying tool, also used to sweep floors, with stiff bristles, need electricity?
+  truth: broom
+  alt: paintbrush
+  answer: 'no'
+  reads:
+  - name: cue
+    word: bristles
+- id: F28_2
+  family: matched
+  pair: F28
+  role: text2
+  text: Does the artist's tool with a wooden handle and soft bristles need electricity?
+  truth: paintbrush
+  alt: broom
+  answer: 'no'
+  reads:
+  - name: cue
+    word: bristles
+- id: F29_1
+  family: matched
+  pair: F29
+  role: text1
+  text: Does the daily printed publication with headlines and large folded pages report current events?
+  truth: newspaper
+  alt: passport
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: pages
+- id: F29_2
+  family: matched
+  pair: F29
+  role: text2
+  text: Do travelers show the official travel document with a photograph and stamped pages at borders?
+  truth: passport
+  alt: newspaper
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: pages
+- id: F30_1
+  family: matched
+  pair: F30
+  role: text1
+  text: What color is the long curved fruit with a thick peel when ripe?
+  truth: banana
+  alt: orange
+  answer: yellow
+  reads:
+  - name: cue
+    word: peel
+- id: F30_2
+  family: matched
+  pair: F30
+  role: text2
+  text: Does the round sweet citrus fruit pressed for breakfast juice, with a bumpy peel, contain vitamin C?
+  truth: orange
+  alt: banana
+  answer: 'yes'
+  reads:
+  - name: cue
+    word: peel

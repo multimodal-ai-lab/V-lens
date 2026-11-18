@@ -1,0 +1,100 @@
+# Short prompts naming each concept in several ways; scripts/calibrate_insertion_layer.py reads the one-hop descriptions
+# (level3_one_hop) as an extra, descriptive source. Every item names its concept (one of concepts.yaml).
+
+level1_image_request:
+  what: The concept word inside a request to draw it. Used to calibrate the lens (scale, layers), never to test it.
+  templates:
+    - "a photo of a {concept}"
+    - "an image of a {concept}"
+    - "a picture showing a {concept}"
+
+level2_plain_sentence:
+  what: The concept word in an ordinary sentence. Nothing asks for a picture.
+  templates:
+    - "Yesterday I saw a {concept} on my way home."
+    - "My friend told me a long story about a {concept}."
+    - "There is a {concept} in the old photograph on the wall."
+
+level3_one_hop:
+  what: >
+    The concept is described but never named. `literal` is what the description's last word means on its own
+    ("trunk" alone is a suitcase); it is added to the candidates when scoring, so a picture of the literal
+    meaning does not count as finding the concept.
+  items:
+    - {concept: spider, prompt: "the animal that spins webs", literal: "spider web"}
+    - {concept: bee, prompt: "the insect that makes honey", literal: "jar of honey"}
+    - {concept: cow, prompt: "the farm animal that gives us most of our milk", literal: "glass of milk"}
+    - {concept: sheep, prompt: "the farm animal that gives us wool", literal: "ball of wool"}
+    - {concept: kangaroo, prompt: "the animal that hops and carries its baby in a pouch", literal: "leather pouch"}
+    - {concept: penguin, prompt: "the bird that cannot fly and lives in Antarctica", literal: "icy landscape"}
+    - {concept: giraffe, prompt: "the animal with the longest neck", literal: "human neck"}
+    - {concept: elephant, prompt: "the large grey animal with a trunk", literal: "suitcase"}
+    - {concept: owl, prompt: "the bird that hoots at night", literal: "night sky"}
+    - {concept: camel, prompt: "the desert animal with humps on its back", literal: "human back"}
+    - {concept: zebra, prompt: "the African animal with black and white stripes", literal: "striped pattern"}
+    - {concept: octopus, prompt: "the sea animal with eight arms", literal: "human arms"}
+    - {concept: whale, prompt: "the largest animal in the ocean", literal: "ocean waves"}
+    - {concept: frog, prompt: "the small green animal that croaks in the pond", literal: "pond"}
+    - {concept: snake, prompt: "the animal with no legs that slithers", literal: "human legs"}
+    - {concept: banana, prompt: "the long yellow fruit that monkeys love", literal: "monkey"}
+    - {concept: apple, prompt: "the fruit that keeps the doctor away", literal: "doctor"}
+    - {concept: lemon, prompt: "the sour yellow citrus fruit you squeeze over fish", literal: "fish dish"}
+    - {concept: pineapple, prompt: "the tropical fruit with a spiky crown of leaves", literal: "crown"}
+    - {concept: carrot, prompt: "the orange vegetable that rabbits love to eat", literal: "rabbit"}
+    - {concept: Eiffel Tower, prompt: "the famous iron tower in Paris", literal: "Paris street"}
+    - {concept: pyramid, prompt: "the ancient tombs of the pharaohs in Egypt", literal: "Egyptian pharaoh"}
+    - {concept: snowman, prompt: "the winter figure with a carrot nose and coal eyes", literal: "lumps of coal"}
+    - {concept: volcano, prompt: "the mountain that erupts with lava", literal: "lava"}
+    - {concept: lighthouse, prompt: "the tall tower that guides ships at night", literal: "ship at night"}
+    - {concept: umbrella, prompt: "the thing you open over your head when it rains", literal: "rain"}
+    - {concept: piano, prompt: "the instrument with black and white keys", literal: "key"}
+    - {concept: guitar, prompt: "the instrument with six strings that rock bands play", literal: "rock concert"}
+    - {concept: rocket, prompt: "the vehicle that carries astronauts into space", literal: "outer space"}
+    - {concept: helicopter, prompt: "the aircraft with spinning blades on top", literal: "spinning fan blades"}
+    - {concept: candle, prompt: "the wax stick you light on a birthday cake", literal: "cake"}
+    - {concept: crown, prompt: "what a king wears on his head", literal: "king"}
+    - {concept: cactus, prompt: "the spiky plant that grows in the desert", literal: "desert"}
+    - {concept: rainbow, prompt: "the colourful arc in the sky after the rain", literal: "rain"}
+    - {concept: moon, prompt: "what shines in the night sky and has phases", literal: "night sky"}
+    - {concept: anchor, prompt: "the heavy metal object a ship drops to stay in place", literal: "ship at sea"}
+
+level4_two_hops:
+  what: >
+    A question about the concept, in the style of the J-Space blog. The concept is the intermediate step,
+    the answer is something else. We decode every token at every layer and look for the intermediate.
+  items:
+    - {concept: spider, prompt: "The number of legs on the animal that spins webs is", answer: "eight"}
+    - {concept: apple, prompt: "The colour of the fruit that keeps the doctor away is usually", answer: "red"}
+    - {concept: sheep, prompt: "The sound made by the farm animal that gives us wool is", answer: "baa"}
+    - {concept: banana, prompt: "The colour of the long fruit that monkeys love is", answer: "yellow"}
+    - {concept: kangaroo, prompt: "The continent where the animal with a pouch that hops lives is", answer: "Australia"}
+    - {concept: octopus, prompt: "The number of arms on the sea animal that squirts ink is", answer: "eight"}
+    - {concept: bee, prompt: "The sweet food made by the insect that buzzes around flowers is", answer: "honey"}
+    - {concept: zebra, prompt: "The continent where the horse-like animal with black and white stripes lives is", answer: "Africa"}
+    - {concept: snowman, prompt: "The season when children build a figure with a carrot nose and coal eyes is", answer: "winter"}
+    - {concept: pyramid, prompt: "The river that flows past the ancient tombs of the pharaohs is the", answer: "Nile"}
+    - {concept: piano, prompt: "The number of keys on the instrument with black and white keys is", answer: "88"}
+    - {concept: guitar, prompt: "The number of strings on the instrument that rock bands play is usually", answer: "six"}
+    - {concept: penguin, prompt: "The food eaten by the bird that cannot fly and lives in Antarctica is mostly", answer: "fish"}
+    - {concept: camel, prompt: "The place where the animal with humps on its back usually lives is the", answer: "desert"}
+    - {concept: Eiffel Tower, prompt: "The country of the famous iron tower in Paris is", answer: "France"}
+    - {concept: cow, prompt: "The drink we get from the farm animal that says moo is", answer: "milk"}
+    - {concept: elephant, prompt: "The material of the tusks of the large grey animal with a trunk is", answer: "ivory"}
+    - {concept: volcano, prompt: "The hot liquid rock that comes out of an erupting mountain is called", answer: "lava"}
+    - {concept: giraffe, prompt: "The leaves eaten by the animal with the longest neck come from tall", answer: "trees"}
+    - {concept: owl, prompt: "The time of day when the bird that hoots is awake is", answer: "night"}
+    - {concept: carrot, prompt: "The colour of the vegetable that rabbits love to eat is", answer: "orange"}
+    - {concept: rocket, prompt: "The place the vehicle with astronauts on board flies to is", answer: "space"}
+    - {concept: crown, prompt: "The metal of the thing a king wears on his head is usually", answer: "gold"}
+    - {concept: lemon, prompt: "The taste of the small yellow citrus fruit is", answer: "sour"}
+
+level5_held_concept:
+  what: >
+    The model is asked to think of the concept, then does something unrelated. We decode the tokens of the
+    unrelated part. A matched control uses a different concept with the same wording.
+  templates:
+    - "Think about a {concept}. Now list the days of the week: Monday, Tuesday, Wednesday,"
+    - "Keep a {concept} in mind while you count: one, two, three, four, five,"
+  concepts: [spider, apple, elephant, banana, penguin, pyramid, piano, rocket, cactus, snowman]
+  control_pairs: {spider: dog, apple: car, elephant: book, banana: clock, penguin: bus, pyramid: chair,
+                  piano: tent, rocket: cake, cactus: kite, snowman: bridge}

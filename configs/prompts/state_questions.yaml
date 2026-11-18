@@ -1,0 +1,93 @@
+# State stories, first set (40 scenarios; the interchange test of Supp. F.5 trains and counts on 28 of them, 56
+# stories; make_state_items.py builds the second set from this file). Each scenario has two versions: `happened` (the
+# change takes place) and `cancelled` (it does not), so the right answer and the right intermediate picture flip. No
+# story names the outcome; the question asks a property with two options. `outcome` and `start` are the two pictures
+# the judges choose between (the changed thing, the unchanged thing).
+template: "{story} {question} Answer with one word: {a} or {b}."
+items:
+  # --- heat and cold
+  - {id: ice, family: heat, happened: "An ice cube was left on a sunny table for an hour.", cancelled: "An ice cube was kept in the freezer for an hour.",
+     question: "Is it now solid or liquid?", options: [solid, liquid], answer: [liquid, solid], outcome: a puddle of water, start: an ice cube}
+  - {id: freeze, family: heat, happened: "A glass of water was put in the freezer overnight.", cancelled: "A glass of water was left on the kitchen table overnight.",
+     question: "Is it now liquid or solid?", options: [liquid, solid], answer: [solid, liquid], outcome: a glass of ice, start: a glass of water}
+  - {id: butter, family: heat, happened: "A block of butter was put in a hot frying pan for five minutes.", cancelled: "A block of butter was kept in the fridge for five minutes.",
+     question: "Is it now solid or liquid?", options: [solid, liquid], answer: [liquid, solid], outcome: melted butter, start: a block of butter}
+  - {id: chocolate, family: heat, happened: "A chocolate bar was left on the dashboard of a hot car all afternoon.", cancelled: "A chocolate bar was kept in a cool cupboard all afternoon.",
+     question: "Is it now hard or soft?", options: [hard, soft], answer: [soft, hard], outcome: melted chocolate, start: a chocolate bar}
+  - {id: snowman, family: heat, happened: "A snowman stood in the warm spring sun for a whole week.", cancelled: "A snowman stood in the freezing winter cold for a whole week.",
+     question: "Is it still standing or has it disappeared?", options: [standing, disappeared], answer: [disappeared, standing], outcome: a puddle of water on the grass, start: a snowman}
+  - {id: candle, family: heat, happened: "A tall new candle burned all night long.", cancelled: "A tall new candle stood unlit in a drawer all night long.",
+     question: "Is it now tall or short?", options: [tall, short], answer: [short, tall], outcome: a short burnt-down candle, start: a tall new candle}
+  - {id: marshmallow, family: heat, happened: "A white marshmallow was held over a campfire for a minute.", cancelled: "A white marshmallow was kept in its bag for a minute.",
+     question: "Is it now white or brown?", options: [white, brown], answer: [brown, white], outcome: a toasted marshmallow, start: a white marshmallow}
+  # --- cooking
+  - {id: toast, family: cooking, happened: "A slice of white bread was put in the toaster for three minutes.", cancelled: "A slice of white bread was left in its bag for three minutes.",
+     question: "Is it now white or brown?", options: [white, brown], answer: [brown, white], outcome: a slice of toast, start: a slice of white bread}
+  - {id: popcorn, family: cooking, happened: "Corn kernels were heated in a covered pot with hot oil for five minutes.", cancelled: "Corn kernels were left in a cold bowl for five minutes.",
+     question: "Are they now small or big?", options: [small, big], answer: [big, small], outcome: popcorn, start: corn kernels}
+  - {id: pancake, family: cooking, happened: "Pancake batter was poured into a hot pan and cooked on both sides.", cancelled: "Pancake batter was poured into a bowl and left on the counter.",
+     question: "Is it now liquid or solid?", options: [liquid, solid], answer: [solid, liquid], outcome: a pancake, start: pancake batter}
+  - {id: egg_fry, family: cooking, happened: "An egg was cracked into a hot pan and cooked for three minutes.", cancelled: "An egg was cracked into a cold glass bowl and left for three minutes.",
+     question: "Is the egg white now clear or white?", options: [clear, white], answer: [white, clear], outcome: a fried egg, start: a raw egg in a bowl}
+  - {id: steak, family: cooking, happened: "A red raw steak was grilled over hot coals for ten minutes.", cancelled: "A red raw steak was kept in the fridge for ten minutes.",
+     question: "Is its outside now red or brown?", options: [red, brown], answer: [brown, red], outcome: a grilled steak, start: a raw steak}
+  # --- growth and time
+  - {id: seed, family: growth, happened: "A seed was planted in a pot and watered every day for three months.", cancelled: "A seed was kept in a dry paper bag in a drawer for three months.",
+     question: "Is there now a plant or no plant?", options: [plant, nothing], answer: [plant, nothing], outcome: a flowering plant in a pot, start: a seed}
+  - {id: tadpole, family: growth, happened: "A tadpole grew in a pond for three months.", cancelled: "A tadpole was born in a pond an hour ago.",
+     question: "Does it now have legs or no legs?", options: [legs, none], answer: [legs, none], outcome: a frog, start: a tadpole}
+  - {id: caterpillar, family: growth, happened: "A caterpillar spun a cocoon and stayed inside it for three weeks.", cancelled: "A caterpillar hatched from its egg a minute ago.",
+     question: "Does it now have wings or no wings?", options: [wings, none], answer: [wings, none], outcome: a butterfly, start: a caterpillar}
+  - {id: banana, family: growth, happened: "A green banana lay in a fruit bowl for three weeks.", cancelled: "A green banana was picked from the tree a minute ago.",
+     question: "Is it now green or brown?", options: [green, brown], answer: [brown, green], outcome: an overripe brown banana, start: a green banana}
+  - {id: puppy, family: growth, happened: "A tiny puppy grew up with its family for five years.", cancelled: "A tiny puppy was born on the farm this morning.",
+     question: "Is it now small or big?", options: [small, big], answer: [big, small], outcome: a large grown dog, start: a tiny puppy}
+  - {id: hen_egg, family: growth, happened: "A hen sat on her egg in the nest for three weeks.", cancelled: "A hen laid an egg in the nest a minute ago.",
+     question: "Can it now walk or not walk?", options: [walk, not], answer: [walk, not], outcome: a fluffy chick, start: an egg in a nest}
+  - {id: autumn, family: growth, happened: "An oak tree stood in the park until late autumn.", cancelled: "An oak tree stood in the park in early summer.",
+     question: "Are its leaves green or orange?", options: [green, orange], answer: [orange, green], outcome: a tree with orange autumn leaves, start: a tree with green leaves}
+  # --- breaking
+  - {id: egg_drop, family: breaking, happened: "A raw egg fell off the kitchen table onto the hard tile floor.", cancelled: "A raw egg was placed gently into an egg carton on the table.",
+     question: "Is it now whole or broken?", options: [whole, broken], answer: [broken, whole], outcome: a broken egg on the floor, start: a whole egg}
+  - {id: glass, family: breaking, happened: "A drinking glass slipped from a hand and hit the stone floor hard.", cancelled: "A drinking glass was put back on the shelf carefully.",
+     question: "Is it now whole or in pieces?", options: [whole, pieces], answer: [pieces, whole], outcome: shards of broken glass, start: a drinking glass}
+  - {id: balloon, family: breaking, happened: "A child poked a full balloon with a sharp needle.", cancelled: "A child held a full balloon by its string.",
+     question: "Is it now round or flat?", options: [round, flat], answer: [flat, round], outcome: a popped burst balloon, start: a round balloon}
+  - {id: paper, family: breaking, happened: "A sheet of paper was thrown into the fireplace fire.", cancelled: "A sheet of paper was put into a desk drawer.",
+     question: "Is it now white or black?", options: [white, black], answer: [black, white], outcome: black ashes, start: a white sheet of paper}
+  - {id: log, family: breaking, happened: "A woodcutter hit a log hard with an axe again and again.", cancelled: "A woodcutter stacked a log on the woodpile.",
+     question: "Is it now one piece or several pieces?", options: [one, several], answer: [several, one], outcome: split firewood pieces, start: a whole log}
+  - {id: apple_eat, family: breaking, happened: "A boy ate a red apple bite by bite.", cancelled: "A boy put a red apple in his lunch box.",
+     question: "Is it now round or thin?", options: [round, thin], answer: [thin, round], outcome: an apple core, start: a red apple}
+  - {id: pencil, family: breaking, happened: "A long new pencil was sharpened a hundred times over the school year.", cancelled: "A long new pencil was bought at the shop this morning.",
+     question: "Is it now long or short?", options: [long, short], answer: [short, long], outcome: a short pencil stub, start: a long new pencil}
+  # --- mixing and colour
+  - {id: paint_green, family: colour, happened: "Blue paint was stirred together with yellow paint in a bucket.", cancelled: "Blue paint was poured alone into a clean bucket.",
+     question: "Is the paint now blue or green?", options: [blue, green], answer: [green, blue], outcome: green paint, start: blue paint}
+  - {id: paint_pink, family: colour, happened: "Red paint was stirred together with white paint in a bucket.", cancelled: "Red paint was poured alone into a clean bucket.",
+     question: "Is the paint now red or pink?", options: [red, pink], answer: [pink, red], outcome: pink paint, start: red paint}
+  - {id: shirt, family: colour, happened: "A white shirt was washed together with a new red sock in hot water.", cancelled: "A white shirt was washed alone in cold water.",
+     question: "Is the shirt now white or pink?", options: [white, pink], answer: [pink, white], outcome: a pink shirt, start: a white shirt}
+  - {id: nail, family: colour, happened: "A shiny iron nail lay outside in the rain for a whole year.", cancelled: "A shiny iron nail lay in a dry toolbox for a whole year.",
+     question: "Is it now grey or orange?", options: [grey, orange], answer: [orange, grey], outcome: a rusty nail, start: a shiny nail}
+  - {id: grapes, family: colour, happened: "Green grapes were laid out to dry in the hot sun for three weeks.", cancelled: "Green grapes were picked from the vine a minute ago.",
+     question: "Are they now smooth or wrinkled?", options: [smooth, wrinkled], answer: [wrinkled, smooth], outcome: raisins, start: green grapes}
+  - {id: sunburn, family: colour, happened: "A pale man lay on the beach in the strong sun all day without sunscreen.", cancelled: "A pale man sat in his office in the shade all day.",
+     question: "Is his skin now pale or red?", options: [pale, red], answer: [red, pale], outcome: a sunburned red man, start: a pale man}
+  # --- weather and place
+  - {id: puddle, family: weather, happened: "A puddle lay on the road during a hot dry summer day.", cancelled: "A puddle lay on the road during a cold rainy day.",
+     question: "Is the road now wet or dry?", options: [wet, dry], answer: [dry, wet], outcome: a dry road, start: a puddle on a road}
+  - {id: car_snow, family: weather, happened: "A red car was parked outside during a heavy snowstorm all night.", cancelled: "A red car was parked inside a warm garage all night.",
+     question: "Is it now red or white?", options: [red, white], answer: [white, red], outcome: a car covered in snow, start: a red car}
+  - {id: pumpkin, family: weather, happened: "A pumpkin was carved with a knife for Halloween.", cancelled: "A pumpkin was put on the porch for decoration.",
+     question: "Does it now have a face or no face?", options: [face, none], answer: [face, none], outcome: a carved jack-o-lantern, start: a pumpkin}
+  - {id: sandcastle, family: weather, happened: "A sandcastle was built close to the water just before high tide came in.", cancelled: "A sandcastle was built high up on the dry beach, far from the water.",
+     question: "Is it still standing or washed away?", options: [standing, washed], answer: [washed, standing], outcome: a flat wet beach, start: a sandcastle}
+  - {id: lake, family: weather, happened: "A lake lay in the mountains through a long freezing winter.", cancelled: "A lake lay in the mountains through a long hot summer.",
+     question: "Is its surface now water or ice?", options: [water, ice], answer: [ice, water], outcome: a frozen lake, start: a blue lake}
+  - {id: flower, family: weather, happened: "A cut flower stood in a vase without water for two weeks.", cancelled: "A flower was cut from the garden a minute ago.",
+     question: "Is it now fresh or wilted?", options: [fresh, wilted], answer: [wilted, fresh], outcome: a wilted dead flower, start: a fresh flower}
+  - {id: bath, family: weather, happened: "A girl played in a muddy field for three hours in white clothes.", cancelled: "A girl put on white clothes a minute ago.",
+     question: "Are her clothes now white or brown?", options: [white, brown], answer: [brown, white], outcome: a girl in muddy clothes, start: a girl in clean white clothes}
+  - {id: ice_cream, family: heat, happened: "An ice cream cone was held in the hot sun for half an hour.", cancelled: "An ice cream cone was taken out of the freezer a second ago.",
+     question: "Is it now dripping or firm?", options: [dripping, firm], answer: [dripping, firm], outcome: a melting dripping ice cream, start: a firm ice cream cone}

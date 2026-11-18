@@ -1,0 +1,124 @@
+# Two-hop questions for the depth study. Families:
+#   bridge:      answering needs one object (the connecting object, `truth`) but the answer names another (`alt`):
+#                cow -> milk.
+#   same_answer: different connecting objects, identical short answers (`answer`); `alt` is the partner question's
+#                connecting object.
+#   candidates:  two plausible objects after the first sentence; a clue picks one. Not used in the paper.
+# `answers`: strings that count as the right text answer (lower case, matched as whole words in the reply).
+# `bridge_question` (bridge, same_answer): asks for the connecting object alone.
+# `positions`: the read positions, each a word whose last occurrence is read (end: the question's last token;
+# answer1: the first token of the right answer in the model's own reply).
+# `bridge_names`: other one-word names that count ("stop" for stop sign).
+reads:
+  # ---------------------------------------------------------------- bridge -> answer
+  - {id: cow_milk, family: bridge, pair: cow_milk, role: text1, truth: cow, alt: milk, answers: [milk],
+     text: "What do people drink that comes from the farm animal that says moo?",
+     bridge_question: "Which farm animal says moo?", positions: {desc: moo}}
+  - {id: bee_honey, family: bridge, pair: bee_honey, role: text1, truth: bee, alt: honey, answers: [honey],
+     text: "What sweet food is made by the insect that lives in a hive?",
+     bridge_question: "Which insect lives in a hive?", positions: {desc: hive}}
+  - {id: chicken_egg, family: bridge, pair: chicken_egg, role: text1, truth: chicken, alt: egg, answers: [egg, eggs],
+     text: "What food does the farm bird that clucks lay?",
+     bridge_question: "Which farm bird clucks?", positions: {desc: clucks}}
+  - {id: rabbit_carrot, family: bridge, pair: rabbit_carrot, role: text1, truth: rabbit, alt: carrot,
+     answers: [carrot, carrots],
+     text: "What orange vegetable does the long-eared animal that hops love to eat?",
+     bridge_question: "Which long-eared animal hops?", positions: {desc: hops}}
+  - {id: horse_horseshoe, family: bridge, pair: horse_horseshoe, role: text1, truth: horse, alt: horseshoe,
+     answers: [horseshoe, horseshoes],
+     text: "What metal object is nailed to the hooves of the farm animal that neighs?",
+     bridge_question: "Which farm animal neighs?", positions: {desc: neighs}}
+  - {id: dog_bone, family: bridge, pair: dog_bone, role: text1, truth: dog, alt: bone, answers: [bone, bones],
+     text: "What does the pet that barks like to chew on?",
+     bridge_question: "Which pet barks?", positions: {desc: barks}}
+  - {id: sheep_wool, family: bridge, pair: sheep_wool, role: text1, truth: sheep, alt: wool, answers: [wool],
+     text: "What soft material do we get from the farm animal that says baa?",
+     bridge_question: "Which farm animal says baa?", positions: {desc: baa}}
+  - {id: cat_mouse, family: bridge, pair: cat_mouse, role: text1, truth: cat, alt: mouse, answers: [mouse, mice],
+     text: "What small animal does the pet that purrs like to chase?",
+     bridge_question: "Which pet purrs?", positions: {desc: purrs}}
+  # ---------------------------------------------------------------- different bridges, same answer
+  - {id: spider_eight, family: same_answer, pair: eight, role: text1, truth: spider, alt: stop sign,
+     answers: [eight, "8"], text: "How many legs does the animal that spins webs have?",
+     bridge_question: "Which animal spins webs?", positions: {desc: webs}}
+  - {id: stopsign_eight, family: same_answer, pair: eight, role: text2, truth: stop sign, alt: spider,
+     bridge_names: [stop sign, stop],
+     answers: [eight, "8"], text: "How many sides does the red road sign that tells cars to halt have?",
+     bridge_question: "Which red road sign tells cars to halt?", positions: {desc: halt}}
+  - {id: bicycle_two, family: same_answer, pair: two_a, role: text1, truth: bicycle, alt: flamingo,
+     answers: [two, "2"], text: "How many wheels does the vehicle that you pedal have?",
+     bridge_question: "Which vehicle do you pedal?", positions: {desc: pedal}}
+  - {id: flamingo_two, family: same_answer, pair: two_a, role: text2, truth: flamingo, alt: bicycle,
+     answers: [two, "2"], text: "How many legs does the tall pink wading bird have?",
+     bridge_question: "Which tall pink bird wades in water?", positions: {desc: bird}}
+  - {id: owl_two, family: same_answer, pair: two_b, role: text1, truth: owl, alt: penguin,
+     answers: [two, "2"], text: "How many eyes does the bird that hoots at night have?",
+     bridge_question: "Which bird hoots at night?", positions: {desc: night}}
+  - {id: penguin_two, family: same_answer, pair: two_b, role: text2, truth: penguin, alt: owl,
+     answers: [two, "2"], text: "How many legs does the black and white bird that cannot fly and lives on the ice have?",
+     bridge_question: "Which black and white bird cannot fly and lives on the ice?", positions: {desc: ice}}
+  - {id: bee_six, family: same_answer, pair: six, role: text1, truth: bee, alt: butterfly,
+     answers: [six, "6"], text: "How many legs does the insect that buzzes and stings have?",
+     bridge_question: "Which insect buzzes and stings?", positions: {desc: stings}}
+  - {id: butterfly_six, family: same_answer, pair: six, role: text2, truth: butterfly, alt: bee,
+     answers: [six, "6"], text: "How many legs does the insect with big colourful wings have?",
+     bridge_question: "Which insect has big colourful wings?", positions: {desc: wings}}
+  # ---------------------------------------------------------------- rejected candidates (exploratory)
+  # The decisive clue states only the accepted candidate's trait, so the rejected candidate is never named or described
+  # after the first sentence.
+  - {id: owl_bat, family: candidates, pair: owl_bat, role: text1, truth: owl, alt: bat, answers: [owl, owls],
+     text: "An animal has wings and flies at night. It is a bird that hoots. What is it?",
+     positions: {desc: night, clue: hoots}}
+  - {id: bat_owl, family: candidates, pair: owl_bat, role: text2, truth: bat, alt: owl, answers: [bat, bats],
+     text: "An animal has wings and flies at night. It has fur. What is it?",
+     positions: {desc: night, clue: fur}}
+  - {id: tiger_zebra, family: candidates, pair: tiger_zebra, role: text1, truth: tiger, alt: zebra, answers: [tiger, tigers],
+     text: "An animal has black stripes and lives in the wild. It is a big orange cat. What is it?",
+     positions: {desc: wild, clue: cat}}
+  - {id: zebra_tiger, family: candidates, pair: tiger_zebra, role: text2, truth: zebra, alt: tiger, answers: [zebra, zebras],
+     text: "An animal has black stripes and lives in the wild. It looks like a horse. What is it?",
+     positions: {desc: wild, clue: horse}}
+  - {id: lemon_banana, family: candidates, pair: lemon_banana, role: text1, truth: lemon, alt: banana, answers: [lemon, lemons],
+     text: "A fruit is yellow and sold in every shop. It is round and sour. What is it?",
+     positions: {desc: shop, clue: sour}}
+  - {id: banana_lemon, family: candidates, pair: lemon_banana, role: text2, truth: banana, alt: lemon, answers: [banana, bananas],
+     text: "A fruit is yellow and sold in every shop. It is long and curved. What is it?",
+     positions: {desc: shop, clue: curved}}
+  - {id: panda_penguin, family: candidates, pair: panda_penguin, role: text1, truth: panda, alt: penguin, answers: [panda, pandas],
+     text: "An animal is black and white and lives in the wild. It is a bear from China. What is it?",
+     positions: {desc: wild, clue: China}}
+  - {id: penguin_panda, family: candidates, pair: panda_penguin, role: text2, truth: penguin, alt: panda, answers: [penguin, penguins],
+     text: "An animal is black and white and lives in the wild. It is a bird that lives on the ice. What is it?",
+     positions: {desc: wild, clue: ice}}
+# Named-object controls: the state of the object's own word in a plain sentence, through the lens from the same
+# layers. If the final layer fails on explicit names too, losing a bridge there says nothing about the bridge.
+controls:
+  - {object: cow, text: "Yesterday I saw a cow on my way home.", literals: [milk]}
+  - {object: milk, text: "Yesterday I saw some milk on my way home.", literals: [cow]}
+  - {object: bee, text: "Yesterday I saw a bee on my way home.", literals: [honey]}
+  - {object: honey, text: "Yesterday I saw some honey on my way home.", literals: [bee]}
+  - {object: chicken, text: "Yesterday I saw a chicken on my way home.", literals: [egg]}
+  - {object: egg, text: "Yesterday I saw an egg on my way home.", literals: [chicken]}
+  - {object: rabbit, text: "Yesterday I saw a rabbit on my way home.", literals: [carrot]}
+  - {object: carrot, text: "Yesterday I saw a carrot on my way home.", literals: [rabbit]}
+  - {object: panda, text: "Yesterday I saw a panda on my way home.", literals: [penguin]}
+  - {object: horse, text: "Yesterday I saw a horse on my way home.", literals: [horseshoe]}
+  - {object: horseshoe, text: "Yesterday I saw a horseshoe on my way home.", literals: [horse]}
+  - {object: dog, text: "Yesterday I saw a dog on my way home.", literals: [bone]}
+  - {object: bone, text: "Yesterday I saw a bone on my way home.", literals: [dog]}
+  - {object: sheep, text: "Yesterday I saw a sheep on my way home.", literals: [wool]}
+  - {object: wool, text: "Yesterday I saw some wool on my way home.", literals: [sheep]}
+  - {object: cat, text: "Yesterday I saw a cat on my way home.", literals: [mouse]}
+  - {object: mouse, text: "Yesterday I saw a mouse on my way home.", literals: [cat]}
+  - {object: spider, text: "Yesterday I saw a spider on my way home.", literals: [stop sign]}
+  - {object: stop sign, text: "Yesterday I saw a stop sign on my way home.", literals: [spider]}
+  - {object: bicycle, text: "Yesterday I saw a bicycle on my way home.", literals: [flamingo]}
+  - {object: flamingo, text: "Yesterday I saw a flamingo on my way home.", literals: [bicycle]}
+  - {object: penguin, text: "Yesterday I saw a penguin on my way home.", literals: [owl]}
+  - {object: butterfly, text: "Yesterday I saw a butterfly on my way home.", literals: [bee]}
+  - {object: owl, text: "Yesterday I saw an owl on my way home.", literals: [bat]}
+  - {object: bat, text: "Yesterday I saw a bat on my way home.", literals: [owl]}
+  - {object: tiger, text: "Yesterday I saw a tiger on my way home.", literals: [zebra]}
+  - {object: zebra, text: "Yesterday I saw a zebra on my way home.", literals: [tiger]}
+  - {object: lemon, text: "Yesterday I saw a lemon on my way home.", literals: [banana]}
+  - {object: banana, text: "Yesterday I saw a banana on my way home.", literals: [lemon]}

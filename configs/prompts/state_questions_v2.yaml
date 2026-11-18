@@ -1,0 +1,689 @@
+# State questions, second set (built by scripts/make_state_items.py from state_questions.yaml; do not edit by
+# hand). Four stories per scenario, the question names the target, options asked in both orders.
+template: '{story} {question} Answer with one word: {a} or {b}.'
+truth:
+  happened: outcome
+  cancelled: start
+  distract_cancelled: start
+  distract_happened: outcome
+items:
+- id: ice
+  family: heat
+  other: freeze
+  options:
+  - solid
+  - liquid
+  answer:
+  - liquid
+  - solid
+  outcome: a puddle of water
+  start: an ice cube
+  question: Is the ice cube now solid or liquid?
+  stories:
+    happened: An ice cube was left on a sunny table for an hour.
+    cancelled: An ice cube was kept in the freezer for an hour.
+    distract_cancelled: An ice cube was kept in the freezer for an hour. Nearby, a glass of water was put in the freezer overnight.
+    distract_happened: An ice cube was left on a sunny table for an hour. Nearby, a glass of water was left on the kitchen table overnight.
+- id: freeze
+  family: heat
+  other: butter
+  options:
+  - liquid
+  - solid
+  answer:
+  - solid
+  - liquid
+  outcome: a glass of ice
+  start: a glass of water
+  question: Is the water in the glass now liquid or solid?
+  stories:
+    happened: A glass of water was put in the freezer overnight.
+    cancelled: A glass of water was left on the kitchen table overnight.
+    distract_cancelled: A glass of water was left on the kitchen table overnight. Nearby, a block of butter was put in a hot frying pan for five minutes.
+    distract_happened: A glass of water was put in the freezer overnight. Nearby, a block of butter was kept in the fridge for five minutes.
+- id: butter
+  family: heat
+  other: chocolate
+  options:
+  - solid
+  - liquid
+  answer:
+  - liquid
+  - solid
+  outcome: melted butter
+  start: a block of butter
+  question: Is the butter now solid or liquid?
+  stories:
+    happened: A block of butter was put in a hot frying pan for five minutes.
+    cancelled: A block of butter was kept in the fridge for five minutes.
+    distract_cancelled: A block of butter was kept in the fridge for five minutes. Nearby, a chocolate bar was left on the dashboard of a hot car all afternoon.
+    distract_happened: A block of butter was put in a hot frying pan for five minutes. Nearby, a chocolate bar was kept in a cool cupboard all afternoon.
+- id: chocolate
+  family: heat
+  other: snowman
+  options:
+  - hard
+  - soft
+  answer:
+  - soft
+  - hard
+  outcome: melted chocolate
+  start: a chocolate bar
+  question: Is the chocolate bar now hard or soft?
+  stories:
+    happened: A chocolate bar was left on the dashboard of a hot car all afternoon.
+    cancelled: A chocolate bar was kept in a cool cupboard all afternoon.
+    distract_cancelled: A chocolate bar was kept in a cool cupboard all afternoon. Nearby, a snowman stood in the warm spring sun for a whole week.
+    distract_happened: A chocolate bar was left on the dashboard of a hot car all afternoon. Nearby, a snowman stood in the freezing winter cold for a whole week.
+- id: snowman
+  family: heat
+  other: candle
+  options:
+  - standing
+  - disappeared
+  answer:
+  - disappeared
+  - standing
+  outcome: a puddle of water on the grass
+  start: a snowman
+  question: Is the snowman still standing or has it disappeared?
+  stories:
+    happened: A snowman stood in the warm spring sun for a whole week.
+    cancelled: A snowman stood in the freezing winter cold for a whole week.
+    distract_cancelled: A snowman stood in the freezing winter cold for a whole week. Nearby, a tall new candle burned all night long.
+    distract_happened: A snowman stood in the warm spring sun for a whole week. Nearby, a tall new candle stood unlit in a drawer all night long.
+- id: candle
+  family: heat
+  other: marshmallow
+  options:
+  - tall
+  - short
+  answer:
+  - short
+  - tall
+  outcome: a short burnt-down candle
+  start: a tall new candle
+  question: Is the candle now tall or short?
+  stories:
+    happened: A tall new candle burned all night long.
+    cancelled: A tall new candle stood unlit in a drawer all night long.
+    distract_cancelled: A tall new candle stood unlit in a drawer all night long. Nearby, a white marshmallow was held over a campfire for a minute.
+    distract_happened: A tall new candle burned all night long. Nearby, a white marshmallow was kept in its bag for a minute.
+- id: marshmallow
+  family: heat
+  other: ice_cream
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a toasted marshmallow
+  start: a white marshmallow
+  question: Is the marshmallow now white or brown?
+  stories:
+    happened: A white marshmallow was held over a campfire for a minute.
+    cancelled: A white marshmallow was kept in its bag for a minute.
+    distract_cancelled: A white marshmallow was kept in its bag for a minute. Nearby, an ice cream cone was held in the hot sun for half an hour.
+    distract_happened: A white marshmallow was held over a campfire for a minute. Nearby, an ice cream cone was taken out of the freezer a second ago.
+- id: ice_cream
+  family: heat
+  other: ice
+  options:
+  - dripping
+  - firm
+  answer:
+  - dripping
+  - firm
+  outcome: a melting dripping ice cream
+  start: a firm ice cream cone
+  question: Is the ice cream now dripping or firm?
+  stories:
+    happened: An ice cream cone was held in the hot sun for half an hour.
+    cancelled: An ice cream cone was taken out of the freezer a second ago.
+    distract_cancelled: An ice cream cone was taken out of the freezer a second ago. Nearby, an ice cube was left on a sunny table for an hour.
+    distract_happened: An ice cream cone was held in the hot sun for half an hour. Nearby, an ice cube was kept in the freezer for an hour.
+- id: toast
+  family: cooking
+  other: popcorn
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a slice of toast
+  start: a slice of white bread
+  question: Is the slice of bread now white or brown?
+  stories:
+    happened: A slice of white bread was put in the toaster for three minutes.
+    cancelled: A slice of white bread was left in its bag for three minutes.
+    distract_cancelled: A slice of white bread was left in its bag for three minutes. Nearby, corn kernels were heated in a covered pot with hot oil for five minutes.
+    distract_happened: A slice of white bread was put in the toaster for three minutes. Nearby, corn kernels were left in a cold bowl for five minutes.
+- id: popcorn
+  family: cooking
+  other: pancake
+  options:
+  - small
+  - big
+  answer:
+  - big
+  - small
+  outcome: popcorn
+  start: corn kernels
+  question: Are the corn kernels now small or big?
+  stories:
+    happened: Corn kernels were heated in a covered pot with hot oil for five minutes.
+    cancelled: Corn kernels were left in a cold bowl for five minutes.
+    distract_cancelled: Corn kernels were left in a cold bowl for five minutes. Nearby, pancake batter was poured into a hot pan and cooked on both sides.
+    distract_happened: Corn kernels were heated in a covered pot with hot oil for five minutes. Nearby, pancake batter was poured into a bowl and left on the counter.
+- id: pancake
+  family: cooking
+  other: egg_fry
+  options:
+  - liquid
+  - solid
+  answer:
+  - solid
+  - liquid
+  outcome: a pancake
+  start: pancake batter
+  question: Is the pancake batter now liquid or solid?
+  stories:
+    happened: Pancake batter was poured into a hot pan and cooked on both sides.
+    cancelled: Pancake batter was poured into a bowl and left on the counter.
+    distract_cancelled: Pancake batter was poured into a bowl and left on the counter. Nearby, an egg was cracked into a hot pan and cooked for three minutes.
+    distract_happened: Pancake batter was poured into a hot pan and cooked on both sides. Nearby, an egg was cracked into a cold glass bowl and left for three minutes.
+- id: egg_fry
+  family: cooking
+  other: steak
+  options:
+  - clear
+  - white
+  answer:
+  - white
+  - clear
+  outcome: a fried egg
+  start: a raw egg in a bowl
+  question: Is the egg white now clear or white?
+  stories:
+    happened: An egg was cracked into a hot pan and cooked for three minutes.
+    cancelled: An egg was cracked into a cold glass bowl and left for three minutes.
+    distract_cancelled: An egg was cracked into a cold glass bowl and left for three minutes. Nearby, a red raw steak was grilled over hot coals for ten minutes.
+    distract_happened: An egg was cracked into a hot pan and cooked for three minutes. Nearby, a red raw steak was kept in the fridge for ten minutes.
+- id: steak
+  family: cooking
+  other: toast
+  options:
+  - red
+  - brown
+  answer:
+  - brown
+  - red
+  outcome: a grilled steak
+  start: a raw steak
+  question: Is the steak's outside now red or brown?
+  stories:
+    happened: A red raw steak was grilled over hot coals for ten minutes.
+    cancelled: A red raw steak was kept in the fridge for ten minutes.
+    distract_cancelled: A red raw steak was kept in the fridge for ten minutes. Nearby, a slice of white bread was put in the toaster for three minutes.
+    distract_happened: A red raw steak was grilled over hot coals for ten minutes. Nearby, a slice of white bread was left in its bag for three minutes.
+- id: seed
+  family: growth
+  other: tadpole
+  options:
+  - plant
+  - nothing
+  answer:
+  - plant
+  - nothing
+  outcome: a flowering plant in a pot
+  start: a seed
+  question: Is there now a plant or no plant where the seed is?
+  stories:
+    happened: A seed was planted in a pot and watered every day for three months.
+    cancelled: A seed was kept in a dry paper bag in a drawer for three months.
+    distract_cancelled: A seed was kept in a dry paper bag in a drawer for three months. Nearby, a tadpole grew in a pond for three months.
+    distract_happened: A seed was planted in a pot and watered every day for three months. Nearby, a tadpole was born in a pond an hour ago.
+- id: tadpole
+  family: growth
+  other: caterpillar
+  options:
+  - legs
+  - none
+  answer:
+  - legs
+  - none
+  outcome: a frog
+  start: a tadpole
+  question: Does the tadpole now have legs or no legs?
+  stories:
+    happened: A tadpole grew in a pond for three months.
+    cancelled: A tadpole was born in a pond an hour ago.
+    distract_cancelled: A tadpole was born in a pond an hour ago. Nearby, a caterpillar spun a cocoon and stayed inside it for three weeks.
+    distract_happened: A tadpole grew in a pond for three months. Nearby, a caterpillar hatched from its egg a minute ago.
+- id: caterpillar
+  family: growth
+  other: banana
+  options:
+  - wings
+  - none
+  answer:
+  - wings
+  - none
+  outcome: a butterfly
+  start: a caterpillar
+  question: Does the caterpillar now have wings or no wings?
+  stories:
+    happened: A caterpillar spun a cocoon and stayed inside it for three weeks.
+    cancelled: A caterpillar hatched from its egg a minute ago.
+    distract_cancelled: A caterpillar hatched from its egg a minute ago. Nearby, a green banana lay in a fruit bowl for three weeks.
+    distract_happened: A caterpillar spun a cocoon and stayed inside it for three weeks. Nearby, a green banana was picked from the tree a minute ago.
+- id: banana
+  family: growth
+  other: puppy
+  options:
+  - green
+  - brown
+  answer:
+  - brown
+  - green
+  outcome: an overripe brown banana
+  start: a green banana
+  question: Is the banana now green or brown?
+  stories:
+    happened: A green banana lay in a fruit bowl for three weeks.
+    cancelled: A green banana was picked from the tree a minute ago.
+    distract_cancelled: A green banana was picked from the tree a minute ago. Nearby, a tiny puppy grew up with its family for five years.
+    distract_happened: A green banana lay in a fruit bowl for three weeks. Nearby, a tiny puppy was born on the farm this morning.
+- id: puppy
+  family: growth
+  other: hen_egg
+  options:
+  - small
+  - big
+  answer:
+  - big
+  - small
+  outcome: a large grown dog
+  start: a tiny puppy
+  question: Is the puppy now small or big?
+  stories:
+    happened: A tiny puppy grew up with its family for five years.
+    cancelled: A tiny puppy was born on the farm this morning.
+    distract_cancelled: A tiny puppy was born on the farm this morning. Nearby, a hen sat on her egg in the nest for three weeks.
+    distract_happened: A tiny puppy grew up with its family for five years. Nearby, a hen laid an egg in the nest a minute ago.
+- id: hen_egg
+  family: growth
+  other: autumn
+  options:
+  - walk
+  - not
+  answer:
+  - walk
+  - not
+  outcome: a fluffy chick
+  start: an egg in a nest
+  question: Can what is in the hen's egg now walk or not walk?
+  stories:
+    happened: A hen sat on her egg in the nest for three weeks.
+    cancelled: A hen laid an egg in the nest a minute ago.
+    distract_cancelled: A hen laid an egg in the nest a minute ago. Nearby, an oak tree stood in the park until late autumn.
+    distract_happened: A hen sat on her egg in the nest for three weeks. Nearby, an oak tree stood in the park in early summer.
+- id: autumn
+  family: growth
+  other: seed
+  options:
+  - green
+  - orange
+  answer:
+  - orange
+  - green
+  outcome: a tree with orange autumn leaves
+  start: a tree with green leaves
+  question: Are the oak tree's leaves green or orange?
+  stories:
+    happened: An oak tree stood in the park until late autumn.
+    cancelled: An oak tree stood in the park in early summer.
+    distract_cancelled: An oak tree stood in the park in early summer. Nearby, a seed was planted in a pot and watered every day for three months.
+    distract_happened: An oak tree stood in the park until late autumn. Nearby, a seed was kept in a dry paper bag in a drawer for three months.
+- id: egg_drop
+  family: breaking
+  other: glass
+  options:
+  - whole
+  - broken
+  answer:
+  - broken
+  - whole
+  outcome: a broken egg on the floor
+  start: a whole egg
+  question: Is the raw egg now whole or broken?
+  stories:
+    happened: A raw egg fell off the kitchen table onto the hard tile floor.
+    cancelled: A raw egg was placed gently into an egg carton on the table.
+    distract_cancelled: A raw egg was placed gently into an egg carton on the table. Nearby, a drinking glass slipped from a hand and hit the stone floor hard.
+    distract_happened: A raw egg fell off the kitchen table onto the hard tile floor. Nearby, a drinking glass was put back on the shelf carefully.
+- id: glass
+  family: breaking
+  other: balloon
+  options:
+  - whole
+  - pieces
+  answer:
+  - pieces
+  - whole
+  outcome: shards of broken glass
+  start: a drinking glass
+  question: Is the drinking glass now whole or in pieces?
+  stories:
+    happened: A drinking glass slipped from a hand and hit the stone floor hard.
+    cancelled: A drinking glass was put back on the shelf carefully.
+    distract_cancelled: A drinking glass was put back on the shelf carefully. Nearby, a child poked a full balloon with a sharp needle.
+    distract_happened: A drinking glass slipped from a hand and hit the stone floor hard. Nearby, a child held a full balloon by its string.
+- id: balloon
+  family: breaking
+  other: paper
+  options:
+  - round
+  - flat
+  answer:
+  - flat
+  - round
+  outcome: a popped burst balloon
+  start: a round balloon
+  question: Is the balloon now round or flat?
+  stories:
+    happened: A child poked a full balloon with a sharp needle.
+    cancelled: A child held a full balloon by its string.
+    distract_cancelled: A child held a full balloon by its string. Nearby, a sheet of paper was thrown into the fireplace fire.
+    distract_happened: A child poked a full balloon with a sharp needle. Nearby, a sheet of paper was put into a desk drawer.
+- id: paper
+  family: breaking
+  other: log
+  options:
+  - white
+  - black
+  answer:
+  - black
+  - white
+  outcome: black ashes
+  start: a white sheet of paper
+  question: Is the sheet of paper now white or black?
+  stories:
+    happened: A sheet of paper was thrown into the fireplace fire.
+    cancelled: A sheet of paper was put into a desk drawer.
+    distract_cancelled: A sheet of paper was put into a desk drawer. Nearby, a woodcutter hit a log hard with an axe again and again.
+    distract_happened: A sheet of paper was thrown into the fireplace fire. Nearby, a woodcutter stacked a log on the woodpile.
+- id: log
+  family: breaking
+  other: apple_eat
+  options:
+  - one
+  - several
+  answer:
+  - several
+  - one
+  outcome: split firewood pieces
+  start: a whole log
+  question: Is the log now one piece or several pieces?
+  stories:
+    happened: A woodcutter hit a log hard with an axe again and again.
+    cancelled: A woodcutter stacked a log on the woodpile.
+    distract_cancelled: A woodcutter stacked a log on the woodpile. Nearby, a boy ate a red apple bite by bite.
+    distract_happened: A woodcutter hit a log hard with an axe again and again. Nearby, a boy put a red apple in his lunch box.
+- id: apple_eat
+  family: breaking
+  other: pencil
+  options:
+  - round
+  - thin
+  answer:
+  - thin
+  - round
+  outcome: an apple core
+  start: a red apple
+  question: Is the red apple now round or thin?
+  stories:
+    happened: A boy ate a red apple bite by bite.
+    cancelled: A boy put a red apple in his lunch box.
+    distract_cancelled: A boy put a red apple in his lunch box. Nearby, a long new pencil was sharpened a hundred times over the school year.
+    distract_happened: A boy ate a red apple bite by bite. Nearby, a long new pencil was bought at the shop this morning.
+- id: pencil
+  family: breaking
+  other: egg_drop
+  options:
+  - long
+  - short
+  answer:
+  - short
+  - long
+  outcome: a short pencil stub
+  start: a long new pencil
+  question: Is the pencil now long or short?
+  stories:
+    happened: A long new pencil was sharpened a hundred times over the school year.
+    cancelled: A long new pencil was bought at the shop this morning.
+    distract_cancelled: A long new pencil was bought at the shop this morning. Nearby, a raw egg fell off the kitchen table onto the hard tile floor.
+    distract_happened: A long new pencil was sharpened a hundred times over the school year. Nearby, a raw egg was placed gently into an egg carton on the table.
+- id: paint_green
+  family: colour
+  other: paint_pink
+  options:
+  - blue
+  - green
+  answer:
+  - green
+  - blue
+  outcome: green paint
+  start: blue paint
+  question: Is the blue paint now blue or green?
+  stories:
+    happened: Blue paint was stirred together with yellow paint in a bucket.
+    cancelled: Blue paint was poured alone into a clean bucket.
+    distract_cancelled: Blue paint was poured alone into a clean bucket. Nearby, red paint was stirred together with white paint in a bucket.
+    distract_happened: Blue paint was stirred together with yellow paint in a bucket. Nearby, red paint was poured alone into a clean bucket.
+- id: paint_pink
+  family: colour
+  other: shirt
+  options:
+  - red
+  - pink
+  answer:
+  - pink
+  - red
+  outcome: pink paint
+  start: red paint
+  question: Is the red paint now red or pink?
+  stories:
+    happened: Red paint was stirred together with white paint in a bucket.
+    cancelled: Red paint was poured alone into a clean bucket.
+    distract_cancelled: Red paint was poured alone into a clean bucket. Nearby, a white shirt was washed together with a new red sock in hot water.
+    distract_happened: Red paint was stirred together with white paint in a bucket. Nearby, a white shirt was washed alone in cold water.
+- id: shirt
+  family: colour
+  other: nail
+  options:
+  - white
+  - pink
+  answer:
+  - pink
+  - white
+  outcome: a pink shirt
+  start: a white shirt
+  question: Is the white shirt now white or pink?
+  stories:
+    happened: A white shirt was washed together with a new red sock in hot water.
+    cancelled: A white shirt was washed alone in cold water.
+    distract_cancelled: A white shirt was washed alone in cold water. Nearby, a shiny iron nail lay outside in the rain for a whole year.
+    distract_happened: A white shirt was washed together with a new red sock in hot water. Nearby, a shiny iron nail lay in a dry toolbox for a whole year.
+- id: nail
+  family: colour
+  other: grapes
+  options:
+  - grey
+  - orange
+  answer:
+  - orange
+  - grey
+  outcome: a rusty nail
+  start: a shiny nail
+  question: Is the iron nail now grey or orange?
+  stories:
+    happened: A shiny iron nail lay outside in the rain for a whole year.
+    cancelled: A shiny iron nail lay in a dry toolbox for a whole year.
+    distract_cancelled: A shiny iron nail lay in a dry toolbox for a whole year. Nearby, green grapes were laid out to dry in the hot sun for three weeks.
+    distract_happened: A shiny iron nail lay outside in the rain for a whole year. Nearby, green grapes were picked from the vine a minute ago.
+- id: grapes
+  family: colour
+  other: sunburn
+  options:
+  - smooth
+  - wrinkled
+  answer:
+  - wrinkled
+  - smooth
+  outcome: raisins
+  start: green grapes
+  question: Are the grapes now smooth or wrinkled?
+  stories:
+    happened: Green grapes were laid out to dry in the hot sun for three weeks.
+    cancelled: Green grapes were picked from the vine a minute ago.
+    distract_cancelled: Green grapes were picked from the vine a minute ago. Nearby, a pale man lay on the beach in the strong sun all day without sunscreen.
+    distract_happened: Green grapes were laid out to dry in the hot sun for three weeks. Nearby, a pale man sat in his office in the shade all day.
+- id: sunburn
+  family: colour
+  other: paint_green
+  options:
+  - pale
+  - red
+  answer:
+  - red
+  - pale
+  outcome: a sunburned red man
+  start: a pale man
+  question: Is the man's skin now pale or red?
+  stories:
+    happened: A pale man lay on the beach in the strong sun all day without sunscreen.
+    cancelled: A pale man sat in his office in the shade all day.
+    distract_cancelled: A pale man sat in his office in the shade all day. Nearby, blue paint was stirred together with yellow paint in a bucket.
+    distract_happened: A pale man lay on the beach in the strong sun all day without sunscreen. Nearby, blue paint was poured alone into a clean bucket.
+- id: puddle
+  family: weather
+  other: car_snow
+  options:
+  - wet
+  - dry
+  answer:
+  - dry
+  - wet
+  outcome: a dry road
+  start: a puddle on a road
+  question: Is the road with the puddle now wet or dry?
+  stories:
+    happened: A puddle lay on the road during a hot dry summer day.
+    cancelled: A puddle lay on the road during a cold rainy day.
+    distract_cancelled: A puddle lay on the road during a cold rainy day. Nearby, a red car was parked outside during a heavy snowstorm all night.
+    distract_happened: A puddle lay on the road during a hot dry summer day. Nearby, a red car was parked inside a warm garage all night.
+- id: car_snow
+  family: weather
+  other: pumpkin
+  options:
+  - red
+  - white
+  answer:
+  - white
+  - red
+  outcome: a car covered in snow
+  start: a red car
+  question: Is the red car now red or white?
+  stories:
+    happened: A red car was parked outside during a heavy snowstorm all night.
+    cancelled: A red car was parked inside a warm garage all night.
+    distract_cancelled: A red car was parked inside a warm garage all night. Nearby, a pumpkin was carved with a knife for Halloween.
+    distract_happened: A red car was parked outside during a heavy snowstorm all night. Nearby, a pumpkin was put on the porch for decoration.
+- id: pumpkin
+  family: weather
+  other: sandcastle
+  options:
+  - face
+  - none
+  answer:
+  - face
+  - none
+  outcome: a carved jack-o-lantern
+  start: a pumpkin
+  question: Does the pumpkin now have a face or no face?
+  stories:
+    happened: A pumpkin was carved with a knife for Halloween.
+    cancelled: A pumpkin was put on the porch for decoration.
+    distract_cancelled: A pumpkin was put on the porch for decoration. Nearby, a sandcastle was built close to the water just before high tide came in.
+    distract_happened: A pumpkin was carved with a knife for Halloween. Nearby, a sandcastle was built high up on the dry beach, far from the water.
+- id: sandcastle
+  family: weather
+  other: lake
+  options:
+  - standing
+  - washed
+  answer:
+  - washed
+  - standing
+  outcome: a flat wet beach
+  start: a sandcastle
+  question: Is the sandcastle still standing or washed away?
+  stories:
+    happened: A sandcastle was built close to the water just before high tide came in.
+    cancelled: A sandcastle was built high up on the dry beach, far from the water.
+    distract_cancelled: A sandcastle was built high up on the dry beach, far from the water. Nearby, a lake lay in the mountains through a long freezing winter.
+    distract_happened: A sandcastle was built close to the water just before high tide came in. Nearby, a lake lay in the mountains through a long hot summer.
+- id: lake
+  family: weather
+  other: flower
+  options:
+  - water
+  - ice
+  answer:
+  - ice
+  - water
+  outcome: a frozen lake
+  start: a blue lake
+  question: Is the lake's surface now water or ice?
+  stories:
+    happened: A lake lay in the mountains through a long freezing winter.
+    cancelled: A lake lay in the mountains through a long hot summer.
+    distract_cancelled: A lake lay in the mountains through a long hot summer. Nearby, a cut flower stood in a vase without water for two weeks.
+    distract_happened: A lake lay in the mountains through a long freezing winter. Nearby, a flower was cut from the garden a minute ago.
+- id: flower
+  family: weather
+  other: bath
+  options:
+  - fresh
+  - wilted
+  answer:
+  - wilted
+  - fresh
+  outcome: a wilted dead flower
+  start: a fresh flower
+  question: Is the flower now fresh or wilted?
+  stories:
+    happened: A cut flower stood in a vase without water for two weeks.
+    cancelled: A flower was cut from the garden a minute ago.
+    distract_cancelled: A flower was cut from the garden a minute ago. Nearby, a girl played in a muddy field for three hours in white clothes.
+    distract_happened: A cut flower stood in a vase without water for two weeks. Nearby, a girl put on white clothes a minute ago.
+- id: bath
+  family: weather
+  other: puddle
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a girl in muddy clothes
+  start: a girl in clean white clothes
+  question: Are the girl's clothes now white or brown?
+  stories:
+    happened: A girl played in a muddy field for three hours in white clothes.
+    cancelled: A girl put on white clothes a minute ago.
+    distract_cancelled: A girl put on white clothes a minute ago. Nearby, a puddle lay on the road during a hot dry summer day.
+    distract_happened: A girl played in a muddy field for three hours in white clothes. Nearby, a puddle lay on the road during a cold rainy day.

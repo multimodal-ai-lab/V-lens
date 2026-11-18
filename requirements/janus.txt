@@ -1,0 +1,25 @@
+# Janus-Pro environment (Python 3.11; upstream's code needs timm and attrdict). Same torch, transformers and diffusers
+# as the main environment. Upstream's package is installed without its dependencies:
+#   python3.11 -m venv .venv-janus && .venv-janus/bin/pip install -r requirements/janus.txt
+#   .venv-janus/bin/pip install --no-deps "git+https://github.com/deepseek-ai/Janus@1daa72fa409002d40931bd7b36a9280362469ead"
+#   .venv-janus/bin/pip install -e . --no-deps
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.51.3
+diffusers==0.37.1
+accelerate==1.15.0
+tokenizers==0.21.4
+timm==1.0.30
+attrdict3==2.0.2
+huggingface-hub
+safetensors==0.8.0
+sentencepiece==0.2.2
+numpy==2.4.6
+pillow==13.0.0
+tqdm==4.70.1
+pyyaml==6.0.3
+scipy==1.17.1
+einops==0.8.2
+regex==2026.9.29
+matplotlib==3.11.2

@@ -1,0 +1,193 @@
+reads:
+- id: target_apple
+  text: a photo of a apple
+  truth: apple
+  alt: printer
+- id: target_backpack
+  text: a photo of a backpack
+  truth: backpack
+  alt: rabbit
+- id: target_banana
+  text: a photo of a banana
+  truth: banana
+  alt: book
+- id: target_belt
+  text: a photo of a belt
+  truth: belt
+  alt: goat
+- id: target_book
+  text: a photo of a book
+  truth: book
+  alt: skirt
+- id: target_boot
+  text: a photo of a boot
+  truth: boot
+  alt: snowmobile
+- id: target_bottle
+  text: a photo of a bottle
+  truth: bottle
+  alt: printer
+- id: target_briefcase
+  text: a photo of a briefcase
+  truth: briefcase
+  alt: kangaroo
+- id: target_bulldozer
+  text: a photo of a bulldozer
+  truth: bulldozer
+  alt: sandwich
+- id: target_bus
+  text: a photo of a bus
+  truth: bus
+  alt: laptop
+- id: target_cake
+  text: a photo of a cake
+  truth: cake
+  alt: van
+- id: target_camel
+  text: a photo of a camel
+  truth: camel
+  alt: envelope
+- id: target_cookie
+  text: a photo of a cookie
+  truth: cookie
+  alt: snowmobile
+- id: target_cow
+  text: a photo of a cow
+  truth: cow
+  alt: bulldozer
+- id: target_deer
+  text: a photo of a deer
+  truth: deer
+  alt: laptop
+- id: target_dog
+  text: a photo of a dog
+  truth: dog
+  alt: bulldozer
+- id: target_donkey
+  text: a photo of a donkey
+  truth: donkey
+  alt: bottle
+- id: target_dress
+  text: a photo of a dress
+  truth: dress
+  alt: watermelon
+- id: target_envelope
+  text: a photo of a envelope
+  truth: envelope
+  alt: golf cart
+- id: target_glove
+  text: a photo of a glove
+  truth: glove
+  alt: umbrella
+- id: target_goat
+  text: a photo of a goat
+  truth: goat
+  alt: washing machine
+- id: target_golf-cart
+  text: a photo of a golf cart
+  truth: golf cart
+  alt: camel
+- id: target_hair-dryer
+  text: a photo of a hair dryer
+  truth: hair dryer
+  alt: glove
+- id: target_jacket
+  text: a photo of a jacket
+  truth: jacket
+  alt: bulldozer
+- id: target_kangaroo
+  text: a photo of a kangaroo
+  truth: kangaroo
+  alt: book
+- id: target_laptop
+  text: a photo of a laptop
+  truth: laptop
+  alt: golf cart
+- id: target_microwave
+  text: a photo of a microwave
+  truth: microwave
+  alt: scarf
+- id: target_motorcycle
+  text: a photo of a motorcycle
+  truth: motorcycle
+  alt: umbrella
+- id: target_orange
+  text: a photo of a orange
+  truth: orange
+  alt: bulldozer
+- id: target_pear
+  text: a photo of a pear
+  truth: pear
+  alt: microwave
+- id: target_printer
+  text: a photo of a printer
+  truth: printer
+  alt: purse
+- id: target_purse
+  text: a photo of a purse
+  truth: purse
+  alt: laptop
+- id: target_rabbit
+  text: a photo of a rabbit
+  truth: rabbit
+  alt: watermelon
+- id: target_radio
+  text: a photo of a radio
+  truth: radio
+  alt: cow
+- id: target_sandwich
+  text: a photo of a sandwich
+  truth: sandwich
+  alt: umbrella
+- id: target_scarf
+  text: a photo of a scarf
+  truth: scarf
+  alt: sewing machine
+- id: target_sewing-machine
+  text: a photo of a sewing machine
+  truth: sewing machine
+  alt: rabbit
+- id: target_shirt
+  text: a photo of a shirt
+  truth: shirt
+  alt: truck
+- id: target_skirt
+  text: a photo of a skirt
+  truth: skirt
+  alt: goat
+- id: target_snowmobile
+  text: a photo of a snowmobile
+  truth: snowmobile
+  alt: belt
+- id: target_tractor
+  text: a photo of a tractor
+  truth: tractor
+  alt: umbrella
+- id: target_truck
+  text: a photo of a truck
+  truth: truck
+  alt: apple
+- id: target_umbrella
+  text: a photo of a umbrella
+  truth: umbrella
+  alt: bus
+- id: target_vacuum-cleaner
+  text: a photo of a vacuum cleaner
+  truth: vacuum cleaner
+  alt: orange
+- id: target_van
+  text: a photo of a van
+  truth: van
+  alt: apple
+- id: target_wallet
+  text: a photo of a wallet
+  truth: wallet
+  alt: watermelon
+- id: target_washing-machine
+  text: a photo of a washing machine
+  truth: washing machine
+  alt: shirt
+- id: target_watermelon
+  text: a photo of a watermelon
+  truth: watermelon
+  alt: laptop

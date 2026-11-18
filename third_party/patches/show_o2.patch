@@ -1,0 +1,60 @@
+diff -ruN a/__init__.py b/__init__.py
+--- a/__init__.py
++++ b/__init__.py
+@@ -1,4 +1,5 @@
++"""Show-o2 model code (showlab/Show-o, show-o2/models, commit 45a5a2d, Apache-2.0). See third_party/README.md."""
++
+ from .modeling_showo2_qwen2_5 import Showo2Qwen2_5
+-from .modeling_semantic_layers import ShowoSemanticLayers
+-from .omni_attention import omni_attn_mask, omni_attn_mask_naive, causal, causal_attn_mask_naive
+-from .wan21_vae import WanVAE
+\ No newline at end of file
++from .omni_attention import omni_attn_mask_naive
++from .wan21_vae import WanVAE
+diff -ruN a/misc.py b/misc.py
+--- a/misc.py
++++ b/misc.py
+@@ -4,7 +4,8 @@
+ import math
+ from .modules import modulate, RMSNorm
+ 
+-from timm.layers.helpers import to_2tuple
++def to_2tuple(x):  # patched: was `from timm.layers.helpers import to_2tuple`
++    return tuple(x) if isinstance(x, (tuple, list)) else (x, x)
+ from transformers import AutoTokenizer
+ 
+ 
+diff -ruN a/modeling_utils.py b/modeling_utils.py
+--- a/modeling_utils.py
++++ b/modeling_utils.py
+@@ -734,7 +734,7 @@
+                 # if device_map is None, load the state dict and move the params from meta device to the cpu
+                 if device_map is None and not is_sharded:
+                     param_device = "cpu"
+-                    state_dict = load_state_dict(model_file, variant=variant)
++                    state_dict = load_state_dict(model_file)  # patched: diffusers 0.37 takes no `variant`
+                     model._convert_deprecated_attention_blocks(state_dict)
+                     # move the params from meta device to cpu
+                     missing_keys = set(model.state_dict().keys()) - set(state_dict.keys())
+@@ -827,7 +827,7 @@
+             else:
+                 model = cls.from_config(config, **unused_kwargs)
+ 
+-                state_dict = load_state_dict(model_file, variant=variant)
++                state_dict = load_state_dict(model_file)  # patched: diffusers 0.37 takes no `variant`
+                 model._convert_deprecated_attention_blocks(state_dict)
+ 
+                 model, missing_keys, unexpected_keys, mismatched_keys, error_msgs = cls._load_pretrained_model(
+diff -ruN a/modules.py b/modules.py
+--- a/modules.py
++++ b/modules.py
+@@ -699,7 +699,8 @@
+         return outputs
+ 
+ 
+-from timm.layers.helpers import to_2tuple
++def to_2tuple(x):  # patched: was `from timm.layers.helpers import to_2tuple`
++    return tuple(x) if isinstance(x, (tuple, list)) else (x, x)
+ 
+ 
+ class PatchEmbed(nn.Module):

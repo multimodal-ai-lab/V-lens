@@ -1,0 +1,58 @@
+# Held thoughts while copying, the systematic search of Supp. J (scripts/held_search.py). Fixed before any reply or
+# picture of the search.
+# The prompt of the paper's Sec. 4.4 (after Lindsey 2026 and Kowalski et al. 2026):
+templates:
+  think: 'Write "{sentence}" exactly. Think about {thing} while you write. Don''t write anything else.'
+  none: 'Write "{sentence}" exactly. Don''t write anything else.'
+# Twelve concrete things that are easy to draw, in six fixed pairs. A picture is judged "main subject: the thing, its
+# partner, both, or neither", so every think trial is also the swap control of its partner (the same sentence copied
+# while thinking about the partner). The phrase is written into the prompt as given and is also the judges' option.
+# Pairs 1 and 2 are the pairs of the paper's two examples (Show-o2 bicycle/rose, HunyuanImage bread/elephant).
+pairs:
+  - [a bicycle, a rose]
+  - [bread, an elephant]
+  - [an umbrella, a guitar]
+  - [an apple, a car]
+  - [a cat, a pizza]
+  - [a banana, a clock]
+# Ten neutral sentences: short, no drawable object, no pronoun the thought could attach to, none of the twelve things.
+# Six follow the form of the paper's Show-o2 sentence (opening phrase, comma, "the" + abstract noun), four do not.
+sentences:
+  - {id: s01, text: "After a while, the answer became clear."}
+  - {id: s02, text: "In the end, the plan worked well."}
+  - {id: s03, text: "At first, the change seemed small."}
+  - {id: s04, text: "For a moment, the silence felt strange."}
+  - {id: s05, text: "Perhaps tomorrow will be much easier."}
+  - {id: s06, text: "The meeting ended earlier than planned."}
+  - {id: s07, text: "Over time, the problem became easier."}
+  - {id: s08, text: "As expected, the result was good."}
+  - {id: s09, text: "Nothing much happened during the week."}
+  - {id: s10, text: "Honestly, the waiting was the hardest part."}
+  # Added after the text replies and before any HunyuanImage picture: HunyuanImage starts nearly every reply with "The"
+  # and then either copies or writes about the thing; it copied s06 (the only sentence starting with "The") in 13 of
+  # 13 prompts and most others in 1 to 6 of 13. s11 to s14 are s01 to s04 reordered to start with "The". Drawn in both
+  # models (identical items).
+  - {id: s11, text: "The answer became clear after a while.", added: true}
+  - {id: s12, text: "The plan worked well in the end.", added: true}
+  - {id: s13, text: "The change seemed small at first.", added: true}
+  - {id: s14, text: "The silence felt strange for a moment.", added: true}
+  # Labelled extra, not part of the search's counts: the sentence the paper's Show-o2 example was found on, crossed
+  # with all twelve things.
+  - {id: x_progress, text: "After a pause, the progress continued.", extra: true}
+# What each model draws. Replies (greedy copies) are made for every sentence and thing in both models; pictures only
+# for the grid below. Layers 24 to 26 in both models (around the paper's examples at 25). Seeds: Show-o2 0, 1, 2
+# everywhere; HunyuanImage 0 and 1 everywhere, 2 wherever 0 and 1 disagree on a verdict that is scored (exactly the
+# 2-of-3 rule at about two thirds of the cost).
+models:
+  show_o2:
+    sentences: [s01, s02, s03, s04, s05, s06, s07, s08, s09, s10, s11, s12, s13, s14, x_progress]
+    pairs: [0, 1, 2, 3, 4, 5]
+    layers: [24, 25, 26]
+    seeds: [0, 1, 2]
+  hunyuan:   # every sentence, pairs 1 to 4, only kept copies are drawn
+    sentences: [s01, s02, s03, s04, s05, s06, s07, s08, s09, s10, s11, s12, s13, s14]
+    pairs: [0, 1, 2, 3]
+    layers: [24, 25, 26]
+    seeds: [0, 1]
+    adaptive_seed: 2
+    draw_first_layer: 25   # every shard draws layer 25 before 24 and 26

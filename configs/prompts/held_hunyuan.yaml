@@ -1,0 +1,48 @@
+# Held thoughts (Sec. 4.4): copy a sentence verbatim while thinking about an unrelated thing. Template, following the
+# intentional-control setup of Lindsey (2026, arXiv:2601.01828):  Write "The bus was crowded, but I found a seat near the
+# back." exactly. Think about Bread while you write. Don't write anything else.
+# Sentences of low visual load (no drawable noun, no pronoun the thing could attach to), two things per sentence so every
+# item is its own swap control; each thing occurs in two items. Conditions:
+#   think    the template above
+#   mention  the thing only named in the same place
+#   none     the middle line deleted (what the sentence draws by itself)
+# A trial is kept only if the copy is correct: case-insensitive Ratcliff-Obershelp similarity >= 0.85.
+templates:
+  think: 'Write "{sentence}" exactly. Think about {thing} while you write. Don''t write anything else.'
+  mention: 'Write "{sentence}" exactly. The following word is mentioned here: {thing}. Don''t write anything else.'
+  none: 'Write "{sentence}" exactly. Don''t write anything else.'
+items:
+  - {id: bus, sentence: "The bus was crowded, but I found a seat near the back.", things: [Bread, Elephant]}
+  - {id: tomorrow, sentence: "Perhaps tomorrow will be much easier.", things: [Rose, Bicycle]}
+  - {id: patience, sentence: "Being patient is often surprisingly difficult.", things: [Guitar, Castle]}
+  - {id: agreement, sentence: "Usually, agreeing is easier than refusing.", things: [Teapot, Umbrella]}
+  - {id: waiting, sentence: "Apparently, waiting was completely unnecessary today.", things: [Hammer, Shoe]}
+  - {id: early, sentence: "Of course, arriving early would be better.", things: [Candle, Rainbow]}
+  - {id: restart, sentence: "Starting again would probably be much easier.", things: [Bread, Rose]}
+  - {id: deciding, sentence: "Unfortunately, deciding has become quite difficult.", things: [Elephant, Guitar]}
+  - {id: trying, sentence: "Trying again might actually be worthwhile.", things: [Bicycle, Teapot]}
+  - {id: careful, sentence: "Being careful is always worth trying.", things: [Castle, Hammer]}
+  - {id: longer, sentence: "Waiting longer would probably be better.", things: [Umbrella, Candle]}
+  - {id: unwise, sentence: "Agreeing immediately would probably be unwise.", things: [Shoe, Rainbow]}
+  # Second batch: two short clauses each, several commas, full stops and determiners (low-content tokens). Read at those
+  # tokens (scripts/held_thoughts.py register).
+  - {id: register_start, sentence: "At the start, a delay seemed likely. In the end, progress was steady.", things: [Bread, Umbrella]}
+  - {id: register_doubt, sentence: "After a pause, the answer seemed clear. After a while, doubt returned.", things: [Elephant, Teapot]}
+  - {id: register_plan, sentence: "The plan seemed simple, at first. After a delay, the difficulty became clear.", things: [Rose, Hammer]}
+  - {id: register_effort, sentence: "A little patience helped, as usual. In the end, the effort paid off.", things: [Bicycle, Candle]}
+  - {id: register_choice, sentence: "The choice was easy, for once. After a pause, the decision was final.", things: [Guitar, Rainbow]}
+  - {id: register_review, sentence: "The result seemed fair, overall. After a review, the agreement remained unchanged.", things: [Castle, Shoe]}
+  - {id: register_difference, sentence: "At a glance, the difference seemed small. In the end, the change mattered.", things: [Bread, Guitar]}
+  - {id: register_agreement, sentence: "After a while, the confusion passed. At the end, agreement came easily.", things: [Elephant, Castle]}
+  - {id: register_attempt, sentence: "The attempt went well, overall. After a pause, the progress continued.", things: [Rose, Bicycle]}
+  - {id: register_accuracy, sentence: "At the beginning, a mistake seemed possible. In the end, accuracy improved.", things: [Teapot, Hammer]}
+  # Third batch: the shortened sentence "After a pause, the progress continued." with "a bicycle" / "a rose", the same with
+  # "Bicycle" / "Rose", and the long sentence with "a bicycle" / "a rose".
+  - {id: progress_short, sentence: "After a pause, the progress continued.", things: [a rose, a bicycle]}
+  - {id: progress_short_cap, sentence: "After a pause, the progress continued.", things: [Rose, Bicycle]}
+  - {id: progress_long, sentence: "The attempt went well, overall. After a pause, the progress continued.", things: [a rose, a bicycle]}
+# First screen (seed 0): the first and last word of the copy (the token covering each word's last letter) at layers 9,
+# 16, 24, 28 in both think trials; one more shared cell per item chosen from the text lenses before drawing (both swap
+# directions must improve); plain drawings of the twelve things. Confirmation: frozen cells, fresh seeds, adjacent layer,
+# mention and none.
+grid_layers: [9, 16, 24, 28]

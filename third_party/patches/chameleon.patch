@@ -1,0 +1,55 @@
+diff -ruN a/image_tokenizer.py b/image_tokenizer.py
+--- a/image_tokenizer.py
++++ b/image_tokenizer.py
+@@ -3,21 +3,21 @@
+ # This source code is licensed under the Chameleon License found in the
+ # LICENSE file in the root directory of this source tree.
+ 
+-import numpy as np
+ import PIL
++import numpy as np
+ import torch
+ import yaml
+ from PIL import Image
+ 
+-from chameleon.inference.vqgan import VQModel
++from .vqgan import VQModel
+ 
+ 
+ class ImageTokenizer:
+     def __init__(
+-        self,
+-        cfg_path: str,
+-        ckpt_path: str,
+-        device: str,
++            self,
++            cfg_path: str,
++            ckpt_path: str,
++            device: str,
+     ):
+         with open(cfg_path) as f:
+             config = yaml.safe_load(f)
+@@ -101,7 +101,7 @@
+         ) / 2.0
+ 
+         # Permute CHW tensor to HWC format and convert to NumPy array.
+-        hwc_array = normalized_chw_tensor.permute(1, 2, 0).numpy()
++        hwc_array = normalized_chw_tensor.permute(1, 2, 0).to(torch.float32).numpy()
+ 
+         # Convert to an 8-bit unsigned integer format.
+         image_array_uint8 = (hwc_array * 255).astype(np.uint8)
+@@ -115,13 +115,10 @@
+ 
+         return pil_image
+ 
+-    def pil_from_img_toks(self, img_tensor: torch.Tensor, height=32,width=32) -> PIL.Image:
++    def pil_from_img_toks(self, img_tensor: torch.Tensor, height=32, width=32) -> PIL.Image:
+         emb_dim = self._vq_model.quantize.embedding.weight.shape[-1]
+-        # import pdb;pdb.set_trace()
+         codebook_entry = self._vq_model.quantize.get_codebook_entry(
+             img_tensor, (1, height, width, emb_dim)
+         )
+-        # import pdb;pdb.set_trace()
+         pixels = self._vq_model.decode(codebook_entry)
+-        # import pdb;pdb.set_trace()
+         return self._pil_from_chw_tensor(pixels[0])

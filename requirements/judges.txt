@@ -1,0 +1,17 @@
+# Judge environment for LLaVA-OneVision-2 (Python 3.11; its remote code needs transformers 5). The other two judges
+# (Qwen3-VL, Gemma-3) run in the SenseNova-U1 environment.
+#   python3.11 -m venv .venv-judges && .venv-judges/bin/pip install -r requirements/judges.txt && .venv-judges/bin/pip install -e . --no-deps
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+transformers==5.19.0
+huggingface-hub==2.2.0
+tokenizers==0.23.3
+accelerate==1.15.0
+safetensors==0.8.0
+einops==0.8.2
+numpy==2.4.6
+pillow==12.3.0
+pyyaml==6.0.3
+regex==2026.9.29
+tqdm==4.70.1

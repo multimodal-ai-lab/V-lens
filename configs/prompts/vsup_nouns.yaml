@@ -1,0 +1,108 @@
+# Noun table of the lens-tuning study (Sec. 4.6, Supp. F, Table S23; scripts/make_tuning_items.py builds
+# vsup_items.yaml from it). Each category has two training verbs and one held-out verb. Every verb selects only its own
+# category among the categories it may be paired with (`pairs_with`), so in "A dog and a cake were in the kitchen. She
+# ate it." only one reading is sensible. `question` is the category's yes/no question for the text test: yes for the
+# referent, no for the other thing.
+categories:
+  animal:
+    verbs: [fed it, petted it]
+    heldout_verb: groomed it
+    question: Is it an animal?
+    pairs_with: [food, device, vehicle, openable, clothing]
+    nouns: [dog, cat, rabbit, horse, cow, sheep, goat, pig, donkey, hamster, camel, llama, deer, kangaroo]
+  food:
+    verbs: [ate it, tasted it]
+    heldout_verb: bit into it
+    question: Is it food?
+    pairs_with: [animal, device, vehicle, openable, clothing]
+    nouns: [apple, banana, orange, pear, carrot, cake, sandwich, pizza, donut, cookie, watermelon, burger, pineapple,
+            strawberry]
+  device:
+    verbs: [switched it on, turned it off]
+    heldout_verb: plugged it in
+    question: Does it run on electricity?
+    pairs_with: [animal, food]
+    nouns: [lamp, fan, television, radio, laptop, toaster, kettle, microwave, blender, vacuum cleaner, hair dryer,
+            printer, washing machine, sewing machine]
+  vehicle:
+    verbs: [drove it, parked it]
+    heldout_verb: steered it
+    question: Is it a vehicle?
+    pairs_with: [animal, food, clothing]
+    nouns: [car, truck, bus, tractor, van, taxi, ambulance, jeep, bulldozer, limousine, forklift, motorcycle, golf cart,
+            snowmobile]
+  openable:
+    verbs: [opened it, closed it]
+    heldout_verb: shut it
+    question: Can you open and close it?
+    pairs_with: [animal, food]
+    nouns: [umbrella, box, suitcase, book, backpack, wallet, envelope, jar, briefcase, purse, cupboard, refrigerator,
+            bottle, gate]
+  clothing:
+    verbs: [wore it, put it on]
+    heldout_verb: took it off
+    question: Do people wear it?
+    pairs_with: [animal, food, vehicle]
+    nouns: [hat, jacket, scarf, sweater, boot, glove, sock, dress, shirt, tie, skirt, belt, sneaker, apron]
+
+# Sentence forms: {a_x} = "a dog" / "an apple". Forms 1-4 train, 5-6 only in test group 1.
+forms:
+  1: "{A_x} and {a_y} were in the {place}. She {verb}."
+  2: "There was {a_x} next to {a_y}. He {verb}."
+  3: "I saw {a_x} and {a_y} in the {place}. Then I {verb}."
+  4: "We found {a_x} near {a_y}. We {verb}."
+  5: "{A_x} sat beside {a_y} all morning. Later my aunt {verb}."
+  6: "Our neighbour kept {a_x} and {a_y}. One day he {verb}."
+train_forms: [1, 2, 3, 4]
+heldout_forms: [5, 6]
+places: [kitchen, yard, garage, hall, barn, shed]
+
+# Neutral sentences for the representation arm (R): the noun's own state, averaged over these.
+neutral:
+  - "There is {a_x} here."
+  - "I looked at the {x}."
+  - "This is a picture of {a_x}."
+  - "She talked about the {x} for a while."
+
+# Fixed general questions for the preservation check (answers judged by exact word match).
+general_qa:
+  - ["What is the capital of France?", paris]
+  - ["What is the capital of Japan?", tokyo]
+  - ["What is the capital of Italy?", rome]
+  - ["What is the capital of Germany?", berlin]
+  - ["What is the capital of Spain?", madrid]
+  - ["What is the capital of Egypt?", cairo]
+  - ["How many legs does a spider have?", eight]
+  - ["How many legs does a dog have?", four]
+  - ["How many days are in a week?", seven]
+  - ["How many months are in a year?", twelve]
+  - ["What color is the sky on a clear day?", blue]
+  - ["What color is grass?", green]
+  - ["What color are ripe bananas?", yellow]
+  - ["What do bees make?", honey]
+  - ["What do cows drink?", water]
+  - ["Which animal is known as the king of the jungle?", lion]
+  - ["What is the largest planet in our solar system?", jupiter]
+  - ["What is frozen water called?", ice]
+  - ["What is the opposite of hot?", cold]
+  - ["What is the opposite of up?", down]
+  - ["What gas do plants take in from the air?", carbon dioxide]
+  - ["Which planet do we live on?", earth]
+  - ["What is two plus three?", five]
+  - ["What is ten minus four?", six]
+  - ["What is three times three?", nine]
+  - ["In which ocean is Hawaii?", pacific]
+  - ["What language is spoken in Brazil?", portuguese]
+  - ["Which animal has a long trunk?", elephant]
+  - ["Which bird is a symbol of peace?", dove]
+  - ["What do you call a baby cat?", kitten]
+  - ["What do you call a baby dog?", puppy]
+  - ["Which fruit is used to make wine?", grape]
+  - ["What instrument has black and white keys?", piano]
+  - ["What do you use to cut paper?", scissors]
+  - ["What is the closest star to Earth?", sun]
+  - ["Which season comes after winter?", spring]
+  - ["How many wheels does a bicycle have?", two]
+  - ["What shape has three sides?", triangle]
+  - ["Which animal is famous for its black and white stripes?", zebra]
+  - ["What is the tallest animal?", giraffe]

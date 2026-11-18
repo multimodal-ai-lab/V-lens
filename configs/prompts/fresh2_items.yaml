@@ -1,0 +1,910 @@
+# Test set of the lens-variant comparison (Table 1, Supp. Tables S2 and S3) and of the ablation (Table 5): two-hop
+# questions (a question is used for a model only if that model answers it correctly, configs/test_sets/test.json) and
+# 40 words with two meanings, each in both orders.
+
+two_hop:
+- prompt: On which continent does the egg-laying swimmer with a leathery bill and webbed feet live naturally?
+  concept: platypus
+  answer: Australia
+  description_end: feet
+  description: the egg-laying swimmer with a leathery bill and webbed feet
+  literals:
+  - egg
+  - duck bill
+  - webbed foot
+  domain: animals
+- prompt: On which continent does the stocky burrowing animal famous for cube-shaped droppings live naturally?
+  concept: wombat
+  answer: Australia
+  description_end: droppings
+  description: the stocky burrowing animal famous for cube-shaped droppings
+  literals:
+  - burrow
+  - wooden cube
+  domain: animals
+- prompt: What material makes up the body covering of the animal with overlapping scales that curls into a ball and eats termites?
+  concept: pangolin
+  answer: keratin
+  description_end: termites
+  description: the animal with overlapping scales that curls into a ball and eats termites
+  literals:
+  - ball
+  - termite
+  domain: animals
+- prompt: On which island do the wild primates with long striped tails and large golden eyes live naturally?
+  concept: lemur
+  answer: Madagascar
+  description_end: eyes
+  description: the wild primates with long striped tails and large golden eyes
+  literals:
+  - striped fabric
+  - golden eyes
+  domain: animals
+- prompt: How many legs does the forest animal with a short flexible snout and a broad white band around its middle have?
+  concept: tapir
+  answer: '4'
+  description_end: middle
+  description: the forest animal with a short flexible snout and a broad white band around its middle
+  literals:
+  - forest
+  - white ribbon
+  domain: animals
+- prompt: How many feet does the colour-changing animal whose eyes can look in different directions have?
+  concept: chameleon
+  answer: '4'
+  description_end: directions
+  description: the colour-changing animal whose eyes can look in different directions
+  literals:
+  - human eyes
+  - direction signs
+  domain: animals
+- prompt: Which country is the natural home of the aquatic animal with feathery external gills and a permanent smile?
+  concept: axolotl
+  answer: Mexico
+  description_end: smile
+  description: the aquatic animal with feathery external gills and a permanent smile
+  literals:
+  - feather
+  - smiling face
+  domain: animals
+- prompt: How many legs does the pink segmented garden burrower that often appears on pavements after rain have?
+  concept: earthworm
+  answer: '0'
+  description_end: rain
+  description: the pink segmented garden burrower that often appears on pavements after rain
+  literals:
+  - garden
+  - wet pavement
+  - rain
+  domain: animals
+- prompt: How many legs does the garden hunter that holds its front limbs together as if in prayer have?
+  concept: praying mantis
+  answer: '6'
+  description_end: prayer
+  description: the garden hunter that holds its front limbs together as if in prayer
+  literals:
+  - garden
+  - praying hands
+  domain: animals
+- prompt: How many wings does the long-bodied pond hunter that rests with its transparent wings spread sideways have?
+  concept: dragonfly
+  answer: '4'
+  description_end: sideways
+  description: the long-bodied pond hunter that rests with its transparent wings spread sideways
+  literals:
+  - pond
+  - transparent sheet
+  domain: animals
+- prompt: How many wings does the tiny whining pest that leaves itchy bites after drinking blood have?
+  concept: mosquito
+  answer: '2'
+  description_end: blood
+  description: the tiny whining pest that leaves itchy bites after drinking blood
+  literals:
+  - insect bite
+  - drop of blood
+  domain: animals
+- prompt: How many legs does the meadow jumper with powerful hind limbs and short antennae have?
+  concept: grasshopper
+  answer: '6'
+  description_end: antennae
+  description: the meadow jumper with powerful hind limbs and short antennae
+  literals:
+  - meadow
+  - radio antenna
+  domain: animals
+- prompt: How many pairs of legs grow from each typical trunk segment of the many-legged hunter with venomous front claws?
+  concept: centipede
+  answer: '1'
+  description_end: claws
+  description: the many-legged hunter with venomous front claws
+  literals:
+  - animal claws
+  domain: animals
+- prompt: How many hearts does the fast sea swimmer with a pointed mantle and long feeding tentacles have?
+  concept: squid
+  answer: '3'
+  description_end: tentacles
+  description: the fast sea swimmer with a pointed mantle and long feeding tentacles
+  literals:
+  - ocean
+  - cloak
+  domain: animals
+- prompt: How many shells enclose the soft body of the shellfish traditionally farmed for pearls?
+  concept: oyster
+  answer: '2'
+  description_end: pearls
+  description: the shellfish traditionally farmed for pearls
+  literals:
+  - pearl necklace
+  domain: animals
+- prompt: How many wings does the large white lake swimmer famous for its long curved neck have?
+  concept: swan
+  answer: '2'
+  description_end: neck
+  description: the large white lake swimmer famous for its long curved neck
+  literals:
+  - lake
+  - human neck
+  domain: animals
+- prompt: How many wings does the black-and-white cliff nester with a bright triangular bill have?
+  concept: puffin
+  answer: '2'
+  description_end: bill
+  description: the black-and-white cliff nester with a bright triangular bill
+  literals:
+  - cliff
+  - triangle
+  domain: animals
+- prompt: How many legs does the nocturnal digger with bold black stripes along its white face have?
+  concept: badger
+  answer: '4'
+  description_end: face
+  description: the nocturnal digger with bold black stripes along its white face
+  literals:
+  - black stripes
+  - human face
+  domain: animals
+- prompt: How many large brown seeds are usually inside the small fruit with rough pink peel and translucent white flesh?
+  concept: lychee
+  answer: '1'
+  description_end: flesh
+  description: the small fruit with rough pink peel and translucent white flesh
+  literals:
+  - fruit peel
+  - white cloth
+  domain: food
+- prompt: What colour is the creamy flesh of the large spiky fruit notorious for its strong smell usually?
+  concept: durian
+  answer: yellow
+  description_end: smell
+  description: the large spiky fruit notorious for its strong smell
+  literals:
+  - metal spikes
+  domain: food
+- prompt: Does the soft teardrop-shaped fruit with a tiny opening opposite its stalk contain one seed or many?
+  concept: fig
+  answer: many
+  description_end: stalk
+  description: the soft teardrop-shaped fruit with a tiny opening opposite its stalk
+  literals:
+  - teardrop
+  - small opening
+  domain: food
+- prompt: What colour is the seedy pulp inside the round tropical fruit that develops a wrinkled purple rind?
+  concept: passion fruit
+  answer: yellow
+  description_end: rind
+  description: the round tropical fruit that develops a wrinkled purple rind
+  literals:
+  - wrinkled fabric
+  - purple square
+  domain: food
+- prompt: What colour is the small round fruit with a five-pointed crown that is often baked into breakfast muffins?
+  concept: blueberry
+  answer: blue
+  description_end: muffins
+  description: the small round fruit with a five-pointed crown that is often baked into breakfast muffins
+  literals:
+  - crown
+  - muffin
+  domain: food
+- prompt: What colour is the soft berry made of tiny joined bumps around a hollow centre usually when ripe?
+  concept: raspberry
+  answer: red
+  description_end: centre
+  description: the soft berry made of tiny joined bumps around a hollow centre
+  literals:
+  - hollow tube
+  domain: food
+- prompt: What colour is the bramble fruit whose joined juicy bumps remain attached to a solid core when fully ripe?
+  concept: blackberry
+  answer: black
+  description_end: core
+  description: the bramble fruit whose joined juicy bumps remain attached to a solid core
+  literals:
+  - bramble branch
+  - solid cylinder
+  domain: food
+- prompt: Is the citrus fruit traditionally eaten in halves with a serrated breakfast spoon generally larger or smaller than
+    an orange?
+  concept: grapefruit
+  answer: larger
+  description_end: spoon
+  description: the citrus fruit traditionally eaten in halves with a serrated breakfast spoon
+  literals:
+  - serrated spoon
+  - orange fruit
+  domain: food
+- prompt: What colour is the rind of the small citrus fruit squeezed into a traditional mojito usually?
+  concept: lime
+  answer: green
+  description_end: mojito
+  description: the small citrus fruit squeezed into a traditional mojito
+  literals:
+  - mojito cocktail
+  domain: food
+- prompt: How many stones does the smooth-skinned fruit whose dried form is eaten to relieve constipation normally contain?
+  concept: plum
+  answer: '1'
+  description_end: constipation
+  description: the smooth-skinned fruit whose dried form is eaten to relieve constipation
+  literals:
+  - dried fruit
+  - stone
+  domain: food
+- prompt: What colour is the vegetable with tightly packed curds surrounded by broad green leaves most commonly?
+  concept: cauliflower
+  answer: white
+  description_end: leaves
+  description: the vegetable with tightly packed curds surrounded by broad green leaves
+  literals:
+  - cheese curds
+  - green leaf
+  domain: food
+- prompt: What colour is the spring vegetable sold in bundles of slender spears with closed buds usually?
+  concept: asparagus
+  answer: green
+  description_end: buds
+  description: the spring vegetable sold in bundles of slender spears with closed buds
+  literals:
+  - spear
+  - flower bud
+  domain: food
+- prompt: Is the edible flower head with thick overlapping leaves and a fuzzy centre normally picked before or after its flowers
+    open?
+  concept: artichoke
+  answer: before
+  description_end: centre
+  description: the edible flower head with thick overlapping leaves and a fuzzy centre
+  literals:
+  - overlapping leaves
+  - fuzzy fabric
+  domain: food
+- prompt: What colour is the skin of the small round peppery root usually served raw in salads most commonly?
+  concept: radish
+  answer: red
+  description_end: salads
+  description: the small round peppery root usually served raw in salads
+  literals:
+  - plant roots
+  - salad bowl
+  domain: food
+- prompt: In folklore, is the pungent cooking bulb that separates into papery cloves used for attracting or repelling vampires?
+  concept: garlic
+  answer: repelling
+  description_end: cloves
+  description: the pungent cooking bulb that separates into papery cloves
+  literals:
+  - cloves spice
+  - paper
+  domain: food
+- prompt: What colour is the flesh of the knobbly spice root with a hot taste and thin tan skin usually?
+  concept: ginger
+  answer: yellow
+  description_end: skin
+  description: the knobbly spice root with a hot taste and thin tan skin
+  literals:
+  - knotted root
+  - tan leather
+  domain: food
+- prompt: How many petal-like parts surround the centre of the cup-shaped flower grown in vast Dutch bulb fields?
+  concept: tulip
+  answer: '6'
+  description_end: fields
+  description: the cup-shaped flower grown in vast Dutch bulb fields
+  literals:
+  - cup
+  - field
+  - flower bulb
+  domain: plants
+- prompt: What colour is the flower of the lawn plant whose seeds form a globe of tiny parachutes?
+  concept: dandelion
+  answer: yellow
+  description_end: parachutes
+  description: the lawn plant whose seeds form a globe of tiny parachutes
+  literals:
+  - lawn
+  - globe
+  - parachute
+  domain: plants
+- prompt: How many colours appear on the classic handheld puzzle solved by twisting rows and columns?
+  concept: Rubik's Cube
+  answer: '6'
+  description_end: columns
+  description: the classic handheld puzzle solved by twisting rows and columns
+  literals:
+  - row of chairs
+  - stone column
+  domain: toys
+- prompt: How many wheels does the circus pedal vehicle with a saddle directly above the pedals and no handlebars have?
+  concept: unicycle
+  answer: '1'
+  description_end: handlebars
+  description: the circus pedal vehicle with a saddle directly above the pedals and no handlebars
+  literals:
+  - circus tent
+  - saddle
+  - pedals
+  domain: vehicles
+- prompt: How many wheels does the small pedal vehicle for toddlers with a low seat and a wide rear axle have altogether?
+  concept: tricycle
+  answer: '3'
+  description_end: axle
+  description: the small pedal vehicle for toddlers with a low seat and a wide rear axle
+  literals:
+  - toddler
+  - seat
+  - wheel
+  domain: vehicles
+- prompt: Is the flat-bottomed passenger vehicle with a flexible skirt underneath supported by air or magnets?
+  concept: hovercraft
+  answer: air
+  description_end: underneath
+  description: the flat-bottomed passenger vehicle with a flexible skirt underneath
+  literals:
+  - skirt
+  - magnet
+  domain: vehicles
+- prompt: What material forms the wide front drum on the heavy vehicle used to flatten fresh asphalt?
+  concept: road roller
+  answer: steel
+  description_end: asphalt
+  description: the heavy vehicle used to flatten fresh asphalt
+  literals:
+  - drum
+  - asphalt road
+  domain: vehicles
+- prompt: What building material is carried in the road vehicle with a large rotating drum behind its cab?
+  concept: cement mixer truck
+  answer: concrete
+  description_end: cab
+  description: the road vehicle with a large rotating drum behind its cab
+  literals:
+  - drum
+  - road
+  domain: vehicles
+- prompt: How many wheels does the self-balancing standing vehicle with an upright handlebar that is steered by leaning have?
+  concept: Segway
+  answer: '2'
+  description_end: leaning
+  description: the self-balancing standing vehicle with an upright handlebar that is steered by leaning
+  literals:
+  - handlebar
+  - leaning person
+  domain: vehicles
+- prompt: Does the portable instrument whose player squeezes a pleated chamber produce sound with strings or reeds?
+  concept: accordion
+  answer: reeds
+  description_end: chamber
+  description: the portable instrument whose player squeezes a pleated chamber
+  literals:
+  - pleated fabric
+  domain: instruments
+- prompt: How many holes does the standard small rectangular mouth instrument used for blues music usually have?
+  concept: harmonica
+  answer: '10'
+  description_end: music
+  description: the standard small rectangular mouth instrument used for blues music
+  literals:
+  - human mouth
+  - rectangle
+  domain: instruments
+- prompt: How many strings does the small fretted instrument closely associated with Hawaiian music usually have?
+  concept: ukulele
+  answer: '4'
+  description_end: music
+  description: the small fretted instrument closely associated with Hawaiian music
+  literals:
+  - Hawaiian beach
+  - musical notes
+  domain: instruments
+- prompt: How many strings does the traditional bluegrass instrument with a round skin-covered body usually have?
+  concept: banjo
+  answer: '5'
+  description_end: body
+  description: the traditional bluegrass instrument with a round skin-covered body
+  literals:
+  - grass
+  - animal skin
+  domain: instruments
+- prompt: What metal alloy is the orchestral instrument whose player moves a long slide back and forth traditionally made
+    from?
+  concept: trombone
+  answer: brass
+  description_end: forth
+  description: the orchestral instrument whose player moves a long slide back and forth
+  literals:
+  - playground slide
+  domain: instruments
+- prompt: With which country is the instrument with a squeezed air reservoir and several projecting tubes most closely associated?
+  concept: bagpipes
+  answer: Scotland
+  description_end: tubes
+  description: the instrument with a squeezed air reservoir and several projecting tubes
+  literals:
+  - water reservoir
+  - metal tubes
+  domain: instruments
+- prompt: What shape is the traditional handheld percussion instrument with jingles around a stretched skin?
+  concept: tambourine
+  answer: round
+  description_end: skin
+  description: the traditional handheld percussion instrument with jingles around a stretched skin
+  literals:
+  - small metal bells
+  - animal skin
+  domain: instruments
+- prompt: Should the spiral hand tool used to open sealed wine bottles normally turn clockwise or anticlockwise to enter the
+    stopper?
+  concept: corkscrew
+  answer: clockwise
+  description_end: bottles
+  description: the spiral hand tool used to open sealed wine bottles
+  literals:
+  - spiral
+  - wine bottle
+  domain: tools
+- prompt: How many side handles does the traditional perforated kitchen bowl used to drain boiled pasta usually have?
+  concept: colander
+  answer: '2'
+  description_end: pasta
+  description: the traditional perforated kitchen bowl used to drain boiled pasta
+  literals:
+  - bowl
+  - boiled pasta
+  domain: household_objects
+- prompt: What material is the smooth kitchen cylinder used to flatten pastry traditionally made from?
+  concept: rolling pin
+  answer: wood
+  description_end: pastry
+  description: the smooth kitchen cylinder used to flatten pastry
+  literals:
+  - cylinder
+  - pastry
+  domain: household_objects
+- prompt: How many beads are on each rod of the traditional Chinese counting frame with upper and lower sections?
+  concept: abacus
+  answer: '7'
+  description_end: sections
+  description: the traditional Chinese counting frame with upper and lower sections
+  literals:
+  - wooden frame
+  - bead
+  - rod
+  domain: tools
+- prompt: What does the needle on the round wall instrument used to forecast approaching storms measure?
+  concept: barometer
+  answer: pressure
+  description_end: storms
+  description: the round wall instrument used to forecast approaching storms
+  literals:
+  - sewing needle
+  - storm cloud
+  domain: tools
+- prompt: How many sharp points does the bent wire fastener with a protective clasp have?
+  concept: safety pin
+  answer: '1'
+  description_end: clasp
+  description: the bent wire fastener with a protective clasp
+  literals:
+  - bent wire
+  - clasp
+  domain: household_objects
+- prompt: What colour are the dots on the traditional ivory-coloured rectangular game tiles joined in long chains?
+  concept: dominoes
+  answer: black
+  description_end: chains
+  description: the traditional ivory-coloured rectangular game tiles joined in long chains
+  literals:
+  - ivory
+  - rectangle
+  - metal chain
+  domain: toys
+- prompt: How many rows of interlocking teeth does the clothing fastener operated by pulling a slider have?
+  concept: zipper
+  answer: '2'
+  description_end: slider
+  description: the clothing fastener operated by pulling a slider
+  literals:
+  - clothes
+  - human teeth
+  domain: household_objects
+- prompt: Is the top of the usual small metal finger guard used to push a sewing needle open or closed?
+  concept: thimble
+  answer: closed
+  description_end: needle
+  description: the usual small metal finger guard used to push a sewing needle
+  literals:
+  - finger
+  - sewing needle
+  domain: tools
+- prompt: What shape is the narrow end of the folding padded surface used for pressing clothes usually?
+  concept: ironing board
+  answer: pointed
+  description_end: clothes
+  description: the folding padded surface used for pressing clothes
+  literals:
+  - folded clothes
+  - cushion
+  domain: household_objects
+- prompt: What form of energy does the handheld device singers speak into on stage convert sound into?
+  concept: microphone
+  answer: electrical
+  description_end: stage
+  description: the handheld device singers speak into on stage
+  literals:
+  - singer
+  - stage
+  domain: household_objects
+- prompt: Is the narrow handheld device campers point along a path after dark usually powered by batteries or mains wiring?
+  concept: flashlight
+  answer: batteries
+  description_end: dark
+  description: the narrow handheld device campers point along a path after dark
+  literals:
+  - camper
+  - dark path
+  domain: household_objects
+- prompt: How many earpieces does the medical listening device placed against a patient's chest have?
+  concept: stethoscope
+  answer: '2'
+  description_end: chest
+  description: the medical listening device placed against a patient's chest
+  literals:
+  - human chest
+  - ear
+  domain: tools
+- prompt: How many eyepieces does the handheld viewing device usually worn around a birdwatcher's neck have?
+  concept: binoculars
+  answer: '2'
+  description_end: neck
+  description: the handheld viewing device usually worn around a birdwatcher's neck
+  literals:
+  - birdwatcher
+  - human neck
+  domain: tools
+- prompt: How many main towers does the enormous stone temple complex built for Vishnu near Siem Reap have?
+  concept: Angkor Wat
+  answer: '5'
+  description_end: Reap
+  description: the enormous stone temple complex built for Vishnu near Siem Reap
+  literals:
+  - stone block
+  - Vishnu statue
+  domain: landmarks_and_places
+- prompt: How many main passageways run through the neoclassical Berlin monument topped by a horse-drawn chariot?
+  concept: Brandenburg Gate
+  answer: '5'
+  description_end: chariot
+  description: the neoclassical Berlin monument topped by a horse-drawn chariot
+  literals:
+  - chariot
+  - horse
+  domain: landmarks_and_places
+- prompt: In which US city stands the giant stainless-steel monument shaped like an upside-down U?
+  concept: Gateway Arch
+  answer: St. Louis
+  description_end: U
+  description: the giant stainless-steel monument shaped like an upside-down U
+  literals:
+  - steel sheet
+  - letter U
+  domain: landmarks_and_places
+- prompt: How many metal spheres make up the Brussels monument built to resemble an enlarged crystal?
+  concept: Atomium
+  answer: '9'
+  description_end: crystal
+  description: the Brussels monument built to resemble an enlarged crystal
+  literals:
+  - metal sphere
+  - crystal
+  domain: landmarks_and_places
+- prompt: How many storeys does each of the matching skyscrapers joined by a skybridge in Kuala Lumpur have?
+  concept: Petronas Towers
+  answer: '88'
+  description_end: Lumpur
+  description: the matching skyscrapers joined by a skybridge in Kuala Lumpur
+  literals:
+  - skybridge
+  - Kuala Lumpur street
+  domain: landmarks_and_places
+- prompt: In which US city is the observation tower with a saucer-shaped top built for the 1962 World's Fair?
+  concept: Space Needle
+  answer: Seattle
+  description_end: Fair
+  description: the observation tower with a saucer-shaped top built for the 1962 World's Fair
+  literals:
+  - saucer
+  - fairground
+  domain: landmarks_and_places
+- prompt: In which city is the tallest freestanding concrete broadcast tower in Canada?
+  concept: CN Tower
+  answer: Toronto
+  description_end: Canada
+  description: the tallest freestanding concrete broadcast tower in Canada
+  literals:
+  - concrete
+  - Canadian flag
+  domain: landmarks_and_places
+- prompt: In which US city stands the tall stone obelisk honouring the country's first president?
+  concept: Washington Monument
+  answer: Washington, D.C.
+  description_end: president
+  description: the tall stone obelisk honouring the country's first president
+  literals:
+  - stone block
+  - president
+  domain: landmarks_and_places
+double_meaning:
+- word: cuff
+  meaning_a: shirt cuff
+  meaning_b: blood pressure cuff
+  sentence_ab: At his shirt sleeve's buttoned end, the cuff was frayed; during the nurse's blood pressure check, the cuff
+    inflated.
+  sentence_ba: During the nurse's blood pressure check, the cuff inflated; at his shirt sleeve's buttoned end, the cuff was
+    frayed.
+- word: pump
+  meaning_a: high-heeled shoe
+  meaning_b: water pump
+  sentence_ab: Among the high heels, a red pump lay sideways, and beside the flooded cellar, the electric pump hummed.
+  sentence_ba: The plumber drained the cellar with a pump, then the dancer chose a high-heeled pump for the evening.
+- word: tie
+  meaning_a: necktie
+  meaning_b: railway sleeper
+  sentence_ab: Around his shirt collar, the silk tie hung neatly; beneath the railway tracks, a wooden tie had cracked.
+  sentence_ba: Beneath the railway tracks, workers replaced a wooden tie; around the inspector's shirt collar, his tie fluttered.
+- word: cape
+  meaning_a: cape garment
+  meaning_b: coastal headland
+  sentence_ab: Around the magician's shoulders, the velvet cape billowed, and beyond the coastal cliffs, the rocky cape projected
+    into the sea.
+  sentence_ba: Beyond the coastal cliffs, the rocky cape caught the sunset; around the magician's shoulders, a velvet cape
+    fluttered.
+- word: bug
+  meaning_a: insect
+  meaning_b: hidden microphone
+  sentence_ab: Among the beetles in the insect collection, a bug crawled; beneath the diplomat's desk, a hidden listening
+    bug recorded everything.
+  sentence_ba: Beneath the diplomat's desk, a hidden listening bug recorded voices; in the insect collector's jar, a tiny
+    bug crawled.
+- word: wafer
+  meaning_a: wafer biscuit
+  meaning_b: silicon wafer
+  sentence_ab: Beside the ice cream, a crisp vanilla wafer snapped; inside the semiconductor factory, a polished silicon wafer
+    reflected the lights.
+  sentence_ba: Inside the semiconductor factory, technicians inspected a silicon wafer; beside her ice cream, a child nibbled
+    a vanilla wafer.
+- word: cracker
+  meaning_a: cracker biscuit
+  meaning_b: Christmas cracker
+  sentence_ab: Beside the sliced cheese, a salted cracker crumbled, while between the Christmas dinner plates, a paper cracker
+    held a tiny gift.
+  sentence_ba: Between the Christmas dinner plates, a paper cracker awaited pulling; beside the sliced cheese, a salted cracker
+    lay untouched.
+- word: roller
+  meaning_a: paint roller
+  meaning_b: hair roller
+  sentence_ab: I spread fresh wall paint with the roller as she secured a curl in her hair with another roller.
+  sentence_ba: She secured a curl in her hair with a roller as I spread fresh wall paint with another roller.
+- word: brush
+  meaning_a: hairbrush
+  meaning_b: paintbrush
+  sentence_ab: Through her tangled hair, she pulled a brush; beside the wet watercolours, the artist rinsed a fine brush.
+  sentence_ba: Beside the wet watercolours, the artist rinsed a brush; through her tangled hair, the model pulled another
+    brush.
+- word: comb
+  meaning_a: hair comb
+  meaning_b: honeycomb
+  sentence_ab: Through his tangled fringe, he dragged a plastic comb, while inside the honey-filled hive, the wax comb gleamed.
+  sentence_ba: Inside the honey-filled hive, bees covered the wax comb; through his tangled fringe, he dragged a plastic comb.
+- word: pick
+  meaning_a: guitar pick
+  meaning_b: ice pick
+  sentence_ab: Between the guitarist's fingers, a plastic pick flicked the strings; beside the frozen ice blocks, a steel
+    pick rested.
+  sentence_ba: Beside the frozen ice blocks, a steel pick lay ready; between the guitarist's fingers, a plastic pick moved
+    quickly.
+- word: joint
+  meaning_a: elbow joint
+  meaning_b: roast beef joint
+  sentence_ab: Between the upper arm and forearm, the elbow joint ached; inside the roasting pan, a beef joint browned slowly.
+  sentence_ba: Inside the roasting pan, a beef joint browned slowly; between the upper arm and forearm, the elbow joint ached.
+- word: plug
+  meaning_a: electrical plug
+  meaning_b: bath plug
+  sentence_ab: Beside the electrical socket, the three-pronged plug lay loose; over the bath's drain hole, the rubber plug
+    stopped the water.
+  sentence_ba: Over the bath's drain hole, the rubber plug stopped the water; beside the electrical socket, the three-pronged
+    plug lay loose.
+- word: monitor
+  meaning_a: monitor lizard
+  meaning_b: computer monitor
+  sentence_ab: Among the basking reptiles, a long-tailed monitor flicked its tongue; beside the desktop keyboard, the computer
+    monitor displayed a photograph.
+  sentence_ba: Beside the desktop keyboard, the computer monitor displayed a photograph; among the basking reptiles, a long-tailed
+    monitor flicked its tongue.
+- word: track
+  meaning_a: railway track
+  meaning_b: running track
+  sentence_ab: Under the train's steel wheels, the track curved away, but inside the athletics stadium, the running track
+    circled the grass.
+  sentence_ba: Inside the athletics stadium, runners lined up on the track; under the train's steel wheels, the track shook.
+- word: plume
+  meaning_a: decorative feather
+  meaning_b: smoke plume
+  sentence_ab: On the ceremonial hat, a long feather plume swayed; above the burning tyres, a dark smoke plume rose.
+  sentence_ba: Above the burning tyres, a dark smoke plume rose, while on the ceremonial hat, a long feather plume swayed.
+- word: counter
+  meaning_a: shop counter
+  meaning_b: board game counter
+  sentence_ab: Behind the shop's cash register, the counter gleamed; beside the dice and playing pieces, a red counter marked
+    my position.
+  sentence_ba: Beside the dice and playing pieces, a red counter marked my position; behind the shop's cash register, the
+    counter gleamed.
+- word: note
+  meaning_a: handwritten note
+  meaning_b: musical note
+  sentence_ab: Tucked into the lunchbox, a handwritten note wished her luck; on the musical staff, a dotted note extended
+    the melody.
+  sentence_ba: On the musical staff, a dotted note extended the melody; tucked into the lunchbox, a handwritten note wished
+    her luck.
+- word: runner
+  meaning_a: runner athlete
+  meaning_b: runner carpet
+  sentence_ab: Along the marathon route, a tired runner slowed down; across the hallway floorboards, a narrow carpet runner
+    softened our footsteps.
+  sentence_ba: Across the hallway floorboards, a narrow carpet runner softened our footsteps; along the marathon route, a
+    tired runner slowed down.
+- word: pin
+  meaning_a: bowling pin
+  meaning_b: lapel pin
+  sentence_ab: At the end of the bowling lane, one pin remained upright, whereas on his jacket lapel, a decorative pin gleamed.
+  sentence_ba: On his jacket lapel, a decorative pin gleamed; at the end of the bowling lane, one pin remained upright.
+- word: lock
+  meaning_a: door lock
+  meaning_b: lock of hair
+  sentence_ab: Around the door's keyhole, the brass lock shone; against her cheek, a loose golden lock escaped from her braid.
+  sentence_ba: Against her cheek, a loose golden lock escaped from her braid; around the door's keyhole, the brass lock shone.
+- word: wheel
+  meaning_a: steering wheel
+  meaning_b: pottery wheel
+  sentence_ab: In front of the driver's seat, the wheel turned; beneath the potter's wet clay, the wheel spun steadily.
+  sentence_ba: Beneath the potter's wet clay, the wheel spun steadily, while in front of the driver's seat, the wheel turned.
+- word: funnel
+  meaning_a: ship funnel
+  meaning_b: kitchen funnel
+  sentence_ab: Above the steamer's engine room, the smoke-blackened funnel towered; over the narrow bottle opening, a kitchen
+    funnel guided the oil.
+  sentence_ba: Over the narrow bottle opening, a kitchen funnel guided the oil; above the steamer's engine room, the smoke-blackened
+    funnel towered.
+- word: tube
+  meaning_a: test tube
+  meaning_b: inflatable swimming ring
+  sentence_ab: In the laboratory's sample rack, a glass tube stood upright; around the swimmer's waist, an inflated tube kept
+    her afloat.
+  sentence_ba: Around the swimmer's waist, an inflated tube kept her afloat; in the laboratory's sample rack, a glass tube
+    stood upright.
+- word: slide
+  meaning_a: playground slide
+  meaning_b: microscope slide
+  sentence_ab: At the playground, children queued for the slide; beneath the microscope's lens, a thin glass slide held the
+    specimen.
+  sentence_ba: Beneath the microscope's lens, a thin glass slide held the specimen; at the playground, children queued for
+    the slide.
+- word: cell
+  meaning_a: prison cell
+  meaning_b: battery cell
+  sentence_ab: Behind the prison's barred door, the cell stood empty, whereas inside the torch's battery compartment, a cylindrical
+    cell supplied power.
+  sentence_ba: Inside the torch's battery compartment, a cylindrical cell supplied power; behind the prison's barred door,
+    the cell stood empty.
+- word: well
+  meaning_a: water well
+  meaning_b: oil well
+  sentence_ab: Beneath the village's bucket and winding handle, the well held water; below the oil drilling tower, the well
+    reached deep underground.
+  sentence_ba: Below the oil drilling tower, the well reached deep underground; beneath the village's bucket and winding handle,
+    the well held water.
+- word: muffler
+  meaning_a: wool scarf
+  meaning_b: exhaust silencer
+  sentence_ab: Around his neck, a knitted muffler kept him warm; at the end of the car's exhaust, the muffler rattled.
+  sentence_ba: At the end of the car's exhaust, the muffler rattled; around his neck, a knitted muffler kept him warm.
+- word: cardinal
+  meaning_a: cardinal bird
+  meaning_b: Catholic cardinal
+  sentence_ab: Among the red songbirds, a crested cardinal perched; beside the pope, a red-robed cardinal adjusted his small
+    cap.
+  sentence_ba: Beside the pope, a red-robed cardinal adjusted his small cap; among the red songbirds, a crested cardinal perched.
+- word: perch
+  meaning_a: perch fish
+  meaning_b: bird perch
+  sentence_ab: Below the lake's surface, a striped perch chased minnows; inside the parakeet's cage, a wooden perch crossed
+    the space.
+  sentence_ba: Inside the parakeet's cage, a wooden perch crossed the space; below the lake's surface, a striped perch chased
+    minnows.
+- word: batter
+  meaning_a: baseball batter
+  meaning_b: pancake batter
+  sentence_ab: At home plate with a bat raised, the batter waited, while inside the pancake mixing bowl, the smooth batter
+    thickened.
+  sentence_ba: Inside the pancake mixing bowl, the smooth batter thickened; at home plate with a bat raised, the batter waited.
+- word: paddle
+  meaning_a: canoe paddle
+  meaning_b: table tennis paddle
+  sentence_ab: Beside the canoe's empty seat, a wooden paddle rested; above the table tennis net, a rubber-faced paddle struck
+    the ball.
+  sentence_ba: Above the table tennis net, a rubber-faced paddle struck the ball; beside the canoe's empty seat, a wooden
+    paddle rested.
+- word: mixer
+  meaning_a: kitchen mixer
+  meaning_b: audio mixing console
+  sentence_ab: Beside the cake ingredients, the electric mixer whirred, and in the recording studio, the sound engineer adjusted
+    the audio mixer.
+  sentence_ba: In the recording studio, the sound engineer adjusted the audio mixer; beside the cake ingredients, the electric
+    mixer whirred.
+- word: mould
+  meaning_a: mould fungus
+  meaning_b: jelly mould
+  sentence_ab: On the damp bread, green mould spread; beside the unset jelly, a rabbit-shaped mould waited on the kitchen
+    worktop.
+  sentence_ba: Beside the unset jelly, a rabbit-shaped mould waited on the worktop; on the damp bread, green mould spread.
+- word: punch
+  meaning_a: fruit punch
+  meaning_b: hole punch
+  sentence_ab: In the fruit-filled serving bowl, the punch tasted sweet; for making holes in paper, the punch was useful.
+  sentence_ba: For making holes in paper, I borrowed a punch; in the fruit-filled serving bowl, the punch tasted sweet.
+- word: braces
+  meaning_a: trouser braces
+  meaning_b: dental braces
+  sentence_ab: Across his shoulders, elastic trouser braces stretched, while inside his mouth, metal orthodontic braces held
+    wires against his teeth.
+  sentence_ba: Inside his mouth, metal orthodontic braces held wires against his teeth; across his shoulders, elastic trouser
+    braces stretched.
+- word: shingle
+  meaning_a: roof shingle
+  meaning_b: beach pebbles
+  sentence_ab: On the sloping roof, a wooden shingle came loose; along the pebbly beach, wet shingle crunched under our feet.
+  sentence_ba: Along the pebbly beach, wet shingle crunched under our feet; on the sloping roof, a wooden shingle came loose.
+- word: press
+  meaning_a: wine press
+  meaning_b: printing press
+  sentence_ab: Over the crushed grapes, a wooden press squeezed slowly; beside the fresh newspapers, the printing press ran
+    loudly.
+  sentence_ba: Beside the fresh newspapers, the printing press ran loudly; over the crushed grapes, a wooden press squeezed
+    slowly.
+- word: mule
+  meaning_a: mule animal
+  meaning_b: mule shoe
+  sentence_ab: Born to a horse and a donkey, the mule grazed; beside the backless footwear display, a leather mule caught
+    her attention.
+  sentence_ba: Beside the backless footwear display, a leather mule caught her attention; born to a horse and a donkey, the
+    mule grazed.
+- word: belt
+  meaning_a: waist belt
+  meaning_b: conveyor belt
+  sentence_ab: Around her trouser waist, a leather belt fitted neatly; under the parcels at the sorting depot, the conveyor
+    belt kept moving.
+  sentence_ba: Under the parcels at the sorting depot, the conveyor belt kept moving; around her trouser waist, a leather
+    belt fitted neatly.

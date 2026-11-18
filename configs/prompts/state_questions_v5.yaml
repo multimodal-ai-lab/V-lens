@@ -1,0 +1,710 @@
+# State questions, 80-story set (Table 4, Supp. F.4): the 20 scenarios of state_questions_v2.yaml unchanged,
+# then 20 scenarios written under the same rules (`new: true`), chosen from screened candidates by a rule fixed
+# before training. Four stories per scenario, the question names the target, options asked in both orders.
+template: '{story} {question} Answer with one word: {a} or {b}.'
+truth:
+  happened: outcome
+  cancelled: start
+  distract_cancelled: start
+  distract_happened: outcome
+items:
+- id: butter
+  family: heat
+  other: chocolate
+  options:
+  - solid
+  - liquid
+  answer:
+  - liquid
+  - solid
+  outcome: melted butter
+  start: a block of butter
+  question: Is the butter now solid or liquid?
+  stories:
+    happened: A block of butter was put in a hot frying pan for five minutes.
+    cancelled: A block of butter was kept in the fridge for five minutes.
+    distract_cancelled: A block of butter was kept in the fridge for five minutes. Nearby, a chocolate bar was left on the dashboard of a hot car all afternoon.
+    distract_happened: A block of butter was put in a hot frying pan for five minutes. Nearby, a chocolate bar was kept in a cool cupboard all afternoon.
+- id: chocolate
+  family: heat
+  other: snowman
+  options:
+  - hard
+  - soft
+  answer:
+  - soft
+  - hard
+  outcome: melted chocolate
+  start: a chocolate bar
+  question: Is the chocolate bar now hard or soft?
+  stories:
+    happened: A chocolate bar was left on the dashboard of a hot car all afternoon.
+    cancelled: A chocolate bar was kept in a cool cupboard all afternoon.
+    distract_cancelled: A chocolate bar was kept in a cool cupboard all afternoon. Nearby, a snowman stood in the warm spring sun for a whole week.
+    distract_happened: A chocolate bar was left on the dashboard of a hot car all afternoon. Nearby, a snowman stood in the freezing winter cold for a whole week.
+- id: snowman
+  family: heat
+  other: candle
+  options:
+  - standing
+  - disappeared
+  answer:
+  - disappeared
+  - standing
+  outcome: a puddle of water on the grass
+  start: a snowman
+  question: Is the snowman still standing or has it disappeared?
+  stories:
+    happened: A snowman stood in the warm spring sun for a whole week.
+    cancelled: A snowman stood in the freezing winter cold for a whole week.
+    distract_cancelled: A snowman stood in the freezing winter cold for a whole week. Nearby, a tall new candle burned all night long.
+    distract_happened: A snowman stood in the warm spring sun for a whole week. Nearby, a tall new candle stood unlit in a drawer all night long.
+- id: marshmallow
+  family: heat
+  other: ice_cream
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a toasted marshmallow
+  start: a white marshmallow
+  question: Is the marshmallow now white or brown?
+  stories:
+    happened: A white marshmallow was held over a campfire for a minute.
+    cancelled: A white marshmallow was kept in its bag for a minute.
+    distract_cancelled: A white marshmallow was kept in its bag for a minute. Nearby, an ice cream cone was held in the hot sun for half an hour.
+    distract_happened: A white marshmallow was held over a campfire for a minute. Nearby, an ice cream cone was taken out of the freezer a second ago.
+- id: toast
+  family: cooking
+  other: popcorn
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a slice of toast
+  start: a slice of white bread
+  question: Is the slice of bread now white or brown?
+  stories:
+    happened: A slice of white bread was put in the toaster for three minutes.
+    cancelled: A slice of white bread was left in its bag for three minutes.
+    distract_cancelled: A slice of white bread was left in its bag for three minutes. Nearby, corn kernels were heated in a covered pot with hot oil for five minutes.
+    distract_happened: A slice of white bread was put in the toaster for three minutes. Nearby, corn kernels were left in a cold bowl for five minutes.
+- id: popcorn
+  family: cooking
+  other: pancake
+  options:
+  - small
+  - big
+  answer:
+  - big
+  - small
+  outcome: popcorn
+  start: corn kernels
+  question: Are the corn kernels now small or big?
+  stories:
+    happened: Corn kernels were heated in a covered pot with hot oil for five minutes.
+    cancelled: Corn kernels were left in a cold bowl for five minutes.
+    distract_cancelled: Corn kernels were left in a cold bowl for five minutes. Nearby, pancake batter was poured into a hot pan and cooked on both sides.
+    distract_happened: Corn kernels were heated in a covered pot with hot oil for five minutes. Nearby, pancake batter was poured into a bowl and left on the counter.
+- id: egg_fry
+  family: cooking
+  other: steak
+  options:
+  - clear
+  - white
+  answer:
+  - white
+  - clear
+  outcome: a fried egg
+  start: a raw egg in a bowl
+  question: Is the egg white now clear or white?
+  stories:
+    happened: An egg was cracked into a hot pan and cooked for three minutes.
+    cancelled: An egg was cracked into a cold glass bowl and left for three minutes.
+    distract_cancelled: An egg was cracked into a cold glass bowl and left for three minutes. Nearby, a red raw steak was grilled over hot coals for ten minutes.
+    distract_happened: An egg was cracked into a hot pan and cooked for three minutes. Nearby, a red raw steak was kept in the fridge for ten minutes.
+- id: tadpole
+  family: growth
+  other: caterpillar
+  options:
+  - legs
+  - none
+  answer:
+  - legs
+  - none
+  outcome: a frog
+  start: a tadpole
+  question: Does the tadpole now have legs or no legs?
+  stories:
+    happened: A tadpole grew in a pond for three months.
+    cancelled: A tadpole was born in a pond an hour ago.
+    distract_cancelled: A tadpole was born in a pond an hour ago. Nearby, a caterpillar spun a cocoon and stayed inside it for three weeks.
+    distract_happened: A tadpole grew in a pond for three months. Nearby, a caterpillar hatched from its egg a minute ago.
+- id: caterpillar
+  family: growth
+  other: banana
+  options:
+  - wings
+  - none
+  answer:
+  - wings
+  - none
+  outcome: a butterfly
+  start: a caterpillar
+  question: Does the caterpillar now have wings or no wings?
+  stories:
+    happened: A caterpillar spun a cocoon and stayed inside it for three weeks.
+    cancelled: A caterpillar hatched from its egg a minute ago.
+    distract_cancelled: A caterpillar hatched from its egg a minute ago. Nearby, a green banana lay in a fruit bowl for three weeks.
+    distract_happened: A caterpillar spun a cocoon and stayed inside it for three weeks. Nearby, a green banana was picked from the tree a minute ago.
+- id: banana
+  family: growth
+  other: puppy
+  options:
+  - green
+  - brown
+  answer:
+  - brown
+  - green
+  outcome: an overripe brown banana
+  start: a green banana
+  question: Is the banana now green or brown?
+  stories:
+    happened: A green banana lay in a fruit bowl for three weeks.
+    cancelled: A green banana was picked from the tree a minute ago.
+    distract_cancelled: A green banana was picked from the tree a minute ago. Nearby, a tiny puppy grew up with its family for five years.
+    distract_happened: A green banana lay in a fruit bowl for three weeks. Nearby, a tiny puppy was born on the farm this morning.
+- id: hen_egg
+  family: growth
+  other: autumn
+  options:
+  - walk
+  - not
+  answer:
+  - walk
+  - not
+  outcome: a fluffy chick
+  start: an egg in a nest
+  question: Can what is in the hen's egg now walk or not walk?
+  stories:
+    happened: A hen sat on her egg in the nest for three weeks.
+    cancelled: A hen laid an egg in the nest a minute ago.
+    distract_cancelled: A hen laid an egg in the nest a minute ago. Nearby, an oak tree stood in the park until late autumn.
+    distract_happened: A hen sat on her egg in the nest for three weeks. Nearby, an oak tree stood in the park in early summer.
+- id: autumn
+  family: growth
+  other: seed
+  options:
+  - green
+  - orange
+  answer:
+  - orange
+  - green
+  outcome: a tree with orange autumn leaves
+  start: a tree with green leaves
+  question: Are the oak tree's leaves green or orange?
+  stories:
+    happened: An oak tree stood in the park until late autumn.
+    cancelled: An oak tree stood in the park in early summer.
+    distract_cancelled: An oak tree stood in the park in early summer. Nearby, a seed was planted in a pot and watered every day for three months.
+    distract_happened: An oak tree stood in the park until late autumn. Nearby, a seed was kept in a dry paper bag in a drawer for three months.
+- id: egg_drop
+  family: breaking
+  other: glass
+  options:
+  - whole
+  - broken
+  answer:
+  - broken
+  - whole
+  outcome: a broken egg on the floor
+  start: a whole egg
+  question: Is the raw egg now whole or broken?
+  stories:
+    happened: A raw egg fell off the kitchen table onto the hard tile floor.
+    cancelled: A raw egg was placed gently into an egg carton on the table.
+    distract_cancelled: A raw egg was placed gently into an egg carton on the table. Nearby, a drinking glass slipped from a hand and hit the stone floor hard.
+    distract_happened: A raw egg fell off the kitchen table onto the hard tile floor. Nearby, a drinking glass was put back on the shelf carefully.
+- id: log
+  family: breaking
+  other: apple_eat
+  options:
+  - one
+  - several
+  answer:
+  - several
+  - one
+  outcome: split firewood pieces
+  start: a whole log
+  question: Is the log now one piece or several pieces?
+  stories:
+    happened: A woodcutter hit a log hard with an axe again and again.
+    cancelled: A woodcutter stacked a log on the woodpile.
+    distract_cancelled: A woodcutter stacked a log on the woodpile. Nearby, a boy ate a red apple bite by bite.
+    distract_happened: A woodcutter hit a log hard with an axe again and again. Nearby, a boy put a red apple in his lunch box.
+- id: nail
+  family: colour
+  other: grapes
+  options:
+  - grey
+  - orange
+  answer:
+  - orange
+  - grey
+  outcome: a rusty nail
+  start: a shiny nail
+  question: Is the iron nail now grey or orange?
+  stories:
+    happened: A shiny iron nail lay outside in the rain for a whole year.
+    cancelled: A shiny iron nail lay in a dry toolbox for a whole year.
+    distract_cancelled: A shiny iron nail lay in a dry toolbox for a whole year. Nearby, green grapes were laid out to dry in the hot sun for three weeks.
+    distract_happened: A shiny iron nail lay outside in the rain for a whole year. Nearby, green grapes were picked from the vine a minute ago.
+- id: puddle
+  family: weather
+  other: car_snow
+  options:
+  - wet
+  - dry
+  answer:
+  - dry
+  - wet
+  outcome: a dry road
+  start: a puddle on a road
+  question: Is the road with the puddle now wet or dry?
+  stories:
+    happened: A puddle lay on the road during a hot dry summer day.
+    cancelled: A puddle lay on the road during a cold rainy day.
+    distract_cancelled: A puddle lay on the road during a cold rainy day. Nearby, a red car was parked outside during a heavy snowstorm all night.
+    distract_happened: A puddle lay on the road during a hot dry summer day. Nearby, a red car was parked inside a warm garage all night.
+- id: car_snow
+  family: weather
+  other: pumpkin
+  options:
+  - red
+  - white
+  answer:
+  - white
+  - red
+  outcome: a car covered in snow
+  start: a red car
+  question: Is the red car now red or white?
+  stories:
+    happened: A red car was parked outside during a heavy snowstorm all night.
+    cancelled: A red car was parked inside a warm garage all night.
+    distract_cancelled: A red car was parked inside a warm garage all night. Nearby, a pumpkin was carved with a knife for Halloween.
+    distract_happened: A red car was parked outside during a heavy snowstorm all night. Nearby, a pumpkin was put on the porch for decoration.
+- id: pumpkin
+  family: weather
+  other: sandcastle
+  options:
+  - face
+  - none
+  answer:
+  - face
+  - none
+  outcome: a carved jack-o-lantern
+  start: a pumpkin
+  question: Does the pumpkin now have a face or no face?
+  stories:
+    happened: A pumpkin was carved with a knife for Halloween.
+    cancelled: A pumpkin was put on the porch for decoration.
+    distract_cancelled: A pumpkin was put on the porch for decoration. Nearby, a sandcastle was built close to the water just before high tide came in.
+    distract_happened: A pumpkin was carved with a knife for Halloween. Nearby, a sandcastle was built high up on the dry beach, far from the water.
+- id: sandcastle
+  family: weather
+  other: lake
+  options:
+  - standing
+  - washed
+  answer:
+  - washed
+  - standing
+  outcome: a flat wet beach
+  start: a sandcastle
+  question: Is the sandcastle still standing or washed away?
+  stories:
+    happened: A sandcastle was built close to the water just before high tide came in.
+    cancelled: A sandcastle was built high up on the dry beach, far from the water.
+    distract_cancelled: A sandcastle was built high up on the dry beach, far from the water. Nearby, a lake lay in the mountains through a long freezing winter.
+    distract_happened: A sandcastle was built close to the water just before high tide came in. Nearby, a lake lay in the mountains through a long hot summer.
+- id: lake
+  family: weather
+  other: flower
+  options:
+  - water
+  - ice
+  answer:
+  - ice
+  - water
+  outcome: a frozen lake
+  start: a blue lake
+  question: Is the lake's surface now water or ice?
+  stories:
+    happened: A lake lay in the mountains through a long freezing winter.
+    cancelled: A lake lay in the mountains through a long hot summer.
+    distract_cancelled: A lake lay in the mountains through a long hot summer. Nearby, a cut flower stood in a vase without water for two weeks.
+    distract_happened: A lake lay in the mountains through a long freezing winter. Nearby, a flower was cut from the garden a minute ago.
+- id: icicle
+  family: heat
+  other: match
+  options:
+  - long
+  - short
+  answer:
+  - short
+  - long
+  outcome: a short melting icicle
+  start: a long icicle hanging from a roof
+  question: Is the icicle now long or short?
+  stories:
+    happened: A long icicle hung from the roof through a warm sunny afternoon.
+    cancelled: A long icicle hung from the roof through a freezing winter afternoon.
+    distract_cancelled: A long icicle hung from the roof through a freezing winter afternoon. Nearby, a new match was struck on its box and left to burn.
+    distract_happened: A long icicle hung from the roof through a warm sunny afternoon. Nearby, a new match was put back into its box unused.
+  new: true
+- id: match
+  family: heat
+  other: jelly
+  options:
+  - red
+  - black
+  answer:
+  - black
+  - red
+  outcome: a burnt black match
+  start: a new match with a red tip
+  question: Is the match now red or black?
+  stories:
+    happened: A new match was struck on its box and left to burn.
+    cancelled: A new match was put back into its box unused.
+    distract_cancelled: A new match was put back into its box unused. Nearby, hot liquid jelly was poured into a mould and put in the fridge overnight.
+    distract_happened: A new match was struck on its box and left to burn. Nearby, hot liquid jelly was poured into a pan and kept on a warm stove overnight.
+  new: true
+- id: jelly
+  family: heat
+  other: saucer
+  options:
+  - liquid
+  - firm
+  answer:
+  - firm
+  - liquid
+  outcome: a firm wobbly jelly on a plate
+  start: a pan of hot liquid jelly
+  question: Is the jelly now liquid or firm?
+  stories:
+    happened: Hot liquid jelly was poured into a mould and put in the fridge overnight.
+    cancelled: Hot liquid jelly was poured into a pan and kept on a warm stove overnight.
+    distract_cancelled: Hot liquid jelly was poured into a pan and kept on a warm stove overnight. Nearby, a shallow saucer of water sat in the hot desert sun for three days.
+    distract_happened: Hot liquid jelly was poured into a mould and put in the fridge overnight. Nearby, a shallow saucer of water sat in a cool closed cupboard for three days.
+  new: true
+- id: saucer
+  family: heat
+  other: poker
+  options:
+  - full
+  - empty
+  answer:
+  - empty
+  - full
+  outcome: an empty dry saucer
+  start: a saucer full of water
+  question: Is the saucer now full or empty?
+  stories:
+    happened: A shallow saucer of water sat in the hot desert sun for three days.
+    cancelled: A shallow saucer of water sat in a cool closed cupboard for three days.
+    distract_cancelled: A shallow saucer of water sat in a cool closed cupboard for three days. Nearby, an iron poker was left with its tip in the blazing fire for an hour.
+    distract_happened: A shallow saucer of water sat in the hot desert sun for three days. Nearby, an iron poker was left leaning against the cold fireplace for an hour.
+  new: true
+- id: poker
+  family: heat
+  other: windscreen
+  options:
+  - grey
+  - glowing
+  answer:
+  - glowing
+  - grey
+  outcome: an iron poker with a glowing red-hot tip
+  start: a grey iron poker
+  question: Is the poker now grey or glowing?
+  stories:
+    happened: An iron poker was left with its tip in the blazing fire for an hour.
+    cancelled: An iron poker was left leaning against the cold fireplace for an hour.
+    distract_cancelled: An iron poker was left leaning against the cold fireplace for an hour. Nearby, a frosted car windscreen faced the bright morning sun for an hour.
+    distract_happened: An iron poker was left with its tip in the blazing fire for an hour. Nearby, a frosted car windscreen stayed in the cold dark shade for an hour.
+  new: true
+- id: windscreen
+  family: heat
+  other: crayon
+  options:
+  - white
+  - clear
+  answer:
+  - clear
+  - white
+  outcome: a clear car windscreen
+  start: a car windscreen covered in white frost
+  question: Is the windscreen now white or clear?
+  stories:
+    happened: A frosted car windscreen faced the bright morning sun for an hour.
+    cancelled: A frosted car windscreen stayed in the cold dark shade for an hour.
+    distract_cancelled: A frosted car windscreen stayed in the cold dark shade for an hour. Nearby, a wax crayon lay on a hot radiator all afternoon.
+    distract_happened: A frosted car windscreen faced the bright morning sun for an hour. Nearby, a wax crayon lay in its cardboard box all afternoon.
+  new: true
+- id: pizza
+  family: cooking
+  other: dough
+  options:
+  - grated
+  - melted
+  answer:
+  - melted
+  - grated
+  outcome: a baked pizza with melted cheese
+  start: an unbaked pizza with grated cheese
+  question: Is the pizza cheese now grated or melted?
+  stories:
+    happened: An unbaked pizza with grated cheese went into a hot oven for fifteen minutes.
+    cancelled: An unbaked pizza with grated cheese went into the fridge for fifteen minutes.
+    distract_cancelled: An unbaked pizza with grated cheese went into the fridge for fifteen minutes. Nearby, a ball of bread dough with yeast was left in a warm kitchen for two hours.
+    distract_happened: An unbaked pizza with grated cheese went into a hot oven for fifteen minutes. Nearby, a ball of bread dough with yeast was kept in the freezer for two hours.
+  new: true
+- id: strawberry
+  family: growth
+  other: pine
+  options:
+  - green
+  - red
+  answer:
+  - red
+  - green
+  outcome: a ripe red strawberry
+  start: an unripe green strawberry
+  question: Is the strawberry now green or red?
+  stories:
+    happened: A small green strawberry hung on its plant in the sun for three weeks.
+    cancelled: A small green strawberry was picked from its plant a minute ago.
+    distract_cancelled: A small green strawberry was picked from its plant a minute ago. Nearby, a little pine seedling grew on the hillside for fifty years.
+    distract_happened: A small green strawberry hung on its plant in the sun for three weeks. Nearby, a little pine seedling was planted on the hillside this morning.
+  new: true
+- id: pine
+  family: growth
+  other: avocado
+  options:
+  - small
+  - tall
+  answer:
+  - tall
+  - small
+  outcome: a tall old pine tree
+  start: a little pine seedling
+  question: Is the pine now small or tall?
+  stories:
+    happened: A little pine seedling grew on the hillside for fifty years.
+    cancelled: A little pine seedling was planted on the hillside this morning.
+    distract_cancelled: A little pine seedling was planted on the hillside this morning. Nearby, a ripe avocado was cut in half and left open on the counter for two days.
+    distract_happened: A little pine seedling grew on the hillside for fifty years. Nearby, a ripe avocado was cut in half a second ago.
+  new: true
+- id: avocado
+  family: growth
+  other: cherry
+  options:
+  - green
+  - brown
+  answer:
+  - brown
+  - green
+  outcome: a brown discoloured avocado half
+  start: a fresh green avocado half
+  question: Is the avocado flesh now green or brown?
+  stories:
+    happened: A ripe avocado was cut in half and left open on the counter for two days.
+    cancelled: A ripe avocado was cut in half a second ago.
+    distract_cancelled: A ripe avocado was cut in half a second ago. Nearby, a cherry tree in white spring blossom stood in the orchard until midsummer.
+    distract_happened: A ripe avocado was cut in half and left open on the counter for two days. Nearby, a cherry tree burst into white spring blossom in the orchard this morning.
+  new: true
+- id: watermelon
+  family: breaking
+  other: coconut
+  options:
+  - whole
+  - split
+  answer:
+  - split
+  - whole
+  outcome: a smashed watermelon with red flesh on the road
+  start: a whole green watermelon
+  question: Is the watermelon now whole or split?
+  stories:
+    happened: A watermelon fell from the back of a truck onto the road.
+    cancelled: A watermelon was placed carefully in a crate on the truck.
+    distract_cancelled: A watermelon was placed carefully in a crate on the truck. Nearby, a coconut was struck hard on a sharp rock again and again.
+    distract_happened: A watermelon fell from the back of a truck onto the road. Nearby, a coconut was put in a fruit basket on the kitchen table.
+  new: true
+- id: juice_glass
+  family: breaking
+  other: cake
+  options:
+  - full
+  - empty
+  answer:
+  - empty
+  - full
+  outcome: an empty juice glass
+  start: a full glass of orange juice
+  question: Is the juice glass now full or empty?
+  stories:
+    happened: A thirsty boy drank his glass of orange juice.
+    cancelled: A thirsty boy poured a glass of orange juice and ran outside to play.
+    distract_cancelled: A thirsty boy poured a glass of orange juice and ran outside to play. Nearby, a birthday cake was shared out among twenty hungry party guests.
+    distract_happened: A thirsty boy drank his glass of orange juice. Nearby, a birthday cake was kept in the fridge until the party.
+  new: true
+- id: cocoa
+  family: colour
+  other: carnation
+  options:
+  - white
+  - brown
+  answer:
+  - brown
+  - white
+  outcome: a glass of chocolate milk
+  start: a glass of white milk
+  question: Is the milk now white or brown?
+  stories:
+    happened: A glass of white milk had three spoons of cocoa powder stirred into it.
+    cancelled: A glass of white milk stood beside a closed tin of cocoa powder.
+    distract_cancelled: A glass of white milk stood beside a closed tin of cocoa powder. Nearby, a white carnation stood in a vase of red-dyed water for two days.
+    distract_happened: A glass of white milk had three spoons of cocoa powder stirred into it. Nearby, a white carnation stood in a vase of clear water for two days.
+  new: true
+- id: tablecloth
+  family: colour
+  other: milk_coffee
+  options:
+  - clean
+  - stained
+  answer:
+  - stained
+  - clean
+  outcome: a tablecloth with a big red wine stain
+  start: a clean white tablecloth
+  question: Is the tablecloth now clean or stained?
+  stories:
+    happened: A white tablecloth had a full glass of red wine knocked over on it.
+    cancelled: A white tablecloth had a full glass of red wine set down carefully on it.
+    distract_cancelled: A white tablecloth had a full glass of red wine set down carefully on it. Nearby, a cup of black coffee had lots of cold milk poured into it.
+    distract_happened: A white tablecloth had a full glass of red wine knocked over on it. Nearby, a cup of black coffee stood beside a closed jug of cold milk.
+  new: true
+- id: milk_coffee
+  family: colour
+  other: houseplant
+  options:
+  - black
+  - brown
+  answer:
+  - brown
+  - black
+  outcome: a cup of light brown milky coffee
+  start: a cup of black coffee
+  question: Is the coffee now black or brown?
+  stories:
+    happened: A cup of black coffee had lots of cold milk poured into it.
+    cancelled: A cup of black coffee stood beside a closed jug of cold milk.
+    distract_cancelled: A cup of black coffee stood beside a closed jug of cold milk. Nearby, a green houseplant was shut in a dark cupboard for two months.
+    distract_happened: A cup of black coffee had lots of cold milk poured into it. Nearby, a green houseplant stood on a sunny windowsill for two months.
+  new: true
+- id: houseplant
+  family: colour
+  other: hare
+  options:
+  - green
+  - yellow
+  answer:
+  - yellow
+  - green
+  outcome: a houseplant with pale yellow leaves
+  start: a houseplant with green leaves
+  question: Are the houseplant's leaves now green or yellow?
+  stories:
+    happened: A green houseplant was shut in a dark cupboard for two months.
+    cancelled: A green houseplant stood on a sunny windowsill for two months.
+    distract_cancelled: A green houseplant stood on a sunny windowsill for two months. Nearby, a brown mountain hare lived high in the mountains through the whole winter.
+    distract_happened: A green houseplant was shut in a dark cupboard for two months. Nearby, a brown mountain hare lived high in the mountains through the whole summer.
+  new: true
+- id: beetroot
+  family: colour
+  other: tea
+  options:
+  - clear
+  - red
+  answer:
+  - red
+  - clear
+  outcome: a bowl of deep red beetroot water
+  start: a bowl of clear water
+  question: Is the water in the bowl now clear or red?
+  stories:
+    happened: A bowl of clear water had chopped beetroot soaking in it all night.
+    cancelled: A bowl of clear water stood beside a whole unwashed beetroot all night.
+    distract_cancelled: A bowl of clear water stood beside a whole unwashed beetroot all night. Nearby, a cup of hot water had a tea bag soaking in it for five minutes.
+    distract_happened: A bowl of clear water had chopped beetroot soaking in it all night. Nearby, a cup of hot water stood beside an unopened tea bag for five minutes.
+  new: true
+- id: lawn_drought
+  family: weather
+  other: riverbed
+  options:
+  - green
+  - brown
+  answer:
+  - brown
+  - green
+  outcome: a dry brown lawn
+  start: a lush green lawn
+  question: Is the lawn now green or brown?
+  stories:
+    happened: A green lawn got no water at all during a long hot summer drought.
+    cancelled: A green lawn was watered every evening during a long hot summer.
+    distract_cancelled: A green lawn was watered every evening during a long hot summer. Nearby, a dry riverbed lay below the mountains during a week of heavy rain.
+    distract_happened: A green lawn got no water at all during a long hot summer drought. Nearby, a dry riverbed lay below the mountains during a week of hot sunshine.
+  new: true
+- id: pond_leaves
+  family: weather
+  other: leaf_pile
+  options:
+  - clear
+  - covered
+  answer:
+  - covered
+  - clear
+  outcome: a pond covered in fallen leaves
+  start: a clear garden pond
+  question: Is the pond now clear or covered?
+  stories:
+    happened: A clear garden pond lay under a big chestnut tree through the whole autumn.
+    cancelled: A clear garden pond lay under a big chestnut tree through the whole spring.
+    distract_cancelled: A clear garden pond lay under a big chestnut tree through the whole spring. Nearby, a neat pile of raked leaves lay in the garden during a strong windstorm.
+    distract_happened: A clear garden pond lay under a big chestnut tree through the whole autumn. Nearby, a neat pile of raked leaves lay in the garden on a still windless day.
+  new: true
+- id: leaf_pile
+  family: weather
+  other: roadside_snow
+  options:
+  - neat
+  - scattered
+  answer:
+  - scattered
+  - neat
+  outcome: leaves scattered all over a lawn
+  start: a neat pile of raked leaves
+  question: Is the leaf pile now neat or scattered?
+  stories:
+    happened: A neat pile of raked leaves lay in the garden during a strong windstorm.
+    cancelled: A neat pile of raked leaves lay in the garden on a still windless day.
+    distract_cancelled: A neat pile of raked leaves lay in the garden on a still windless day. Nearby, a pile of fresh white snow lay beside a busy road for three weeks.
+    distract_happened: A neat pile of raked leaves lay in the garden during a strong windstorm. Nearby, a pile of fresh white snow was shovelled beside a busy road this morning.
+  new: true

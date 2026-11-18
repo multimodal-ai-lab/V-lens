@@ -1,0 +1,32 @@
+# Two-hop questions asked during the insertion-layer calibration (scripts/calibrate_insertion_layer.py, part A: text
+# answers). `concept` is the unnamed middle step, `description_end` the word that completes the description.
+
+two_hop:
+  - {concept: spider, prompt: "How many legs does the animal that spins webs have?", answer: "8", description_end: webs, literals: [spider web], description: "the animal that spins webs"}
+  - {concept: spider, prompt: "How many legs does the creature that traps flies in sticky silk threads have?", answer: "8", description_end: threads, literals: [silk thread, fly], description: "the creature that traps flies in sticky silk threads"}
+  - {concept: spider, prompt: "The number of legs on the animal that spins webs is", answer: "eight", description_end: webs, literals: [spider web], description: "the animal that spins webs"}
+  - {concept: apple, prompt: "The colour of the fruit that keeps the doctor away is usually", answer: "red", description_end: away, literals: [doctor], description: "the fruit that keeps the doctor away"}
+  - {concept: sheep, prompt: "The sound made by the farm animal that gives us wool is", answer: "baa", description_end: wool, literals: [ball of wool], description: "the farm animal that gives us wool"}
+  - {concept: banana, prompt: "The colour of the long fruit that monkeys love is", answer: "yellow", description_end: love, literals: [monkey], description: "the long fruit that monkeys love"}
+  - {concept: kangaroo, prompt: "The continent where the animal with a pouch that hops lives is", answer: "Australia", description_end: hops, literals: [leather pouch], description: "the animal with a pouch that hops"}
+  - {concept: bee, prompt: "The sweet food made by the insect that buzzes around flowers is", answer: "honey", description_end: flowers, literals: [flower, jar of honey], description: "the insect that buzzes around flowers"}
+  - {concept: zebra, prompt: "The continent where the horse-like animal with black and white stripes lives is", answer: "Africa", description_end: stripes, literals: [striped pattern], description: "the horse-like animal with black and white stripes"}
+  - {concept: pyramid, prompt: "The river that flows past the ancient tombs of the pharaohs is the", answer: "Nile", description_end: pharaohs, literals: [Egyptian pharaoh, river], description: "the ancient tombs of the pharaohs"}
+  - {concept: piano, prompt: "The number of keys on the instrument with black and white keys is", answer: "88", description_end: keys, literals: [key], description: "the instrument with black and white keys"}
+  - {concept: camel, prompt: "The place where the animal with humps on its back usually lives is the", answer: "desert", description_end: back, literals: [human back, desert], description: "the animal with humps on its back"}
+  - {concept: Eiffel Tower, prompt: "The country of the famous iron tower in Paris is", answer: "France", description_end: Paris, literals: [Paris street], description: "the famous iron tower in Paris"}
+  - {concept: cow, prompt: "The drink we get from the farm animal that says moo is", answer: "milk", description_end: moo, literals: [glass of milk], description: "the farm animal that says moo"}
+  - {concept: elephant, prompt: "The material of the tusks of the large grey animal with a trunk is", answer: "ivory", description_end: trunk, literals: [suitcase, ivory tusk], description: "the large grey animal with a trunk"}
+  - {concept: giraffe, prompt: "The leaves eaten by the animal with the longest neck come from tall", answer: "trees", description_end: neck, literals: [human neck, tree], description: "the animal with the longest neck"}
+
+context:
+  - {concept: elephant, prompt: "the large grey animal with a long trunk", literals: [suitcase, tree trunk]}
+  - {concept: piano, prompt: "the instrument with black and white keys", literals: [key]}
+  - {concept: kangaroo, prompt: "the Australian animal that carries its baby in a pouch", literals: [leather pouch]}
+  - {concept: octopus, prompt: "the sea creature with eight arms", literals: [human arms]}
+  - {concept: dog, prompt: "the loyal pet whose loud bark wakes the neighbours", literals: [tree bark]}
+  - {concept: giraffe, prompt: "the tall animal with a very long neck", literals: [human neck]}
+  - {concept: zebra, prompt: "the African horse with black and white stripes", literals: [striped pattern]}
+  - {concept: sheep, prompt: "the woolly farm animal that says baa", literals: [ball of wool]}
+  - {concept: owl, prompt: "the wise bird that hoots at night", literals: [night sky]}
+  - {concept: bee, prompt: "the striped insect that makes honey", literals: [jar of honey, striped pattern]}

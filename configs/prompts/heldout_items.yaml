@@ -1,0 +1,837 @@
+# Validation set of the lens-variant comparison (Table 1, Supp. Table S2): two-hop questions (a question is used for a
+# model only if that model answers it correctly, configs/test_sets/val.json) and 45 words with two meanings, each in both
+# orders; every occurrence is settled by words before it, because the model reads left to right.
+# `description` (two_hop) is the phrase that names the thing without its name.
+
+two_hop:
+  - prompt: "On which continent does the large orange predator with black stripes live?"
+    concept: "tiger"
+    answer: "Asia"
+    description_end: "stripes"
+    description: "the large orange predator with black stripes"
+    literals: ["orange fruit", "black striped pattern"]
+    domain: "animals"
+
+  - prompt: "How many wings does the black-and-white Antarctic bird that cannot fly have?"
+    concept: "penguin"
+    answer: "2"
+    description_end: "fly"
+    description: "the black-and-white Antarctic bird that cannot fly"
+    literals: ["black-and-white pattern", "housefly"]
+    domain: "animals"
+
+  - prompt: "What colour head does the large bird that is the national emblem of the United States have?"
+    concept: "eagle"
+    answer: "white"
+    description_end: "States"
+    description: "the large bird that is the national emblem of the United States"
+    literals: ["human head", "United States flag"]
+    domain: "animals"
+
+  - prompt: "How many wings does the colourful tropical bird that can copy human speech have?"
+    concept: "parrot"
+    answer: "2"
+    description_end: "speech"
+    description: "the colourful tropical bird that can copy human speech"
+    literals: ["speaking person", "tropical forest"]
+    domain: "animals"
+
+  - prompt: "How many gill slits does the ocean predator with a triangular fin and several rows of sharp teeth usually have?"
+    concept: "shark"
+    answer: "5"
+    description_end: "teeth"
+    description: "the ocean predator with a triangular fin and several rows of sharp teeth"
+    literals: ["triangle", "human teeth"]
+    domain: "animals"
+
+  - prompt: "How many legs does the sideways-walking sea creature with two large claws have?"
+    concept: "crab"
+    answer: "10"
+    description_end: "claws"
+    description: "the sideways-walking sea creature with two large claws"
+    literals: ["animal claw", "ocean floor"]
+    domain: "animals"
+
+  - prompt: "How many legs does the long limbless reptile that sheds its skin have?"
+    concept: "snake"
+    answer: "0"
+    description_end: "skin"
+    description: "the long limbless reptile that sheds its skin"
+    literals: ["animal skin", "garden shed"]
+    domain: "animals"
+
+  - prompt: "What sound does the small jumping amphibian that catches insects with a sticky tongue make?"
+    concept: "frog"
+    answer: "croak"
+    description_end: "tongue"
+    description: "the small jumping amphibian that catches insects with a sticky tongue"
+    literals: ["human tongue", "flying insects"]
+    domain: "animals"
+
+  - prompt: "How many legs does the slow reptile that carries a hard shell on its back have?"
+    concept: "turtle"
+    answer: "4"
+    description_end: "back"
+    description: "the slow reptile that carries a hard shell on its back"
+    literals: ["seashell", "human back"]
+    domain: "animals"
+
+  - prompt: "How many legs does the tiny colony insect that carries crumbs heavier than itself have?"
+    concept: "ant"
+    answer: "6"
+    description_end: "itself"
+    description: "the tiny colony insect that carries crumbs heavier than itself"
+    literals: ["bread crumbs", "insect colony"]
+    domain: "animals"
+
+  - prompt: "What colour does the tall wading bird that often balances on one leg usually appear?"
+    concept: "flamingo"
+    answer: "pink"
+    description_end: "leg"
+    description: "the tall wading bird that often balances on one leg"
+    literals: ["human leg", "shallow lake"]
+    domain: "animals_new"
+
+  - prompt: "What colour neck does the male bird that fans a tail covered in eye-shaped spots usually have?"
+    concept: "peacock"
+    answer: "blue"
+    description_end: "spots"
+    description: "the male bird that fans a tail covered in eye-shaped spots"
+    literals: ["hand fan", "human eye", "spotted pattern"]
+    domain: "animals_new"
+
+  - prompt: "What material are the horns of the large grey land animal with thick skin and poor eyesight made from?"
+    concept: "rhinoceros"
+    answer: "keratin"
+    description_end: "eyesight"
+    description: "the large grey land animal with thick skin and poor eyesight"
+    literals: ["musical horn", "animal skin", "human eye"]
+    domain: "animals_new"
+
+  - prompt: "On which continent does the huge semi-aquatic grazer that spends hot days in rivers live?"
+    concept: "hippopotamus"
+    answer: "Africa"
+    description_end: "rivers"
+    description: "the huge semi-aquatic grazer that spends hot days in rivers"
+    literals: ["river", "grazing field"]
+    domain: "animals_new"
+
+  - prompt: "How many legs does the armoured river reptile with a long snout and powerful jaws have?"
+    concept: "crocodile"
+    answer: "4"
+    description_end: "jaws"
+    description: "the armoured river reptile with a long snout and powerful jaws"
+    literals: ["body armour", "animal jaw"]
+    domain: "animals_new"
+
+  - prompt: "On which continent does the largest living ape known for beating its chest live?"
+    concept: "gorilla"
+    answer: "Africa"
+    description_end: "chest"
+    description: "the largest living ape known for beating its chest"
+    literals: ["human chest", "beating drum"]
+    domain: "animals_new"
+
+  - prompt: "How many legs does the brown woodland herbivore that freezes in headlights have?"
+    concept: "deer"
+    answer: "4"
+    description_end: "headlights"
+    description: "the brown woodland herbivore that freezes in headlights"
+    literals: ["car headlights", "forest"]
+    domain: "animals_new"
+
+  - prompt: "How many large claws does the marine crustacean with long antennae usually have?"
+    concept: "lobster"
+    answer: "2"
+    description_end: "antennae"
+    description: "the marine crustacean with long antennae"
+    literals: ["radio antenna", "animal claw"]
+    domain: "animals_new"
+
+  - prompt: "What colour wing cases does the small round beetle associated with good luck usually have?"
+    concept: "ladybug"
+    answer: "red"
+    description_end: "luck"
+    description: "the small round beetle associated with good luck"
+    literals: ["four-leaf clover", "red circle"]
+    domain: "animals_new"
+
+  - prompt: "How many tentacles does the slow garden creature carrying a spiral shell usually have?"
+    concept: "snail"
+    answer: "4"
+    description_end: "shell"
+    description: "the slow garden creature carrying a spiral shell"
+    literals: ["spiral", "seashell"]
+    domain: "animals_new"
+
+  - prompt: "At what time of day does the male farm bird known for loud crowing usually call?"
+    concept: "rooster"
+    answer: "dawn"
+    description_end: "crowing"
+    description: "the male farm bird known for loud crowing"
+    literals: ["crow bird", "sunrise"]
+    domain: "animals_new"
+
+  - prompt: "What sound does the sturdy long-eared working animal make?"
+    concept: "donkey"
+    answer: "bray"
+    description_end: "animal"
+    description: "the sturdy long-eared working animal"
+    literals: ["human ear", "farm worker"]
+    domain: "animals_new"
+
+  - prompt: "How many legs does the sure-footed horned farm animal known for climbing steep rocks have?"
+    concept: "goat"
+    answer: "4"
+    description_end: "rocks"
+    description: "the sure-footed horned farm animal known for climbing steep rocks"
+    literals: ["musical horn", "steep rocks"]
+    domain: "animals_new"
+
+  - prompt: "At which holiday is the large American bird with a fan-shaped tail traditionally served?"
+    concept: "turkey"
+    answer: "Thanksgiving"
+    description_end: "tail"
+    description: "the large American bird with a fan-shaped tail"
+    literals: ["hand fan", "animal tail"]
+    domain: "animals_new"
+
+  - prompt: "What taste does the yellow citrus fruit often squeezed into tea usually have?"
+    concept: "lemon"
+    answer: "sour"
+    description_end: "tea"
+    description: "the yellow citrus fruit often squeezed into tea"
+    literals: ["cup of tea", "yellow square"]
+    domain: "food"
+
+  - prompt: "Are the tiny seeds of the heart-shaped red fruit found inside or outside?"
+    concept: "strawberry"
+    answer: "outside"
+    description_end: "fruit"
+    description: "the heart-shaped red fruit"
+    literals: ["heart", "seeds"]
+    domain: "food"
+
+  - prompt: "What colour flesh does the tropical fruit with rough diamond-patterned skin and a spiky crown have?"
+    concept: "pineapple"
+    answer: "yellow"
+    description_end: "crown"
+    description: "the tropical fruit with rough diamond-patterned skin and a spiky crown"
+    literals: ["diamond pattern", "human skin", "royal crown"]
+    domain: "food"
+
+  - prompt: "What colour flesh does the large green fruit with black seeds and a hard rind usually have?"
+    concept: "watermelon"
+    answer: "red"
+    description_end: "rind"
+    description: "the large green fruit with black seeds and a hard rind"
+    literals: ["black seeds", "green sphere"]
+    domain: "food"
+
+  - prompt: "What drink can the small fruit that grows in bunches on vines make when fermented?"
+    concept: "grapes"
+    answer: "wine"
+    description_end: "vines"
+    description: "the small fruit that grows in bunches on vines"
+    literals: ["vine", "bouquet of flowers"]
+    domain: "food"
+
+  - prompt: "How many slices is the round baked dish with tomato sauce and melted cheese often cut into?"
+    concept: "pizza"
+    answer: "8"
+    description_end: "cheese"
+    description: "the round baked dish with tomato sauce and melted cheese"
+    literals: ["tomato sauce", "block of cheese"]
+    domain: "food"
+
+  - prompt: "How many bread halves does a common fast-food sandwich built around one patty usually have?"
+    concept: "hamburger"
+    answer: "2"
+    description_end: "patty"
+    description: "a common fast-food sandwich built around one patty"
+    literals: ["bread roll", "meat patty"]
+    domain: "food"
+
+  - prompt: "At what ceremony is the tiered iced dessert cut by newlyweds traditionally served?"
+    concept: "cake"
+    answer: "wedding"
+    description_end: "newlyweds"
+    description: "the tiered iced dessert cut by newlyweds"
+    literals: ["wedding couple", "ice cubes"]
+    domain: "food"
+
+  - prompt: "What living ingredient helps the soft baked staple made from flour rise before cooking?"
+    concept: "bread"
+    answer: "yeast"
+    description_end: "flour"
+    description: "the soft baked staple made from flour"
+    literals: ["bag of flour", "oven"]
+    domain: "food"
+
+  - prompt: "The firm food often grated over pasta is made by curdling which liquid?"
+    concept: "cheese"
+    answer: "milk"
+    description_end: "pasta"
+    description: "The firm food often grated over pasta"
+    literals: ["plate of pasta", "milk bottle"]
+    domain: "food"
+
+  - prompt: "What colour yolk does the oval food laid by a hen usually contain?"
+    concept: "egg"
+    answer: "yellow"
+    description_end: "hen"
+    description: "the oval food laid by a hen"
+    literals: ["hen", "yellow circle"]
+    domain: "food"
+
+  - prompt: "In what setting does the umbrella-shaped fungus with a cap and stalk often grow?"
+    concept: "mushroom"
+    answer: "damp forest"
+    description_end: "stalk"
+    description: "the umbrella-shaped fungus with a cap and stalk"
+    literals: ["umbrella", "walking stick"]
+    domain: "food"
+
+  - prompt: "Which vitamin does the round citrus fruit whose skin matches a colour name provide?"
+    concept: "orange"
+    answer: "vitamin C"
+    description_end: "name"
+    description: "the round citrus fruit whose skin matches a colour name"
+    literals: ["paint palette", "name tag", "human skin"]
+    domain: "food_new"
+
+  - prompt: "Which liquid does the hard brown tropical fruit with a hairy shell contain?"
+    concept: "coconut"
+    answer: "water"
+    description_end: "shell"
+    description: "the hard brown tropical fruit with a hairy shell"
+    literals: ["brown hair", "seashell"]
+    domain: "food_new"
+
+  - prompt: "What temperature in degrees Celsius does the tall kitchen appliance that keeps groceries cold usually maintain?"
+    concept: "refrigerator"
+    answer: "4"
+    description_end: "cold"
+    description: "the tall kitchen appliance that keeps groceries cold"
+    literals: ["grocery bag", "ice cube", "kitchen cabinet"]
+    domain: "household_objects_new"
+
+  - prompt: "What job does the person controlling the long public road vehicle that stops along a fixed route have?"
+    concept: "bus"
+    answer: "driver"
+    description_end: "route"
+    description: "the long public road vehicle that stops along a fixed route"
+    literals: ["route map", "stop sign"]
+    domain: "vehicles"
+
+  - prompt: "What does the long chain of passenger carriages running between stations travel on?"
+    concept: "train"
+    answer: "rails"
+    description_end: "stations"
+    description: "the long chain of passenger carriages running between stations"
+    literals: ["metal chain", "station building"]
+    domain: "vehicles"
+
+  - prompt: "How many wings does the large passenger vehicle that flies between airports usually have?"
+    concept: "airplane"
+    answer: "2"
+    description_end: "airports"
+    description: "the large passenger vehicle that flies between airports"
+    literals: ["airport terminal", "bird wings"]
+    domain: "vehicles"
+
+  - prompt: "The floating passenger carrier that crosses a lake has port on which side?"
+    concept: "boat"
+    answer: "left"
+    description_end: "lake"
+    description: "The floating passenger carrier that crosses a lake"
+    literals: ["lake", "seaport"]
+    domain: "vehicles"
+
+  - prompt: "How many wheels does the pedal-powered vehicle steered with handlebars have?"
+    concept: "bicycle"
+    answer: "2"
+    description_end: "handlebars"
+    description: "the pedal-powered vehicle steered with handlebars"
+    literals: ["metal handlebar", "foot pedal"]
+    domain: "vehicles"
+
+  - prompt: "How many wheels does the engine-powered road vehicle whose rider wears a helmet have?"
+    concept: "motorcycle"
+    answer: "2"
+    description_end: "helmet"
+    description: "the engine-powered road vehicle whose rider wears a helmet"
+    literals: ["helmet", "road"]
+    domain: "vehicles"
+
+  - prompt: "How many main rotors does the flying vehicle that hovers and lands vertically usually have?"
+    concept: "helicopter"
+    answer: "1"
+    description_end: "vertically"
+    description: "the flying vehicle that hovers and lands vertically"
+    literals: ["ceiling fan", "vertical arrow"]
+    domain: "vehicles"
+
+  - prompt: "How many large rear wheels does the farm vehicle used to pull ploughs usually have?"
+    concept: "tractor"
+    answer: "2"
+    description_end: "ploughs"
+    description: "the farm vehicle used to pull ploughs"
+    literals: ["plough", "farm field"]
+    domain: "vehicles"
+
+  - prompt: "The long craft that travels beneath the ocean must carry which breathing gas?"
+    concept: "submarine"
+    answer: "oxygen"
+    description_end: "ocean"
+    description: "The long craft that travels beneath the ocean"
+    literals: ["ocean", "paper craft"]
+    domain: "vehicles_new"
+
+  - prompt: "Which direction does the red needle inside the round navigation tool usually point?"
+    concept: "compass"
+    answer: "north"
+    description_end: "tool"
+    description: "the round navigation tool"
+    literals: ["sewing needle", "circle", "map"]
+    domain: "tools_new"
+
+  - prompt: "What colour is the emergency vehicle that carries ladders and water hoses usually painted?"
+    concept: "fire truck"
+    answer: "red"
+    description_end: "hoses"
+    description: "the emergency vehicle that carries ladders and water hoses"
+    literals: ["ladder", "garden hose"]
+    domain: "vehicles_new"
+
+  - prompt: "The hired city ride marked by a roof sign uses which device to calculate its fare?"
+    concept: "taxi"
+    answer: "meter"
+    description_end: "sign"
+    description: "The hired city ride marked by a roof sign"
+    literals: ["roof sign", "parking meter"]
+    domain: "vehicles_new"
+
+  - prompt: "How many numbered positions does the round wall device that shows time usually have?"
+    concept: "clock"
+    answer: "12"
+    description_end: "time"
+    description: "the round wall device that shows time"
+    literals: ["numbers", "round wall mirror"]
+    domain: "household_objects"
+
+  - prompt: "How many strings does the common fretted instrument held across the player's body usually have?"
+    concept: "guitar"
+    answer: "6"
+    description_end: "body"
+    description: "the common fretted instrument held across the player's body"
+    literals: ["string", "human body"]
+    domain: "instruments"
+
+  - prompt: "How many strings does the small bowed instrument held under the player's chin usually have?"
+    concept: "violin"
+    answer: "4"
+    description_end: "chin"
+    description: "the small bowed instrument held under the player's chin"
+    literals: ["bow and arrow", "human chin"]
+    domain: "instruments"
+
+  - prompt: "How many legs does the common seat with a backrest usually have?"
+    concept: "chair"
+    answer: "4"
+    description_end: "backrest"
+    description: "the common seat with a backrest"
+    literals: ["human leg", "human back"]
+    domain: "household_objects"
+
+  - prompt: "What happens to the slender wax object with a burning wick as it gives light?"
+    concept: "candle"
+    answer: "melts"
+    description_end: "wick"
+    description: "the slender wax object with a burning wick"
+    literals: ["wax block", "flame"]
+    domain: "household_objects"
+
+  - prompt: "How many blades does the hand tool used to cut paper have?"
+    concept: "scissors"
+    answer: "2"
+    description_end: "paper"
+    description: "the hand tool used to cut paper"
+    literals: ["knife blade", "sheet of paper"]
+    domain: "tools"
+
+  - prompt: "Which part of the hand tool used for driving nails is usually metal?"
+    concept: "hammer"
+    answer: "head"
+    description_end: "nails"
+    description: "the hand tool used for driving nails"
+    literals: ["fingernails", "metal nail"]
+    domain: "tools"
+
+  - prompt: "The handled vessel with a spout and lid is mainly used to brew which drink?"
+    concept: "teapot"
+    answer: "tea"
+    description_end: "lid"
+    description: "The handled vessel with a spout and lid"
+    literals: ["door handle", "water spout", "container lid"]
+    domain: "household_objects"
+
+  - prompt: "Which gas makes the rubber party decoration tied to a string float safely?"
+    concept: "balloon"
+    answer: "helium"
+    description_end: "string"
+    description: "the rubber party decoration tied to a string"
+    literals: ["rubber sheet", "piece of string"]
+    domain: "toys"
+
+  - prompt: "The diamond-shaped toy flown at the end of a string needs what to stay aloft?"
+    concept: "kite"
+    answer: "wind"
+    description_end: "string"
+    description: "The diamond-shaped toy flown at the end of a string"
+    literals: ["diamond", "piece of string"]
+    domain: "toys"
+
+  - prompt: "What body of water surrounds the fortified stone home with towers for protection?"
+    concept: "castle"
+    answer: "moat"
+    description_end: "towers"
+    description: "the fortified stone home with towers"
+    literals: ["stone tower", "house"]
+    domain: "landmarks_and_places"
+
+  - prompt: "After it erupts from the cone-shaped mountain, what is molten rock called?"
+    concept: "volcano"
+    answer: "lava"
+    description_end: "mountain"
+    description: "the cone-shaped mountain"
+    literals: ["cone", "mountain"]
+    domain: "nature"
+
+  - prompt: "Where does the spiny green desert plant store most of its water?"
+    concept: "cactus"
+    answer: "stem"
+    description_end: "plant"
+    description: "the spiny green desert plant"
+    literals: ["sewing pins", "desert"]
+    domain: "plants"
+
+  - prompt: "The traditional tower used to grind grain has large sails turned by what?"
+    concept: "windmill"
+    answer: "wind"
+    description_end: "grain"
+    description: "The traditional tower used to grind grain"
+    literals: ["stone tower", "sailboat sail", "grain"]
+    domain: "landmarks_and_places"
+
+  - prompt: "What shape does the violently rotating column of air reaching the ground usually have?"
+    concept: "tornado"
+    answer: "funnel"
+    description_end: "ground"
+    description: "the violently rotating column of air reaching the ground"
+    literals: ["stone column", "ground"]
+    domain: "nature"
+
+  - prompt: "Is the landform surrounded on every side by water connected to the mainland by land?"
+    concept: "island"
+    answer: "no"
+    description_end: "water"
+    description: "the landform surrounded on every side by water"
+    literals: ["water", "mainland coast"]
+    domain: "landmarks_and_places"
+
+  - prompt: "The very tall city building uses which device to carry people between floors?"
+    concept: "skyscraper"
+    answer: "elevator"
+    description_end: "building"
+    description: "The very tall city building"
+    literals: ["city skyline", "building"]
+    domain: "landmarks_and_places"
+
+  - prompt: "The ancient oval arena where gladiators fought stands in which city?"
+    concept: "Colosseum"
+    answer: "Rome"
+    description_end: "fought"
+    description: "The ancient oval arena where gladiators fought"
+    literals: ["oval sports arena", "gladiator"]
+    domain: "landmarks_new"
+
+  - prompt: "The white marble monument built by an emperor for his wife stands in which country?"
+    concept: "Taj Mahal"
+    answer: "India"
+    description_end: "wife"
+    description: "The white marble monument built by an emperor for his wife"
+    literals: ["white marble slab", "emperor", "woman"]
+    domain: "landmarks_new"
+
+double_meaning:
+  - word: "mouse"
+    meaning_a: "mouse"
+    meaning_b: "computer mouse"
+    sentence_ab: "Inside the rodent cage, the mouse nibbled cheese, and beside the keyboard and screen, the mouse moved the cursor."
+    sentence_ba: "Beside the keyboard and screen, the mouse moved the cursor; inside the rodent cage, the mouse nibbled cheese."
+
+  - word: "bat"
+    meaning_a: "bat animal"
+    meaning_b: "baseball bat"
+    sentence_ab: "Beneath the cave roof, the bat spread its wings, whereas beside home plate, the bat waited for the pitch."
+    sentence_ba: "Beside home plate, the bat waited for the pitch; beneath the cave roof, the bat spread its wings."
+
+  - word: "crane"
+    meaning_a: "crane bird"
+    meaning_b: "construction crane"
+    sentence_ab: "Deep in the marsh, the crane caught a fish, and high above the building site, the crane lifted steel beams."
+    sentence_ba: "High above the building site, the crane lifted steel beams; deep in the marsh, the crane caught a fish."
+
+  - word: "seal"
+    meaning_a: "seal animal"
+    meaning_b: "wax seal"
+    sentence_ab: "On the Arctic ice, the seal slid toward the water, and across the hot royal wax, the seal left a crest."
+    sentence_ba: "Across the hot royal wax, the seal left a crest; on the Arctic ice, the seal slid toward the water."
+
+  - word: "trunk"
+    meaning_a: "elephant trunk"
+    meaning_b: "travel trunk"
+    sentence_ab: "Between two ivory tusks, the trunk sprayed water; among the stacked airport luggage, the trunk held old clothes."
+    sentence_ba: "Among the stacked airport luggage, the trunk held old clothes; between two ivory tusks, the trunk sprayed water."
+
+  - word: "bank"
+    meaning_a: "river bank"
+    meaning_b: "bank building"
+    sentence_ab: "At the river's muddy edge, the bank crumbled slowly; behind the loan officer's desk, the bank approved our mortgage."
+    sentence_ba: "Behind the loan officer's desk, the bank approved our mortgage; at the river's muddy edge, the bank crumbled slowly."
+
+  - word: "jaguar"
+    meaning_a: "jaguar animal"
+    meaning_b: "Jaguar car"
+    sentence_ab: "Beneath the rainforest canopy, the jaguar stalked prey, and inside the dealership showroom, the jaguar gleamed under bright lights."
+    sentence_ba: "Inside the dealership showroom, the jaguar gleamed under bright lights; beneath the rainforest canopy, the jaguar stalked prey."
+
+  - word: "mole"
+    meaning_a: "mole animal"
+    meaning_b: "skin mole"
+    sentence_ab: "Beneath freshly raised lawn soil, the mole dug a tunnel; on the dermatologist's skin photograph, the mole looked irregular."
+    sentence_ba: "On the dermatologist's skin photograph, the mole looked irregular; beneath freshly raised lawn soil, the mole dug a tunnel."
+
+  - word: "palm"
+    meaning_a: "palm tree"
+    meaning_b: "hand palm"
+    sentence_ab: "Above a curved tropical trunk, the palm swayed in the breeze; at the centre of an open hand, the palm held a coin."
+    sentence_ba: "At the centre of an open hand, the palm held a coin; above a curved tropical trunk, the palm swayed in the breeze."
+
+  - word: "bow"
+    meaning_a: "bow and arrow"
+    meaning_b: "ribbon bow"
+    sentence_ab: "In the archer's gloved hand, the bow launched an arrow; on top of the wrapped gift, the bow held its shape."
+    sentence_ba: "On top of the wrapped gift, the bow held its shape; in the archer's gloved hand, the bow launched an arrow."
+
+  - word: "pitcher"
+    meaning_a: "baseball pitcher"
+    meaning_b: "drink pitcher"
+    sentence_ab: "At the centre of the baseball mound, the pitcher threw a fastball; beside six empty tumblers, the pitcher held lemonade."
+    sentence_ba: "Beside six empty tumblers, the pitcher held lemonade; at the centre of the baseball mound, the pitcher threw a fastball."
+
+  - word: "nail"
+    meaning_a: "fingernail"
+    meaning_b: "metal nail"
+    sentence_ab: "At the tip of a polished finger, the nail shone red; halfway into the wooden plank, the nail held two boards together."
+    sentence_ba: "Halfway into the wooden plank, the nail held two boards together; at the tip of a polished finger, the nail shone red."
+
+  - word: "key"
+    meaning_a: "door key"
+    meaning_b: "piano key"
+    sentence_ab: "Inside the front-door lock, the key turned smoothly, whereas beneath the pianist's finger, the key sounded a high note."
+    sentence_ba: "Beneath the pianist's finger, the key sounded a high note; inside the front-door lock, the key turned smoothly."
+
+  - word: "glasses"
+    meaning_a: "eyeglasses"
+    meaning_b: "drinking glasses"
+    sentence_ab: "Across the reader's nose, the glasses sharpened small print; beside the dinner plates, the glasses held sparkling water."
+    sentence_ba: "Beside the dinner plates, the glasses held sparkling water; across the reader's nose, the glasses sharpened small print."
+
+  - word: "tank"
+    meaning_a: "military tank"
+    meaning_b: "fish tank"
+    sentence_ab: "Behind the advancing soldiers, the tank crossed the field; on the aquarium stand, the tank held colourful fish."
+    sentence_ba: "On the aquarium stand, the tank held colourful fish; behind the advancing soldiers, the tank crossed the field."
+
+  - word: "ring"
+    meaning_a: "finger ring"
+    meaning_b: "boxing ring"
+    sentence_ab: "On the bride's finger, the ring held a diamond; under the boxing arena lights, the ring contained two fighters."
+    sentence_ba: "Under the boxing arena lights, the ring contained two fighters; on the bride's finger, the ring held a diamond."
+
+  - word: "chip"
+    meaning_a: "potato chip"
+    meaning_b: "computer chip"
+    sentence_ab: "Beside the bowl of dip, the chip looked crisp; on the circuit board, the chip processed incoming data."
+    sentence_ba: "On the circuit board, the chip processed incoming data; beside the bowl of dip, the chip looked crisp."
+
+  - word: "club"
+    meaning_a: "golf club"
+    meaning_b: "nightclub"
+    sentence_ab: "Inside the golfer's equipment bag, the club had a metal head; behind the downtown velvet rope, the club filled with dancers."
+    sentence_ba: "Behind the downtown velvet rope, the club filled with dancers; inside the golfer's equipment bag, the club had a metal head."
+
+  - word: "pen"
+    meaning_a: "writing pen"
+    meaning_b: "animal pen"
+    sentence_ab: "Beside the open notebook, the pen leaked blue ink; behind the farm fence, the pen held three goats."
+    sentence_ba: "Behind the farm fence, the pen held three goats; beside the open notebook, the pen leaked blue ink."
+
+  - word: "spring"
+    meaning_a: "metal spring"
+    meaning_b: "natural spring"
+    sentence_ab: "Inside the mattress coil row, the spring compressed under weight; at the mountain stream's source, the spring released clear water."
+    sentence_ba: "At the mountain stream's source, the spring released clear water; inside the mattress coil row, the spring compressed under weight."
+
+  - word: "jam"
+    meaning_a: "fruit jam"
+    meaning_b: "traffic jam"
+    sentence_ab: "Across the buttered toast, the jam tasted sweet; between rows of stopped motorway cars, the jam stretched for miles."
+    sentence_ba: "Between rows of stopped motorway cars, the jam stretched for miles; across the buttered toast, the jam tasted sweet."
+
+  - word: "calf"
+    meaning_a: "young cow"
+    meaning_b: "lower leg calf"
+    sentence_ab: "Beside its grazing mother in the pasture, the calf rested quietly; below the runner's knee, the calf ached badly."
+    sentence_ba: "Below the runner's knee, the calf ached badly; beside its grazing mother in the pasture, the calf rested quietly."
+
+  - word: "fly"
+    meaning_a: "fly insect"
+    meaning_b: "trouser fly"
+    sentence_ab: "Against the kitchen window, the fly buzzed loudly; at the front of his trousers, the fly remained unzipped."
+    sentence_ba: "At the front of his trousers, the fly remained unzipped; against the kitchen window, the fly buzzed loudly."
+
+  - word: "iron"
+    meaning_a: "clothes iron"
+    meaning_b: "iron metal"
+    sentence_ab: "On the ironing board beside a wrinkled shirt, the iron released steam; within the rusted bridge beam, the iron supported heavy traffic."
+    sentence_ba: "Within the rusted bridge beam, the iron supported heavy traffic; on the ironing board beside a wrinkled shirt, the iron released steam."
+
+  - word: "bolt"
+    meaning_a: "metal bolt"
+    meaning_b: "lightning bolt"
+    sentence_ab: "Through the machine's joined metal plates, the bolt held firm; across the dark storm cloud, the bolt lit the sky."
+    sentence_ba: "Across the dark storm cloud, the bolt lit the sky; through the machine's joined metal plates, the bolt held firm."
+
+  - word: "bass"
+    meaning_a: "bass fish"
+    meaning_b: "bass guitar"
+    sentence_ab: "Below the lake reeds, the bass chased minnows; across the musician's shoulder strap, the bass rumbled through an amplifier."
+    sentence_ba: "Across the musician's shoulder strap, the bass rumbled through an amplifier; below the lake reeds, the bass chased minnows."
+
+  - word: "scale"
+    meaning_a: "weighing scale"
+    meaning_b: "fish scale"
+    sentence_ab: "On the bathroom floor beneath bare feet, the scale displayed a number; along the silver fish's side, the scale caught the light."
+    sentence_ba: "Along the silver fish's side, the scale caught the light; on the bathroom floor beneath bare feet, the scale displayed a number."
+
+  - word: "board"
+    meaning_a: "wooden board"
+    meaning_b: "game board"
+    sentence_ab: "Across the broken window, the board blocked the wind; between the arranged chess pieces, the board showed black and white squares."
+    sentence_ba: "Between the arranged chess pieces, the board showed black and white squares; across the broken window, the board blocked the wind."
+
+  - word: "pool"
+    meaning_a: "swimming pool"
+    meaning_b: "pool game"
+    sentence_ab: "Behind the hotel lounge chairs, the pool shimmered; among cues and numbered balls, the pool table stood ready."
+    sentence_ba: "Among cues and numbered balls, the pool table stood ready; behind the hotel lounge chairs, the pool shimmered."
+
+  - word: "file"
+    meaning_a: "document file"
+    meaning_b: "metal file tool"
+    sentence_ab: "Inside the office cabinet, the file stored old reports; on the workshop bench beside rough metal, the file smoothed an edge."
+    sentence_ba: "On the workshop bench beside rough metal, the file smoothed an edge; inside the office cabinet, the file stored old reports."
+
+  - word: "horn"
+    meaning_a: "musical horn"
+    meaning_b: "animal horn"
+    sentence_ab: "Across the brass musician's lap, the horn gleamed under stage lights; above the mountain goat's eye, the horn curved backward."
+    sentence_ba: "Above the mountain goat's eye, the horn curved backward; across the brass musician's lap, the horn gleamed under stage lights."
+
+  - word: "cap"
+    meaning_a: "bottle cap"
+    meaning_b: "baseball cap"
+    sentence_ab: "Over the bottle mouth, the cap kept the drink fresh; above the baseball player's eyes, the cap shaded his face."
+    sentence_ba: "Above the baseball player's eyes, the cap shaded his face; over the bottle mouth, the cap kept the drink fresh."
+
+  - word: "mint"
+    meaning_a: "mint plant"
+    meaning_b: "coin mint"
+    sentence_ab: "Inside the herb pot by the kitchen window, the mint grew fragrant leaves; behind the coin presses, the mint stamped new money."
+    sentence_ba: "Behind the coin presses, the mint stamped new money; inside the herb pot by the kitchen window, the mint grew fragrant leaves."
+
+  - word: "sole"
+    meaning_a: "shoe sole"
+    meaning_b: "sole fish"
+    sentence_ab: "Beneath the leather shoe, the sole wore thin; flat against the sandy seabed, the sole searched for food."
+    sentence_ba: "Flat against the sandy seabed, the sole searched for food; beneath the leather shoe, the sole wore thin."
+
+  - word: "chest"
+    meaning_a: "treasure chest"
+    meaning_b: "human chest"
+    sentence_ab: "Between the pirate's boots and treasure map, the chest held gold, whereas below the swimmer's shoulders, the chest rose with each breath."
+    sentence_ba: "Below the swimmer's shoulders, the chest rose with each breath, whereas between the pirate's boots and treasure map, the chest held gold."
+
+  - word: "boot"
+    meaning_a: "hiking boot"
+    meaning_b: "car boot"
+    sentence_ab: "Over the hiker's socked foot, the boot carried dried mud; behind the hatchback's rear seats, the boot held two suitcases."
+    sentence_ba: "Behind the hatchback's rear seats, the boot held two suitcases; over the hiker's socked foot, the boot carried dried mud."
+
+  - word: "hood"
+    meaning_a: "coat hood"
+    meaning_b: "car hood"
+    sentence_ab: "Around the winter coat wearer's head, the hood blocked snow, and above the car's front engine, the hood reflected sunlight."
+    sentence_ba: "Above the car's front engine, the hood reflected sunlight, and around the winter coat wearer's head, the hood blocked snow."
+
+  - word: "deck"
+    meaning_a: "ship deck"
+    meaning_b: "deck of cards"
+    sentence_ab: "Under the sailors on the ship's upper level, the deck became slippery; beside the shuffled playing cards, the deck waited for dealing."
+    sentence_ba: "Beside the shuffled playing cards, the deck waited for dealing; under the sailors on the ship's upper level, the deck became slippery."
+
+  - word: "pipe"
+    meaning_a: "smoking pipe"
+    meaning_b: "water pipe"
+    sentence_ab: "Between the smoker's lips, the pipe released curling smoke, but under the kitchen sink, the pipe dripped water."
+    sentence_ba: "Under the kitchen sink, the pipe dripped water, but between the smoker's lips, the pipe released curling smoke."
+
+  - word: "clip"
+    meaning_a: "paper clip"
+    meaning_b: "hair clip"
+    sentence_ab: "Around the stack of office papers, the clip held pages together; among the strands above her ear, the clip held back her hair."
+    sentence_ba: "Among the strands above her ear, the clip held back her hair; around the stack of office papers, the clip held pages together."
+
+  - word: "roll"
+    meaning_a: "bread roll"
+    meaning_b: "film roll"
+    sentence_ab: "Beside the soup on a dinner plate, the roll looked warm, whereas inside the analog camera case, the roll held unused film."
+    sentence_ba: "Inside the analog camera case, the roll held unused film, whereas beside the soup on a dinner plate, the roll looked warm."
+
+  - word: "cone"
+    meaning_a: "ice cream cone"
+    meaning_b: "traffic cone"
+    sentence_ab: "Beneath a scoop of ice cream, the cone began to drip, and between the roadworks warning signs, the cone redirected traffic."
+    sentence_ba: "Between the roadworks warning signs, the cone redirected traffic, and beneath a scoop of ice cream, the cone began to drip."
+
+  - word: "jack"
+    meaning_a: "car jack"
+    meaning_b: "playing card jack"
+    sentence_ab: "Under the raised car axle, the jack supported the vehicle; among the face cards in her hand, the jack showed a prince."
+    sentence_ba: "Among the face cards in her hand, the jack showed a prince; under the raised car axle, the jack supported the vehicle."
+
+  - word: "bulb"
+    meaning_a: "light bulb"
+    meaning_b: "flower bulb"
+    sentence_ab: "Inside the table lamp shade, the bulb glowed brightly, and beneath the tulip shoots in garden soil, the bulb began to sprout."
+    sentence_ba: "Beneath the tulip shoots in garden soil, the bulb began to sprout, and inside the table lamp shade, the bulb glowed brightly."
+
+  - word: "stamp"
+    meaning_a: "postage stamp"
+    meaning_b: "rubber stamp"
+    sentence_ab: "On the addressed envelope's corner, the stamp showed a queen; beside the office ink pad, the stamp left a red mark."
+    sentence_ba: "Beside the office ink pad, the stamp left a red mark; on the addressed envelope's corner, the stamp showed a queen."
+

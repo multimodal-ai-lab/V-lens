@@ -1,0 +1,184 @@
+diff -ruN a/__init__.py b/__init__.py
+--- a/__init__.py
++++ b/__init__.py
+@@ -0,0 +1 @@
++# Vendored copy of ByteDance-Seed/Bagel @056b5fd (Apache-2.0). See third_party/README.md.
+diff -ruN a/data/transforms.py b/data/transforms.py
+--- a/data/transforms.py
++++ b/data/transforms.py
+@@ -4,7 +4,10 @@
+ import random
+ from PIL import Image
+ 
+-import cv2
++try:  # only the augmentation helpers use OpenCV; ImageTransform does not need it
++    import cv2
++except ImportError:
++    cv2 = None
+ import numpy as np
+ import torch
+ from torchvision import transforms
+diff -ruN a/modeling/bagel/bagel.py b/modeling/bagel/bagel.py
+--- a/modeling/bagel/bagel.py
++++ b/modeling/bagel/bagel.py
+@@ -11,7 +11,7 @@
+ from transformers.configuration_utils import PretrainedConfig
+ from transformers.modeling_utils import PreTrainedModel
+ 
+-from data.data_utils import (
++from bagel.data.data_utils import (
+     create_sparse_mask, 
+     get_flattened_position_ids_extrapolate, 
+     get_flattened_position_ids_interpolate,
+@@ -19,7 +19,7 @@
+ )
+ from .qwen2_navit import NaiveCache
+ from .modeling_utils import MLPconnector, TimestepEmbedder, PositionEmbedding
+-from modeling.cache_utils.taylorseer import cache_init
++from bagel.modeling.cache_utils.taylorseer import cache_init
+ 
+ from tqdm import tqdm
+ 
+diff -ruN a/modeling/bagel/qwen2_navit.py b/modeling/bagel/qwen2_navit.py
+--- a/modeling/bagel/qwen2_navit.py
++++ b/modeling/bagel/qwen2_navit.py
+@@ -22,7 +22,7 @@
+ from transformers.utils import ModelOutput
+ 
+ from flash_attn import flash_attn_varlen_func
+-from modeling.qwen2.modeling_qwen2 import (
++from bagel.modeling.qwen2.modeling_qwen2 import (
+     Qwen2Attention, 
+     Qwen2MLP, 
+     Qwen2PreTrainedModel, 
+@@ -31,13 +31,38 @@
+     apply_rotary_pos_emb,
+ )
+ 
+-from modeling.qwen2.configuration_qwen2 import Qwen2Config as _Qwen2Config
+-from modeling.cache_utils.taylorseer import (
++from bagel.modeling.qwen2.configuration_qwen2 import Qwen2Config as _Qwen2Config
++from bagel.modeling.cache_utils.taylorseer import (
+     cal_type, taylor_cache_init, derivative_approximation, taylor_formula,
+ )
+ 
+ 
+ torch._dynamo.config.cache_size_limit = 512
++
++# Patch: BAGEL casts to bfloat16 and uses flash-attn, which only runs in 16-bit.
++# For precise gradient checks one can set COMPUTE_DTYPE = torch.float32, which replaces those casts and
++# routes attention through a plain PyTorch implementation. The default leaves BAGEL unchanged.
++COMPUTE_DTYPE = torch.bfloat16
++
++
++def varlen_attention(q, k, v, cu_seqlens_q, cu_seqlens_k, max_seqlen_q, max_seqlen_k, causal):
++    if COMPUTE_DTYPE in (torch.bfloat16, torch.float16):
++        return flash_attn_varlen_func(q=q, k=k, v=v, cu_seqlens_q=cu_seqlens_q, cu_seqlens_k=cu_seqlens_k,
++                                      max_seqlen_q=max_seqlen_q, max_seqlen_k=max_seqlen_k, causal=causal)
++    # Plain attention, one packed sequence at a time, with flash-attn's conventions: grouped key/value heads,
++    # scale 1/sqrt(head_dim), and a causal mask aligned to the bottom right when there are more keys than queries.
++    outs = []
++    groups = q.shape[1] // k.shape[1]
++    for i in range(len(cu_seqlens_q) - 1):
++        qs = q[cu_seqlens_q[i]:cu_seqlens_q[i + 1]].transpose(0, 1)
++        ks = k[cu_seqlens_k[i]:cu_seqlens_k[i + 1]].repeat_interleave(groups, dim=1).transpose(0, 1)
++        vs = v[cu_seqlens_k[i]:cu_seqlens_k[i + 1]].repeat_interleave(groups, dim=1).transpose(0, 1)
++        mask = None
++        if causal:
++            n_q, n_k = qs.shape[1], ks.shape[1]
++            mask = torch.ones(n_q, n_k, dtype=torch.bool, device=q.device).tril(diagonal=n_k - n_q)
++        outs.append(scaled_dot_product_attention(qs, ks, vs, attn_mask=mask).transpose(0, 1))
++    return torch.cat(outs)
+ torch._dynamo.config.accumulated_cache_size_limit = 4096
+ # flex_attention = torch.compile(flex_attention) # , dynamic=True, mode='max-autotune'
+ flex_attention = torch.compile(flex_attention)
+@@ -334,9 +359,9 @@
+             packed_query_states, packed_key_states, packed_cos, packed_sin, unsqueeze_dim=1
+         )
+ 
+-        packed_query_states = packed_query_states.to(torch.bfloat16)
+-        packed_key_states = packed_key_states.to(torch.bfloat16)
+-        packed_value_states = packed_value_states.to(torch.bfloat16)
++        packed_query_states = packed_query_states.to(COMPUTE_DTYPE)
++        packed_key_states = packed_key_states.to(COMPUTE_DTYPE)
++        packed_value_states = packed_value_states.to(COMPUTE_DTYPE)
+ 
+         if past_key_values is not None and past_key_values.key_cache[self.layer_idx] is not None:
+             past_key_states = past_key_values.key_cache[self.layer_idx]
+@@ -358,7 +383,7 @@
+         cu_seqlens_q = torch.nn.functional.pad(torch.cumsum(query_lens, dim=0), (1, 0))
+         cu_seqlens_k = torch.nn.functional.pad(torch.cumsum(key_values_lens, dim=0), (1, 0))
+ 
+-        packed_attn_output = flash_attn_varlen_func(
++        packed_attn_output = varlen_attention(
+             q=packed_query_states,
+             k=merged_key_states,
+             v=merged_value_states,
+@@ -518,7 +543,7 @@
+             packed_query_states = self.q_norm(packed_query_states)
+             packed_key_states = self.k_norm(packed_key_states)
+         elif mode == 'gen':
+-            packed_query_sequence = packed_query_sequence.to(torch.bfloat16)
++            packed_query_sequence = packed_query_sequence.to(COMPUTE_DTYPE)
+             packed_query_states = packed_query_sequence.new_zeros((packed_query_sequence.shape[0], self.num_heads * self.head_dim))
+             packed_key_states = packed_query_sequence.new_zeros((packed_query_sequence.shape[0], self.num_key_value_heads * self.head_dim))
+             packed_value_states = packed_query_sequence.new_zeros((packed_query_sequence.shape[0], self.num_key_value_heads * self.head_dim))
+@@ -552,9 +577,9 @@
+             packed_query_states, packed_key_states, packed_cos, packed_sin, unsqueeze_dim=1
+         )
+ 
+-        packed_query_states = packed_query_states.to(torch.bfloat16)
+-        packed_key_states = packed_key_states.to(torch.bfloat16)
+-        packed_value_states = packed_value_states.to(torch.bfloat16)
++        packed_query_states = packed_query_states.to(COMPUTE_DTYPE)
++        packed_key_states = packed_key_states.to(COMPUTE_DTYPE)
++        packed_value_states = packed_value_states.to(COMPUTE_DTYPE)
+ 
+         if past_key_values is not None and past_key_values.key_cache[self.layer_idx] is not None:
+             past_key_states = past_key_values.key_cache[self.layer_idx]
+@@ -576,7 +601,7 @@
+         cu_seqlens_q = torch.nn.functional.pad(torch.cumsum(query_lens, dim=0), (1, 0))
+         cu_seqlens_k = torch.nn.functional.pad(torch.cumsum(key_values_lens, dim=0), (1, 0))
+ 
+-        packed_attn_output = flash_attn_varlen_func(
++        packed_attn_output = varlen_attention(
+             q=packed_query_states,
+             k=merged_key_states,
+             v=merged_value_states,
+@@ -590,6 +615,8 @@
+         if mode == 'und':
+             packed_attn_output = self.o_proj(packed_attn_output)
+         elif mode == 'gen':
++            # Patch: clone so autograd can backpropagate through this in-place write.
++            packed_attn_output = packed_attn_output.clone()
+             packed_attn_output[packed_text_indexes] = self.o_proj(packed_attn_output[packed_text_indexes])
+             packed_attn_output[packed_vae_token_indexes] = self.o_proj_moe_gen(packed_attn_output[packed_vae_token_indexes])
+ 
+@@ -811,10 +838,10 @@
+             elif mode == "gen":
+                 packed_text_query_sequence = packed_query_sequence[packed_text_indexes]
+                 packed_vae_query_sequence = packed_query_sequence[packed_vae_token_indexes]
+-                packed_text_query_sequence = self.post_attention_layernorm(packed_text_query_sequence).to(torch.bfloat16)
+-                packed_vae_query_sequence = self.post_attention_layernorm_moe_gen(packed_vae_query_sequence).to(torch.bfloat16)
++                packed_text_query_sequence = self.post_attention_layernorm(packed_text_query_sequence).to(COMPUTE_DTYPE)
++                packed_vae_query_sequence = self.post_attention_layernorm_moe_gen(packed_vae_query_sequence).to(COMPUTE_DTYPE)
+ 
+-                packed_query_sequence_ = torch.zeros_like(packed_query_sequence).to(torch.bfloat16)
++                packed_query_sequence_ = torch.zeros_like(packed_query_sequence).to(COMPUTE_DTYPE)
+                 packed_query_sequence_[packed_text_indexes] = self.mlp(packed_text_query_sequence)
+                 packed_query_sequence_[packed_vae_token_indexes] = self.mlp_moe_gen(packed_vae_query_sequence)
+                 packed_query_sequence = packed_query_sequence_
+diff -ruN a/modeling/bagel/siglip_navit.py b/modeling/bagel/siglip_navit.py
+--- a/modeling/bagel/siglip_navit.py
++++ b/modeling/bagel/siglip_navit.py
+@@ -13,8 +13,8 @@
+ from torch import nn
+ 
+ from transformers.activations import ACT2FN
+-from modeling.siglip.configuration_siglip import SiglipVisionConfig as _SiglipVisionConfig
+-from modeling.siglip.modeling_siglip import SiglipAttention, SiglipPreTrainedModel
++from bagel.modeling.siglip.configuration_siglip import SiglipVisionConfig as _SiglipVisionConfig
++from bagel.modeling.siglip.modeling_siglip import SiglipAttention, SiglipPreTrainedModel
+ from flash_attn import flash_attn_varlen_func
+ 
+ 
