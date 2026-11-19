@@ -1,5 +1,7 @@
 # V-lens: drawing the hidden states of unified models
 
+**[Project page](https://multimodal-ai-lab.github.io/V-lens/)** · **[Paper (arXiv)](https://arxiv.org/abs/2611.24793)**
+
 Code for the paper "The Elephant in the Question: Unified Models Picture the Concepts Behind Their Answers" by Tobias
 Braun, Marcus Rohrbach and Lorenzo Cavallaro. The V-lens reads a token's hidden state from the text computation
 of a unified text-and-image model and draws it: the state is centred, rescaled coordinate by coordinate to the
